@@ -1,25 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import Heatmap from './components/Heatmap'
-import { ketoneLevels } from './data/SampleData'
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import HomeScreen from './components/screens/HomeScreen';
+import CalendarScreen from './components/screens/CalendarScreen';
+import ReminderScreen from "./components/screens/ReminderScreen";
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
       <StatusBar style="auto" />
-      <Heatmap ketoneLevels={ketoneLevels} />
-    </View>
+      <Tab.Navigator>
+        <Tab.Screen name="CalendarScreen" component={CalendarScreen} />
+        <Tab.Screen name="HomeScreen" component={HomeScreen} />
+        <Tab.Screen name="ReminderScreen" component={ReminderScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    height: "100%",
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

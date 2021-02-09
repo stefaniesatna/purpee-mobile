@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import ColourScale from '../data/ColourScale'
+import ColourScale from '../../data/ColourScale'
 
 function HeatmapSquare(props){
 

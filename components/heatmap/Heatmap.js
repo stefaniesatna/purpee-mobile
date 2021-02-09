@@ -7,7 +7,7 @@ import HeatmapHeader from "./HeatmapHeader";
 function Heatmap(props){
 
     const style = {
-        flexDirection: "column"
+        flexDirection: "column",
     }
 
     const heatmapRows = props.ketoneLevels.map((ketoneLevels, idx) => <HeatmapRow key={idx} ketoneLevels={ketoneLevels} />)

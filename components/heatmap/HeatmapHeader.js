@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import { defaultTextStyle } from '../data/Style';
+import { defaultTextStyle } from '../../data/Style';
 
 function HeatmapHeader(){
 
