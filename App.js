@@ -8,13 +8,17 @@ import HomeScreen from './components/screens/HomeScreen';
 import CalendarScreen from './components/screens/CalendarScreen';
 import ReminderScreen from "./components/screens/ReminderScreen";
 
+import { styleNavigator } from "./data/Style"
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <Tab.Navigator>
+      <Tab.Navigator tabBarOptions={{
+        style: styleNavigator
+      }}>
         <Tab.Screen name="CalendarScreen" component={CalendarScreen} />
         <Tab.Screen name="HomeScreen" component={HomeScreen} />
         <Tab.Screen name="ReminderScreen" component={ReminderScreen} />
