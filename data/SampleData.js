@@ -8,3 +8,5 @@ export const ketoneLevels = [
     [6, 6, 5, 5, 5, 4, 0],
     [0, 0, 4, 6, 2, 4, 1],
 ]
+
+export const daysInKetosis = 5

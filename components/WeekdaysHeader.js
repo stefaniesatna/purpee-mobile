@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
-import { defaultTextStyle } from '../../data/Style';
+import { UIColors } from '../data/Style';
 
-function HeatmapHeader(){
+function WeekdaysHeader(){
 
     const style = {
         marginTop: 3,
         marginBottom: 3,
         flexDirection: "row",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
     }
 
     const textStyle = {
-        ...defaultTextStyle,
+        color: UIColors.blueFull,
         width: 50,
         textAlign: "center"
     }
@@ -30,4 +30,4 @@ function HeatmapHeader(){
     )
 }
 
-export default HeatmapHeader
+export default WeekdaysHeader

@@ -1,11 +1,17 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import Container from "../Container";
+import WeekdaysHeader from "../WeekdaysHeader";
+import { contentContainer } from '../../data/Style'
+import CalendarMonth from "../calendar/CalendarMonth"
 
 function CalendarScreen() {
     return (
       <Container>
-        <Text>Calendar Screen!</Text>
+        <View style={contentContainer}>
+            <WeekdaysHeader />
+            <CalendarMonth />
+        </View>
       </Container>
     );
   }

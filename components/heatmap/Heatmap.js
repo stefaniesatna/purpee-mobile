@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import HeatmapRow from "./HeatmapRow";
 import HeatmapSquare from './HeatmapSquare';
-import HeatmapHeader from "./HeatmapHeader";
+import WeekdaysHeader from "../WeekdaysHeader";
 
 function Heatmap(props){
 
@@ -14,7 +14,7 @@ function Heatmap(props){
 
     return (
         <View style={style}>
-            <HeatmapHeader />
+            <WeekdaysHeader />
             {heatmapRows}
         </View>
     )
