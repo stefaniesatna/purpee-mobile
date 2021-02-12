@@ -5,11 +5,11 @@ import { UIColors } from '../data/Style';
 function WeekdaysHeader(props){
 
     const style = {
-        ...props.style,
         marginTop: 3,
         marginBottom: 3,
         flexDirection: "row",
         justifyContent: "space-evenly",
+        ...props.style,
     }
 
     const textStyle = {
