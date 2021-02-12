@@ -2,9 +2,10 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import { UIColors } from '../data/Style';
 
-function WeekdaysHeader(){
+function WeekdaysHeader(props){
 
     const style = {
+        ...props.style,
         marginTop: 3,
         marginBottom: 3,
         flexDirection: "row",

@@ -10,3 +10,18 @@ export const ketoneLevels = [
 ]
 
 export const daysInKetosis = 5
+
+export const monthsData = [
+    {
+        name: "February",
+        weeks: 4
+    },
+    {
+        name: "March",
+        weeks: 5
+    },
+    {
+        name: "April",
+        weeks: 5
+    }
+]

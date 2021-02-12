@@ -3,6 +3,11 @@ export const mainText = {
     fontSize: 24
 }
 
+export const secondaryText = {
+    color: "#00bfeb",
+    fontSize: 18
+}
+
 export const contentContainer = {
     marginTop: 36,
     width: "100%"

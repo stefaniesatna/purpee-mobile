@@ -5,7 +5,8 @@ import HeatmapSquare from "./HeatmapSquare";
 function HeatmapRow(props){
 
     const style = {
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: "center"
     }
 
     const heatmapSquares = props.ketoneLevels.map((ketoneLevel, idx) => {
