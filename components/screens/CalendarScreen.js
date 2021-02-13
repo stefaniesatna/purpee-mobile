@@ -47,6 +47,7 @@ function CalendarScreen() {
                 textMonthFontFamily: 'Helvetica',
                 textDayHeaderFontFamily: 'Helvetica',
 
+                monthTextColor: UIColors.blueFull,
                 todayTextColor: UIColors.darkPurple,
                 dayTextColor: UIColors.blueFull,
               }} 
