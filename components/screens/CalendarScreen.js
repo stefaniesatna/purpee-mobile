@@ -4,7 +4,9 @@ import { CalendarList } from "react-native-calendars"
 
 import Container from "../Container";
 import WeekdaysHeader from "../WeekdaysHeader";
+import ColourScale from '../../data/ColourScale'
 import { contentContainer, UIColors } from '../../data/Style'
+import { ketoneLevelsDates } from '../../data/SampleData'
 
 function CalendarScreen() {
 
@@ -51,9 +53,10 @@ function CalendarScreen() {
     let yyyy = today.getFullYear();
     
     today = yyyy + "-" + mm + "-" + dd 
-    console.log(today)
     return today;
   }
+
+  
 
     return (
       <Container>
@@ -65,6 +68,24 @@ function CalendarScreen() {
               calendarHeight={320}
               theme={styleCalendarTheme} 
               maxDate={today()}
+              disableAllTouchEventsForDisabledDays={true}
+              markingType={'custom'}
+              markedDates={{
+                '2021-02-10': {
+                  customStyles: {
+                    container: {
+                      backgroundColor: ColourScale[2]
+                    },
+                  }
+                },
+                '2021-02-11': {
+                  customStyles: {
+                    container: {
+                      backgroundColor: ColourScale[4],
+                    },
+                  }
+                }
+              }}
             />
         </View>
       </Container>
