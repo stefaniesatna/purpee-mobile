@@ -44,6 +44,17 @@ function CalendarScreen() {
     dayTextColor: UIColors.blueFull,
   }
 
+  function today(){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    
+    today = yyyy + "-" + mm + "-" + dd 
+    console.log(today)
+    return today;
+  }
+
     return (
       <Container>
         <View style={contentContainer}>
@@ -53,6 +64,7 @@ function CalendarScreen() {
               hideDayNames={true} 
               calendarHeight={320}
               theme={styleCalendarTheme} 
+              maxDate={today()}
             />
         </View>
       </Container>
