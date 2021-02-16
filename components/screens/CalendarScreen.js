@@ -17,6 +17,33 @@ function CalendarScreen() {
     borderBottomColor: UIColors.blueMedium,
   }
   
+  const styleCalendarTheme = {
+    "stylesheet.calendar-list.main": {
+      calendar: {
+        paddingLeft: 0,
+        paddingRight: 0,
+      }
+    },
+    'stylesheet.calendar.main': {
+      monthView: {
+        margin: 0,
+        padding: 0,
+      }
+    },
+    'stylesheet.calendar.header': {
+      header: {
+        alignItems: "center"
+      }
+    },
+    textDayFontFamily: 'Helvetica',
+    textMonthFontFamily: 'Helvetica',
+    textDayHeaderFontFamily: 'Helvetica',
+
+    monthTextColor: UIColors.blueFull,
+    todayTextColor: UIColors.darkPurple,
+    dayTextColor: UIColors.blueFull,
+  }
+
     return (
       <Container>
         <View style={contentContainer}>
@@ -25,32 +52,7 @@ function CalendarScreen() {
               firstDay={1} 
               hideDayNames={true} 
               calendarHeight={320}
-              theme={{
-                "stylesheet.calendar-list.main": {
-                  calendar: {
-                    paddingLeft: 0,
-                    paddingRight: 0,
-                  }
-                },
-                'stylesheet.calendar.main': {
-                  monthView: {
-                    margin: 0,
-                    padding: 0,
-                  }
-                },
-                'stylesheet.calendar.header': {
-                  header: {
-                    alignItems: "center"
-                  }
-                },
-                textDayFontFamily: 'Helvetica',
-                textMonthFontFamily: 'Helvetica',
-                textDayHeaderFontFamily: 'Helvetica',
-
-                monthTextColor: UIColors.blueFull,
-                todayTextColor: UIColors.darkPurple,
-                dayTextColor: UIColors.blueFull,
-              }} 
+              theme={styleCalendarTheme} 
             />
         </View>
       </Container>
