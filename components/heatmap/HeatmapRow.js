@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { View } from 'react-native';
+
 import HeatmapSquare from "./HeatmapSquare";
 
 function HeatmapRow(props){

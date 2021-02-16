@@ -1,26 +1,26 @@
 import React from 'react';
 import { View } from 'react-native';
+import { CalendarList } from "react-native-calendars"
+
 import Container from "../Container";
 import WeekdaysHeader from "../WeekdaysHeader";
 import { contentContainer, UIColors } from '../../data/Style'
-import CalendarMonth from "../calendar/CalendarMonth"
-import {monthsData} from "../../data/SampleData"
-
-import {CalendarList} from "react-native-calendars"
 
 function CalendarScreen() {
 
-  const headerStyle = {
-    paddingBottom: 2,
-    borderBottomStyle: "solid", 
-    borderBottomWidth: 1, 
-    borderBottomColor: UIColors.blueMedium,
+  const styleHeader = {
     justifyContent: "space-evenly",
+
+    paddingBottom: 2,
+    borderBottomWidth: 1, 
+    borderBottomStyle: "solid", 
+    borderBottomColor: UIColors.blueMedium,
   }
+  
     return (
       <Container>
         <View style={contentContainer}>
-            <WeekdaysHeader style={headerStyle}/>
+            <WeekdaysHeader style={styleHeader}/>
             <CalendarList 
               firstDay={1} 
               hideDayNames={true} 

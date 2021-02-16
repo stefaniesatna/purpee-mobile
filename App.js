@@ -1,5 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { StatusBar } from 'expo-status-bar';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,6 +18,7 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="auto" />
       <Tab.Navigator 
+        initialRouteName="HomeScreen"
         tabBarOptions={{
           style: styleNavigator,
           activeTintColor: UIColors.darkPurple,
@@ -33,16 +34,15 @@ export default function App() {
               <Ionicons name="ios-calendar-outline" color={color} size={size} />
             )
           }} 
-          
         />
         <Tab.Screen 
-          name="HomeScreen" 
-          component={HomeScreen}
-          options={{
-            tabBarIcon:({color, size}) => (
-              <Ionicons name="ios-home" color={color} size={size} />
-            )
-          }} 
+            name="HomeScreen" 
+            component={HomeScreen}
+            options={{
+              tabBarIcon:({color, size}) => (
+                <Ionicons name="ios-home" color={color} size={size} />
+              )
+            }} 
         />
         <Tab.Screen 
           name="ReminderScreen" 

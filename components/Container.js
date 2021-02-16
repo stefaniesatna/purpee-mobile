@@ -1,22 +1,23 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 function Container(props){
+
+    const style = {
+      flex: 1,
+      flexDirection: "column",
+      alignItems: 'center',
+
+      height: "100%",
+      
+      backgroundColor: '#fff',
+    }
+
     return (
-        <View style={styles.container}>
+        <View style={style}>
             {props.children}
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      height: "100%",
-      flexDirection: 'column',
-      backgroundColor: '#fff',
-      alignItems: 'center',
-    },
-});
 
 export default Container
