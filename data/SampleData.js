@@ -9,10 +9,25 @@ export const ketoneLevels = [
     [0, 0, 4, 6, 2, 4, 1],
 ]
 
-export const ketoneLevelsDates = [
-    {"2021-02-10": 3},
-    {"2021-02-11": 5},
-    {"2021-02-12": 4}
-]
+export const ketoneLevelsDates = {
+    "2021-02-01": Math.floor(Math.random() * 6),
+    "2021-02-02": Math.floor(Math.random() * 6),
+    "2021-02-03": Math.floor(Math.random() * 6),
+    "2021-02-04": Math.floor(Math.random() * 6),
+    "2021-02-05": Math.floor(Math.random() * 6),
+    "2021-02-06": Math.floor(Math.random() * 6),
+    "2021-02-07": Math.floor(Math.random() * 6),
+    "2021-02-08": Math.floor(Math.random() * 6),
+    "2021-02-09": Math.floor(Math.random() * 6),
+    "2021-02-10": Math.floor(Math.random() * 6),
+    "2021-02-11": Math.floor(Math.random() * 6),
+    "2021-02-12": Math.floor(Math.random() * 6),
+    "2021-02-13": Math.floor(Math.random() * 6),
+    "2021-02-14": Math.floor(Math.random() * 6),
+    "2021-02-15": Math.floor(Math.random() * 6),
+    "2021-02-16": Math.floor(Math.random() * 6),
+    "2021-02-17": Math.floor(Math.random() * 6),
+    "2021-02-18": Math.floor(Math.random() * 6),
+}
 
 export const daysInKetosis = 5
