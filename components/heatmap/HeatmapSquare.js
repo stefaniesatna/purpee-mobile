@@ -1,36 +1,32 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { View } from "react-native";
 
-import ColourScale from '../../data/ColourScale'
+import ColourScale from "../../data/ColourScale";
 
-function HeatmapSquare(props){
+function HeatmapSquare(props) {
+  let style = {
+    width: 50,
+    height: 50,
+    margin: 1.5,
+    borderRadius: 3,
 
-    let style = {
-        width: 50,
-        height: 50,
-        margin: 1.5,
-        borderRadius: 3,
+    backgroundColor: ColourScale[props.ketoneLevel],
+  };
 
-        backgroundColor: ColourScale[props.ketoneLevel],
-    }
+  const todayStyle = {
+    borderWidth: 2,
+    borderStyle: "solid",
+    borderColor: "red",
+  };
 
-    const todayStyle = {
-        borderWidth: 2,
-        borderStyle: "solid",
-        borderColor: "red",
-    }
+  if (props.today) {
+    style = {
+      ...style,
+      ...todayStyle,
+    };
+  }
 
-    if (props.today) {
-        style = {
-            ...style,
-            ...todayStyle
-        }
-    }
-
-    return (
-        <View style={style}>
-        </View>
-    )
+  return <View style={style}></View>;
 }
 
-export default HeatmapSquare
+export default HeatmapSquare;

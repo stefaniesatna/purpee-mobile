@@ -1,23 +1,18 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from "react";
+import { View } from "react-native";
 
-function Container(props){
+function Container(props) {
+  const style = {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
 
-    const style = {
-      flex: 1,
-      flexDirection: "column",
-      alignItems: 'center',
+    height: "100%",
 
-      height: "100%",
-      
-      backgroundColor: '#fff',
-    }
+    backgroundColor: "#fff",
+  };
 
-    return (
-        <View style={style}>
-            {props.children}
-        </View>
-    )
+  return <View style={style}>{props.children}</View>;
 }
 
-export default Container
+export default Container;
