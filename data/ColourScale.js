@@ -1,6 +1,6 @@
 const ColourScale = [
   "#f3fcfe",
-  "#f2cfba",
+  "#ffefe5",
   "#fac1b7",
   "#f58e8e",
   "#cb5183",
