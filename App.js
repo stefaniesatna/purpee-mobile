@@ -57,5 +57,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-// Comment for a new branch

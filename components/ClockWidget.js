@@ -1,9 +1,15 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import CircleSlider from "react-native-circle-slider";
 import { UIColors } from "../data/Style";
 
 function ClockWidget() {
+
+    let degrees = 90;
+    const handleChange = (e) => { 
+        degrees = e;
+        return degrees;
+    }
 
     const style = {
         flex: 1,
@@ -12,25 +18,42 @@ function ClockWidget() {
     }
 
     const styleOuterCircle = {
-        width: 300,
-        height: 300,
-        backgroundColor: "green",
+        width: 320,
+        height: 320,
+        backgroundColor: UIColors.blueFull,
         position: "absolute",
-        borderRadius: 150,
+        borderRadius: 160,
+    }
+
+    const styleInnerCircle = {
+        width: 220,
+        height: 220,
+        backgroundColor: UIColors.white,
+        position: "absolute",
+        borderRadius: 110,
+    }
+
+    const styleTime = {
+        position: "absolute",
     }
 
     return (
         <View style={style}>
             <View style={styleOuterCircle}/>
             <CircleSlider 
-                value={360}
-                fillColor={UIColors.white}
-                strokeColor={UIColors.blueFull}
-                meterColor={UIColors.blueFull}
+                value={90}
+                fillColor={UIColors.blueFull}
+                strokeWidth={0}
+                meterColor={UIColors.white}
                 dialWidth={0}
-                dialRadius={100}
-
+                dialRadius={135}
+                btnRadius={20}
+                onValueChange={handleChange}
             />
+            <View style={styleInnerCircle}/>
+            <View style={styleTime}>
+                <Text>{degrees}</Text>
+            </View>
         </View>
     )
 }
