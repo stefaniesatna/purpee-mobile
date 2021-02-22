@@ -54,6 +54,9 @@ export const ketoneLevelsDates = {
   "2021-02-17": Math.floor(Math.random() * 7),
   "2021-02-18": Math.floor(Math.random() * 7),
   "2021-02-19": Math.floor(Math.random() * 7),
+  "2021-02-20": Math.floor(Math.random() * 7),
+  "2021-02-21": Math.floor(Math.random() * 7),
+  "2021-02-22": Math.floor(Math.random() * 7),
 };
 
 export const ketoneLevels = generateKetoneLevelsWeeks();
@@ -103,6 +106,5 @@ export function generateKetoneLevelsWeeks() {
     }
     day.setDate(day.getDate() + 1);
   }
-  console.log(weeks);
   return weeks;
 }

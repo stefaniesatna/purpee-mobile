@@ -5325,6 +5325,15 @@ react-native-calendars@^1.1249.0:
     react-native-swipe-gestures "^1.0.5"
     xdate "^0.8.0"
 
+react-native-circle-slider@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/react-native-circle-slider/-/react-native-circle-slider-2.7.0.tgz#477e86ac3dbdc57e3ad6bb8a6b937c3f495b6c18"
+  integrity sha512-p6zlpV+CpY6lhrt9xS5wqjWOaR/yCxSDi3lqc7/7aFIv0nUq6TuMwnmWSIfB9yz3wYjyrumI2WmOwpgPSyR33g==
+  dependencies:
+    react "16.13.1"
+    react-native "0.63.2"
+    react-native-svg "^12.1.0"
+
 react-native-gesture-handler@~1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.8.0.tgz#18f61f51da50320f938957b0ee79bc58f47449dc"
@@ -5385,7 +5394,7 @@ react-native-web@~0.13.12:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
-"react-native@https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz":
+react-native@0.63.2, "react-native@https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz":
   version "0.63.2"
   resolved "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz#5a545ad0b464824817ad699bb104d031d6ff6c39"
   dependencies:
