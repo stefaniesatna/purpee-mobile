@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 import CircleSlider from "react-native-circle-slider";
 import { UIColors } from "../data/Style";
 
 function ClockWidget() {
 
-    let degrees = 90;
+    const [ degrees, setDegrees ] = useState()
+
+    let time = {
+        hours: degreesToTime(degrees).hours,
+        mins: degreesToTime(degrees).mins
+    }
+
     const handleChange = (e) => { 
-        degrees = e;
-        return degrees;
+        setDegrees(e)
+        time = degreesToTime(degrees);
+    }
+
+    function degreesToTime(deg) {
+        let fiveMins = Math.floor(deg / 2.5)
+        let mins = fiveMins * 5
+        let hours = Math.floor(mins / 60)
+        mins -= hours * 60
+        return {
+            hours: hours,
+            mins: mins
+        };
     }
 
     const style = {
@@ -52,7 +69,7 @@ function ClockWidget() {
             />
             <View style={styleInnerCircle}/>
             <View style={styleTime}>
-                <Text>{degrees}</Text>
+                <Text>{time.hours} : {time.mins}</Text>
             </View>
         </View>
     )
