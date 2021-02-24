@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, Switch } from "react-native";
+import ReminderWidget from "../ReminderWidget"
 
 import Container from "../Container";
 import ClockWidget from "../ClockWidget"
@@ -16,7 +17,7 @@ function ReminderScreen() {
   };
 
   return (
-    <ClockWidget />
+    <ReminderWidget />
   )
 }
 
