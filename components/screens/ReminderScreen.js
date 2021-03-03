@@ -1,8 +1,9 @@
 import React from "react";
-import { Text } from "react-native"
+import { Text, View } from "react-native"
 // import ReminderWidget from "../ReminderWidget"
 
 function ReminderScreen() {
+  //WIP 
   const styleDailyLog = {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -12,8 +13,17 @@ function ReminderScreen() {
     paddingLeft: 16,
   };
 
+  const styleView = {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+
   return (
-    <Text>Reminder</Text>
+    // <ReminderWidget />
+    <View style={styleView}>
+      <Text>Reminder Screen</Text>  
+    </View>
   )
 }
 
