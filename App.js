@@ -71,7 +71,7 @@ function MainStackScreen({ navigation }) {
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <Root.Navigator mode="modal" headerMode="none">
         <Root.Screen name="Main" component={MainStackScreen} />
         <Root.Screen name="Modal" component={ModalScreen} />
