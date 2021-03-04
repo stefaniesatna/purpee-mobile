@@ -1,38 +1,18 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { View, Text, Button } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import ModalScreen from "./components/screens/ModalScreen"
 import HomeScreen from "./components/screens/HomeScreen";
 import CalendarScreen from "./components/screens/CalendarScreen";
 import ReminderScreen from "./components/screens/ReminderScreen";
 
 import { styleNavigator, UIColors } from "./data/Style";
 import { Ionicons } from "@expo/vector-icons";
-
-function ModalScreen({ navigation }) {
-  const styleView = {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "aqua",
-  };
-
-  const styleText = {
-    fontSize: 30,
-  };
-
-  return (
-    <View style={styleView}>
-      <Text style={styleText}>This is a modal!</Text>
-      <Button onPress={() => navigation.navigate("Main")} title="Dismiss" />
-    </View>
-  );
-}
 
 const Tab = createBottomTabNavigator();
 const Root = createStackNavigator();

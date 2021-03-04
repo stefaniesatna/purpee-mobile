@@ -3,6 +3,12 @@ export const mainText = {
   fontSize: 24,
 };
 
+export const h1 = {
+  color: "white", 
+  fontSize: 36,
+  fontWeight: "600"
+}
+
 export const secondaryText = {
   color: "#00bfeb",
   fontSize: 18,
@@ -35,3 +41,8 @@ export const debugging = {
   borderWidth: 2,
   borderColor: "red",
 };
+
+export const styleModalScreenBackground = {
+  backgroundColor: "#2D0039"
+}
+
