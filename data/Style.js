@@ -29,7 +29,6 @@ export const UIColors = {
 
 export const styleNavigator = {
   height: 83,
-  backgroundColor: UIColors.white,
 
   borderTopStyle: "solid",
   borderTopColor: UIColors.blueMedium,

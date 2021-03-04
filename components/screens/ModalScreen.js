@@ -1,19 +1,26 @@
 import React, { useState } from "react"
-import { View, Text, Button } from "react-native"
+import { View, Text } from "react-native"
 import LightFatButton from "../buttons/LightFatButton"
 import KetoLevelButtonGroup from "../KetoLevelButtonGroup"
 import { styleModalScreenBackground, h1, mainText } from "../../data/Style"
+import { LinearGradient } from "expo-linear-gradient"
 
 function ModalScreen({ navigation }) {
   //TODO: Implement initial state (currently none, but you can still submit)
   const [ selectedKetoLevel, setSelectedKetoLevel ] = useState(null)
   const styleView = {
-    ...styleModalScreenBackground,
-
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   };
+
+  const styleGradient = {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: "100%",
+  }
 
   const handlePress = () => {
     navigation.navigate("Main")
@@ -25,6 +32,11 @@ function ModalScreen({ navigation }) {
 
   return (
     <View style={styleView}>
+      <LinearGradient
+        colors={["#190028", "#3C0146", "#610A68", "#702359", "#190028"]}
+        locations={[0, 0.3177, 0.5156, 0.7552, 1]}
+        style={styleGradient}
+      />
       <Text style={h1}>How was your pee today?</Text>
       <KetoLevelButtonGroup onKetoLevelSelect={handleKetoLevelSelect} />
       <Text style={mainText}>Selected Keto Level: {selectedKetoLevel}</Text>
