@@ -3,16 +3,18 @@ import { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { BottomTabBar, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import ModalScreen from "./components/screens/ModalScreen"
+import ModalScreen from "./components/screens/ModalScreen";
 import HomeScreen from "./components/screens/HomeScreen";
 import CalendarScreen from "./components/screens/CalendarScreen";
 import ReminderScreen from "./components/screens/ReminderScreen";
 
-import { styleNavigator, UIColors } from "./data/Style";
+import { styleNavigator, UIColors, styleGradient } from "./data/Style";
+import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import { Line } from "react-native-svg";
 
 const Tab = createBottomTabNavigator();
 const Root = createStackNavigator();
@@ -31,10 +33,27 @@ function MainStackScreen({ navigation }) {
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
-        style: styleNavigator,
+        // style: styleNavigator,
         activeTintColor: UIColors.darkPurple,
         inactiveTintColor: UIColors.blueFull,
         showLabel: false,
+      }}
+      sceneContainerStyle={{
+        backgroundColor: "purple",
+      }}
+      tabBar={(props) => {
+        return (
+          <LinearGradient
+            colors={["#190028", "#2D0039"]}
+            locations={[1, 0.3]}
+            style={styleNavigator}
+          >
+            <BottomTabBar
+              {...props}
+              style={{ backgroundColor: "transparent", justifyContent: "center"}}
+            />
+          </LinearGradient>
+        );
       }}
     >
       <Tab.Screen
@@ -78,4 +97,4 @@ export default function App() {
       </Root.Navigator>
     </NavigationContainer>
   );
-} 
+}

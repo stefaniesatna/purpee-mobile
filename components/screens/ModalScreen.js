@@ -4,6 +4,7 @@ import LightFatButton from "../buttons/LightFatButton"
 import KetoLevelButtonGroup from "../KetoLevelButtonGroup"
 import { styleModalScreenBackground, h1, mainText } from "../../data/Style"
 import { LinearGradient } from "expo-linear-gradient"
+import { styleGradient } from "../../data/Style"
 
 function ModalScreen({ navigation }) {
   //TODO: Implement initial state (currently none, but you can still submit)
@@ -13,14 +14,6 @@ function ModalScreen({ navigation }) {
     alignItems: "center",
     justifyContent: "center",
   };
-
-  const styleGradient = {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    height: "100%",
-  }
 
   const handlePress = () => {
     navigation.navigate("Main")

@@ -6,10 +6,7 @@ function Container(props) {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
-
     height: "100%",
-
-    backgroundColor: "#fff",
   };
 
   return <View style={style}>{props.children}</View>;

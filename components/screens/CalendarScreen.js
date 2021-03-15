@@ -44,6 +44,8 @@ function CalendarScreen() {
     monthTextColor: UIColors.blueFull,
     todayTextColor: UIColors.darkPurple,
     dayTextColor: UIColors.blueFull,
+    backgroundColor: "transparent",
+    calendarBackground: "transparent",
   };
 
   /* Extracting dates as properties from the ketoneLevelsDates object to have an array

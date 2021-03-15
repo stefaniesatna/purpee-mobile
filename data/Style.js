@@ -28,8 +28,10 @@ export const UIColors = {
 };
 
 export const styleNavigator = {
-  height: 83,
-
+  height: 83,         
+  // position: "absolute",
+  // backgroundColor: "transparent",
+  
   borderTopStyle: "solid",
   borderTopColor: UIColors.blueMedium,
   borderTopWidth: 2,
@@ -45,3 +47,11 @@ export const styleModalScreenBackground = {
   backgroundColor: "#2D0039"
 }
 
+export const styleGradient = {
+  flex: 1,
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  height: "100%",
+}

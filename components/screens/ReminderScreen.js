@@ -29,11 +29,6 @@ function ReminderScreen() {
 
   return (
     <View style={styleView}>
-      <LinearGradient
-        colors={["#190028", "#3C0146", "#610A68", "#702359", "#190028"]}
-        locations={[0, 0.3177, 0.5156, 0.7552, 1]}
-        style={styleGradient}
-      />
       <Text>Reminder Screen</Text>  
     </View>
   )
