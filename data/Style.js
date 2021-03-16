@@ -32,9 +32,9 @@ export const styleNavigator = {
   // position: "absolute",
   // backgroundColor: "transparent",
   
-  borderTopStyle: "solid",
-  borderTopColor: UIColors.blueMedium,
-  borderTopWidth: 2,
+  // borderTopStyle: "solid",
+  // borderTopColor: UIColors.blueMedium,
+  // borderTopWidth: 4,
 };
 
 export const debugging = {

@@ -3,7 +3,10 @@ import { useEffect, useState } from "react";
 import { StatusBar } from "expo-status-bar";
 
 import { NavigationContainer } from "@react-navigation/native";
-import { BottomTabBar, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import {
+  BottomTabBar,
+  createBottomTabNavigator,
+} from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import ModalScreen from "./components/screens/ModalScreen";
@@ -50,7 +53,13 @@ function MainStackScreen({ navigation }) {
           >
             <BottomTabBar
               {...props}
-              style={{ backgroundColor: "transparent", justifyContent: "center"}}
+              style={{
+                flex: 1,
+                backgroundColor: "transparent",
+                borderStyle: "none",
+                borderTopWidth: 1.5,
+                borderTopColor: UIColors.blueFull,
+              }}
             />
           </LinearGradient>
         );
