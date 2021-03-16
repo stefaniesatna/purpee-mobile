@@ -1,5 +1,5 @@
 const ColourScale = [
-  "#f3fcfe",
+  "rgba(0,191,235,0.075)",
   "#ffefe5",
   "#fac1b7",
   "#f58e8e",

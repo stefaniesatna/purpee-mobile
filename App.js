@@ -41,14 +41,11 @@ function MainStackScreen({ navigation }) {
         inactiveTintColor: UIColors.blueFull,
         showLabel: false,
       }}
-      sceneContainerStyle={{
-        backgroundColor: "purple",
-      }}
       tabBar={(props) => {
         return (
           <LinearGradient
-            colors={["#190028", "#2D0039"]}
-            locations={[1, 0.3]}
+            colors={["#3F0F3D", "#190028"]}
+            locations={[0, 1]}
             style={styleNavigator}
           >
             <BottomTabBar

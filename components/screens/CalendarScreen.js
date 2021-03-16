@@ -1,6 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import { CalendarList } from "react-native-calendars";
+import { LinearGradient } from "expo-linear-gradient";
 
 import Container from "../Container";
 import WeekdaysHeader from "../WeekdaysHeader";
@@ -8,6 +9,7 @@ import ColourScale from "../../data/ColourScale";
 import { contentContainer, UIColors } from "../../data/Style";
 import { ketoneLevelsDates, shortenDate } from "../../data/SampleData";
 import { acc } from "react-native-reanimated";
+import { Line } from "react-native-svg";
 
 function CalendarScreen() {
   const styleHeader = {
@@ -44,6 +46,7 @@ function CalendarScreen() {
     monthTextColor: UIColors.blueFull,
     todayTextColor: UIColors.darkPurple,
     dayTextColor: UIColors.blueFull,
+    textDisabledColor: UIColors.blueFull,
     backgroundColor: "transparent",
     calendarBackground: "transparent",
   };
@@ -73,21 +76,27 @@ function CalendarScreen() {
     }, {});
 
   return (
-    <Container>
-      <View style={contentContainer}>
-        <WeekdaysHeader style={styleHeader} />
-        <CalendarList
-          firstDay={1}
-          hideDayNames={true}
-          calendarHeight={320}
-          theme={styleCalendarTheme}
-          maxDate={shortenDate(new Date())}
-          disableAllTouchEventsForDisabledDays={true}
-          markingType={"custom"}
-          markedDates={markedDates}
-        />
-      </View>
-    </Container>
+    <LinearGradient
+      colors={["#3F0F3D", "#25013D", "#190028"]}
+      locations={[1, 0.1373, 0]}
+      style={{ width: "100%", height: "100%", position: "absolute" }}
+    >
+      <Container>
+        <View style={contentContainer}>
+          <WeekdaysHeader style={styleHeader} />
+          <CalendarList
+            firstDay={1}
+            hideDayNames={true}
+            calendarHeight={320}
+            theme={styleCalendarTheme}
+            maxDate={shortenDate(new Date())}
+            disableAllTouchEventsForDisabledDays={true}
+            markingType={"custom"}
+            markedDates={markedDates}
+          />
+        </View>
+      </Container>
+    </LinearGradient>
   );
 }
 

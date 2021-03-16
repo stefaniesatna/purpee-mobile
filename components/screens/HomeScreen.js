@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
+import { LinearGradient } from "expo-linear-gradient"
 
 import Container from "../Container";
 import Heatmap from "../heatmap/Heatmap";
@@ -35,6 +36,11 @@ function HomeScreen({ navigation }) {
   }
 
   return (
+    <LinearGradient
+    colors={["#3F0F3D", "#25013D", "#190028"]}
+    locations={[1, 0.1373, 0]}
+    style={{ width: "100%", height: "100%", position: "absolute" }}
+  >
     <Container>
       <View style={contentContainer}>
         <Heatmap ketoneLevels={ketoneLevels} />
@@ -47,6 +53,7 @@ function HomeScreen({ navigation }) {
         />
       </View>
     </Container>
+    </LinearGradient>
   );
 }
 
