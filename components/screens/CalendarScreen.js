@@ -63,7 +63,7 @@ function CalendarScreen() {
       [date]: {
         customStyles: {
           container: {
-            backgroundColor: ColourScale[ketoneLevelsDates[date]],
+            backgroundColor: ketoneLevelsDates[date] === 0 ? "transparent" : ColourScale[ketoneLevelsDates[date]],
           },
         },
       },
