@@ -17,7 +17,6 @@ import ReminderScreen from "./components/screens/ReminderScreen";
 import { styleNavigator, UIColors, styleGradient } from "./data/Style";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
-import { Line } from "react-native-svg";
 
 const Tab = createBottomTabNavigator();
 const Root = createStackNavigator();
@@ -36,7 +35,6 @@ function MainStackScreen({ navigation }) {
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
-        // style: styleNavigator,
         activeTintColor: UIColors.darkPurple,
         inactiveTintColor: UIColors.blueFull,
         showLabel: false,

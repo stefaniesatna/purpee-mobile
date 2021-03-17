@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import { CalendarList } from "react-native-calendars";
 import { LinearGradient } from "expo-linear-gradient";
@@ -8,8 +8,7 @@ import WeekdaysHeader from "../WeekdaysHeader";
 import ColourScale from "../../data/ColourScale";
 import { contentContainer, UIColors } from "../../data/Style";
 import { ketoneLevelsDates, shortenDate } from "../../data/SampleData";
-import { acc } from "react-native-reanimated";
-import { Line } from "react-native-svg";
+import ChangeLevelModal from "../ChangeLevelModal";
 
 function CalendarScreen() {
   const styleHeader = {
@@ -75,6 +74,15 @@ function CalendarScreen() {
       };
     }, {});
 
+    const [modalVisible, setModalVisible] = useState(false)
+    const [daySelected, setDaySelected] = useState(null)
+
+    const handlePress = day => {
+      setModalVisible(!modalVisible)
+      setDaySelected(day)
+      console.log(day)
+    }
+
   return (
     <LinearGradient
       colors={[ "#190028", "#25013D" , "#2D0039" ]}
@@ -82,6 +90,7 @@ function CalendarScreen() {
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
       <Container>
+        <ChangeLevelModal daySelected={daySelected} modalVisible={modalVisible}/>
         <View style={contentContainer}>
           <WeekdaysHeader style={styleHeader} />
           <CalendarList
@@ -93,6 +102,7 @@ function CalendarScreen() {
             disableAllTouchEventsForDisabledDays={true}
             markingType={"custom"}
             markedDates={markedDates}
+            onDayPress={handlePress}
           />
         </View>
       </Container>

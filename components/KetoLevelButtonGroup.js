@@ -19,6 +19,7 @@ function KetoLevelButtonGroup(props) {
     borderRadius: 8,
 
     backgroundColor: "white",
+    ...props.styleButtonGroup
   };
 
   const handlePress = (level) => {

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { View, Text } from "react-native"
 import LightFatButton from "../buttons/LightFatButton"
 import KetoLevelButtonGroup from "../KetoLevelButtonGroup"
-import { styleModalScreenBackground, h1, mainText } from "../../data/Style"
+import { h1, mainText } from "../../data/Style"
 import { LinearGradient } from "expo-linear-gradient"
 import { styleGradient } from "../../data/Style"
 
