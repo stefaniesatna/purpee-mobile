@@ -37,10 +37,10 @@ function HomeScreen({ navigation }) {
 
   return (
     <LinearGradient
-    colors={["#3F0F3D", "#25013D", "#190028"]}
-    locations={[1, 0.1373, 0]}
-    style={{ width: "100%", height: "100%", position: "absolute" }}
-  >
+      colors={[ "#190028", "#25013D" , "#2D0039" ]}
+      locations={[0, 0.7627, 1]}
+      style={{ width: "100%", height: "100%", position: "absolute" }}
+    >
     <Container>
       <View style={contentContainer}>
         <Heatmap ketoneLevels={ketoneLevels} />

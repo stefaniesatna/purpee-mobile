@@ -44,7 +44,7 @@ function MainStackScreen({ navigation }) {
       tabBar={(props) => {
         return (
           <LinearGradient
-            colors={["#3F0F3D", "#190028"]}
+            colors={["#2D0039", "#190028"]}
             locations={[0, 1]}
             style={styleNavigator}
           >

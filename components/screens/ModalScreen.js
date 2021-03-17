@@ -26,8 +26,8 @@ function ModalScreen({ navigation }) {
   return (
     <View style={styleView}>
       <LinearGradient
-        colors={["#190028", "#3C0146", "#610A68", "#702359", "#190028"]}
-        locations={[0, 0.3177, 0.5156, 0.7552, 1]}
+        colors={["#190028", "#25013D", "#3C0146", "#702359", "#2D0039", "#190028"]}
+        locations={[0.1364, 0.363, 0.4745, 0.7111, 0.8983, 1]}
         style={styleGradient}
       />
       <Text style={h1}>How was your pee today?</Text>
