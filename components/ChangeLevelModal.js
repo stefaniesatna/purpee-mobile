@@ -4,8 +4,8 @@ import KetoLevelButtonGroup from "./KetoLevelButtonGroup";
 import { ketoneLevelsDates } from "../data/SampleData";
 
 function ChangeLevelModal(props) {
-  const [modalVisible, setModalVisible] = useState(props.modalVisible);
-  console.log("Is modal visible? ", modalVisible)
+  const [ketoLevelSelected, setKetoLevelSelected] = useState(null);
+
   const style = {
     flex: 1,
     justifyContent: "center",
@@ -18,28 +18,11 @@ function ChangeLevelModal(props) {
     elevation: 5,
   };
   const styleButton = {
-      backgroundColor: "aqua",
-      alignItems: "center",
-      height: 50,
-      width: 150,
-      justifyContent: "center"
-  }
-
-  const [ketoLevelSelected, setKetoLevelSelected] = useState(null);
-  const handleKetoLevelSelect = (level) => {
-    setKetoLevelSelected(level);
-  };
-
-  const handlePress = () => {
-    setModalVisible(!modalVisible);
-    console.log(
-      `Changing keto level selected on the day ${
-        props.daySelected ? props.daySelected.dateString : "no day"
-      } from ${ props.daySelected ? 
-        ketoneLevelsDates[props.daySelected.dateString] : "nothing"
-      } to ${ketoLevelSelected}`
-    );
-    //TODO: Implement function to change ketoleveldata for a new, "changed", entry
+    backgroundColor: "aqua",
+    alignItems: "center",
+    height: 50,
+    width: 150,
+    justifyContent: "center",
   };
 
   const styleButtonGroup = {
@@ -47,29 +30,42 @@ function ChangeLevelModal(props) {
     height: 75,
   };
 
+  function handleKetoLevelSelect(level) {
+    setKetoLevelSelected(level);
+  }
+
+  function handlePress() {
+    setModalVisible(false);
+    console.log(
+      `Changing keto level selected on the day ${
+        props.daySelected ? props.daySelected.dateString : "no day"
+      } from ${
+        props.daySelected
+          ? ketoneLevelsDates[props.daySelected.dateString]
+          : "nothing"
+      } to ${ketoLevelSelected}`
+    );
+    //TODO: Implement function to change ketoleveldata for a new, "changed", entry
+  }
+
   return (
     <View style={style}>
       <Modal
         transparent={true}
-        visible={modalVisible}
+        visible={props.modalVisible}
         onRequestClose={() => {
           setModalVisible(false);
         }}
       >
         <View style={style}>
           <View style={styleModal}>
-            <Text>
-              Change Ketone Level for {props.daySelected ? props.daySelected.dateString : "nothing"}
-            </Text>
+            <Text>Change Ketone Level for</Text>
             <KetoLevelButtonGroup
               onKetoLevelSelect={handleKetoLevelSelect}
               styleButtonGroup={styleButtonGroup}
             />
-            <Pressable 
-            onPress={handlePress} 
-            style={styleButton}
-            >
-                <Text>Submit</Text>
+            <Pressable onPress={props.handlePress} style={styleButton}>
+              <Text>Submit</Text>
             </Pressable>
           </View>
         </View>

@@ -11,6 +11,9 @@ import { ketoneLevelsDates, shortenDate } from "../../data/SampleData";
 import ChangeLevelModal from "../ChangeLevelModal";
 
 function CalendarScreen() {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [daySelected, setDaySelected] = useState(null);
+
   const styleHeader = {
     justifyContent: "space-evenly",
 
@@ -62,7 +65,10 @@ function CalendarScreen() {
       [date]: {
         customStyles: {
           container: {
-            backgroundColor: ketoneLevelsDates[date] === 0 ? "transparent" : ColourScale[ketoneLevelsDates[date]],
+            backgroundColor:
+              ketoneLevelsDates[date] === 0
+                ? "transparent"
+                : ColourScale[ketoneLevelsDates[date]],
           },
         },
       },
@@ -74,23 +80,27 @@ function CalendarScreen() {
       };
     }, {});
 
-    const [modalVisible, setModalVisible] = useState(false)
-    const [daySelected, setDaySelected] = useState(null)
+  const handlePress = (day) => {
+    setDaySelected(day);
+    setModalVisible(true);
+  };
 
-    const handlePress = day => {
-      setModalVisible(!modalVisible)
-      setDaySelected(day)
-      console.log(day)
-    }
+  const closeModal = () => {
+    setModalVisible(false)
+  }
 
   return (
     <LinearGradient
-      colors={[ "#190028", "#25013D" , "#2D0039" ]}
+      colors={["#190028", "#25013D", "#2D0039"]}
       locations={[0, 0.7627, 1]}
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
       <Container>
-        <ChangeLevelModal daySelected={daySelected} modalVisible={modalVisible}/>
+        <ChangeLevelModal
+          daySelected={daySelected}
+          modalVisible={modalVisible}
+          handlePress={closeModal}
+        />
         <View style={contentContainer}>
           <WeekdaysHeader style={styleHeader} />
           <CalendarList
