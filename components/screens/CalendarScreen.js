@@ -11,9 +11,9 @@ import { shortenDate } from "../../data/SampleData";
 import ChangeLevelModal from "../ChangeLevelModal"
 
 function CalendarScreen() {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [daySelected, setDaySelected] = useState(null);
-  console.log("DaySelected: ", daySelected)
+  const [changedLevel, setChangedLevel] = useState(null);
   const [ketoneLevelsDates, setKetoneLevelsDates] = useState({
   "2020-12-27": Math.floor(Math.random() * 7),
   "2020-12-28": Math.floor(Math.random() * 7),
@@ -164,15 +164,18 @@ function CalendarScreen() {
       };
     }, {});
 
-  const handlePress = (day) => {
-    console.log(day)
+  const handleDayPress = (day) => {
     setDaySelected(day);
-    setModalVisible(true);
+    setIsModalVisible(true);
   };
 
-  const closeModal = () => {
-    setModalVisible(false)
-    setKetoneLevelsDates({...ketoneLevelsDates, [daySelected.dateString]: 6})
+  const handleLevelChangeSubmit = () => {
+    setIsModalVisible(false)
+    setKetoneLevelsDates({...ketoneLevelsDates, [daySelected.dateString]: changedLevel})
+  }
+
+  const handleLevelChangeSelect = level => {
+    setChangedLevel(level)
   }
   
   return (
@@ -184,8 +187,9 @@ function CalendarScreen() {
       <Container>
         <ChangeLevelModal
           daySelected={daySelected}
-          modalVisible={modalVisible}
-          handlePress={closeModal}
+          isModalVisible={isModalVisible}
+          handleLevelChangeSubmit={handleLevelChangeSubmit}
+          handleLevelChangeSelect={handleLevelChangeSelect}
         />
         <View style={contentContainer}>
           <WeekdaysHeader style={styleHeader} />
@@ -198,7 +202,7 @@ function CalendarScreen() {
             disableAllTouchEventsForDisabledDays={true}
             markingType={"custom"}
             markedDates={markedDates}
-            onDayPress={handlePress}
+            onDayPress={handleDayPress}
           />
         </View>
       </Container>

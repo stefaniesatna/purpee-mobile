@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import { Button, Pressable, Modal, View, Text } from "react-native";
+import React from "react";
+import { Pressable, Modal, View, Text } from "react-native";
 import KetoLevelButtonGroup from "./KetoLevelButtonGroup";
-import { ketoneLevelsDates } from "../data/SampleData";
 
 function ChangeLevelModal(props) {
-  const [ketoLevelSelected, setKetoLevelSelected] = useState(null);
 
   const style = {
     flex: 1,
@@ -30,29 +28,11 @@ function ChangeLevelModal(props) {
     height: 75,
   };
 
-  function handleKetoLevelSelect(level) {
-    setKetoLevelSelected(level);
-  }
-
-  function handlePress() {
-    setModalVisible(false);
-    console.log(
-      `Changing keto level selected on the day ${
-        props.daySelected ? props.daySelected.dateString : "no day"
-      } from ${
-        props.daySelected
-          ? ketoneLevelsDates[props.daySelected.dateString]
-          : "nothing"
-      } to ${ketoLevelSelected}`
-    );
-    //TODO: Implement function to change ketoleveldata for a new, "changed", entry
-  }
-
   return (
     <View style={style}>
       <Modal
         transparent={true}
-        visible={props.modalVisible}
+        visible={props.isModalVisible}
         onRequestClose={() => {
           setModalVisible(false);
         }}
@@ -61,10 +41,10 @@ function ChangeLevelModal(props) {
           <View style={styleModal}>
             <Text>Change Ketone Level for</Text>
             <KetoLevelButtonGroup
-              onKetoLevelSelect={handleKetoLevelSelect}
               styleButtonGroup={styleButtonGroup}
+              handleLevelSelect={props.handleLevelChangeSelect}
             />
-            <Pressable onPress={props.handlePress} style={styleButton}>
+            <Pressable onPress={props.handleLevelChangeSubmit} style={styleButton}>
               <Text>Submit</Text>
             </Pressable>
           </View>
