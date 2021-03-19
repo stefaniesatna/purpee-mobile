@@ -4,9 +4,11 @@ export const mainText = {
 };
 
 export const h1 = {
-  color: "white", 
-  fontSize: 36,
-  fontWeight: "600"
+  color: "white",
+  textAlign: "center", 
+  fontSize: 52,
+  fontWeight: "500",
+  fontFamily: "Helvetica"
 }
 
 export const secondaryText = {

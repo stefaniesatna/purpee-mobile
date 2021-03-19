@@ -9,18 +9,20 @@ function LightFatButton(props) {
 
     width: 200, 
     height: 52,
-    margin: 13,
     borderRadius: 30,
 
     backgroundColor: "white",
+    ...props.style
   }
 
   const styleText = {
     alignItems: "center",
     
+    fontFamily: "Helvetica",
     fontSize: 18,
-    fontWeight: "600",
-    color: "#A12680"
+    fontWeight: "400",
+    color: "#A12680",
+    ...props.styleText
   }
 
   return (

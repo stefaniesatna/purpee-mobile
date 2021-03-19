@@ -9,6 +9,13 @@ import { styleGradient } from "../../data/Style"
 function ModalScreen({ navigation }) {
   //TODO: Implement initial state (currently none, but you can still submit)
   const [ selectedKetoLevel, setSelectedKetoLevel ] = useState(null)
+
+  const styleButtonGroup = {
+    height: 125,
+    width: 350,
+    margin: 31,
+  }
+
   const styleView = {
     flex: 1,
     alignItems: "center",
@@ -19,7 +26,7 @@ function ModalScreen({ navigation }) {
     navigation.navigate("Main")
   }
 
-  const handleKetoLevelSelect = level => {
+  const handleLevelSelect = level => {
     setSelectedKetoLevel(level)
   }
 
@@ -31,9 +38,8 @@ function ModalScreen({ navigation }) {
         style={styleGradient}
       />
       <Text style={h1}>How was your pee today?</Text>
-      <KetoLevelButtonGroup onKetoLevelSelect={handleKetoLevelSelect} />
-      <Text style={mainText}>Selected Keto Level: {selectedKetoLevel}</Text>
-      <LightFatButton handlePress={handlePress}>Log today</LightFatButton>
+      <KetoLevelButtonGroup handleLevelSelect={handleLevelSelect} styleButtonGroup={styleButtonGroup}/>
+      <LightFatButton handlePress={handlePress} style={{margin: 13}}>Log today</LightFatButton>
     </View>
   );
 }

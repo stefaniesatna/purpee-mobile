@@ -13,9 +13,6 @@ function KetoLevelButtonGroup(props) {
     alignItems: "center",
     justifyContent: "center",
 
-    height: 125,
-    width: 350,
-    margin: 31,
     borderRadius: 8,
 
     backgroundColor: "white",
@@ -26,16 +23,14 @@ function KetoLevelButtonGroup(props) {
     return (
       <KetoLevelButton
         styleButton={{ backgroundColor: ColourScale[ketoLevel] }}
-        ketoLevel={ketoLevel}
         key={ketoLevel + 1}
-        isChecked={selectedKetoLevel === ketoLevel ? true : false}
+        isChecked={selectedKetoLevel ? (selectedKetoLevel === ketoLevel ? true : false) : props.highlightButton === ketoLevel ? true : false}
         onPress={() => {
             props.handleLevelSelect(ketoLevel)
             setSelectedKetoLevel(ketoLevel)
           }
         }
       >
-        {ketoLevel}
       </KetoLevelButton>
     );
   });

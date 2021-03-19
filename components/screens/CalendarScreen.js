@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { CalendarList } from "react-native-calendars";
 import { LinearGradient } from "expo-linear-gradient";
+import { BlurView } from "expo-blur";
+
 
 import Container from "../Container";
 import WeekdaysHeader from "../WeekdaysHeader";
@@ -130,7 +132,7 @@ function CalendarScreen() {
     textDayHeaderFontFamily: "Helvetica",
 
     monthTextColor: UIColors.blueFull,
-    todayTextColor: UIColors.darkPurple,
+    todayTextColor: "white",
     dayTextColor: UIColors.blueFull,
     textDisabledColor: UIColors.blueFull,
     backgroundColor: "transparent",
@@ -174,6 +176,10 @@ function CalendarScreen() {
     setKetoneLevelsDates({...ketoneLevelsDates, [daySelected.dateString]: changedLevel})
   }
 
+  const handleLevelChangeSkip = () => {
+    setIsModalVisible(false)
+  }
+
   const handleLevelChangeSelect = level => {
     setChangedLevel(level)
   }
@@ -185,12 +191,14 @@ function CalendarScreen() {
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
       <Container>
-        <ChangeLevelModal
-          daySelected={daySelected}
-          isModalVisible={isModalVisible}
-          handleLevelChangeSubmit={handleLevelChangeSubmit}
-          handleLevelChangeSelect={handleLevelChangeSelect}
-        />
+          <ChangeLevelModal
+            daySelected={daySelected ? daySelected.dateString : ""}
+            previousLevel={daySelected ? ketoneLevelsDates[daySelected.dateString] : ""}
+            isModalVisible={isModalVisible}
+            handleLevelChangeSubmit={handleLevelChangeSubmit}
+            handleLevelChangeSelect={handleLevelChangeSelect}
+            handleLevelChangeSkip={handleLevelChangeSkip}
+          />
         <View style={contentContainer}>
           <WeekdaysHeader style={styleHeader} />
           <CalendarList
