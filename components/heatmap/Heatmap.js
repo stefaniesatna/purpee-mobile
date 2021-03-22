@@ -11,8 +11,8 @@ function Heatmap(props) {
     marginLeft: "auto",
   };
 
-  const heatmapRows = props.ketoneLevels.map((ketoneLevels, idx) => (
-    <HeatmapRow key={idx} ketoneLevels={ketoneLevels} />
+  const heatmapRows = props.levels.map((levels, idx) => (
+    <HeatmapRow key={idx} levels={levels} />
   ));
 
   return (

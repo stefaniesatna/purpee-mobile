@@ -82,7 +82,7 @@ export const ketoneLevelsDates = {
   "2021-03-17": Math.floor(Math.random() * 7),
 };
 
-export const ketoneLevels = generateKetoneLevelsWeeks();
+export const levels = generateKetoneLevelsWeeks();
 export const daysInKetosis = calculateDaysKeto();
 
 export function shortenDate(day) {

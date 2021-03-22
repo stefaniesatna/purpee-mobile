@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 import ColourScale from "../../data/ColourScale";
 
@@ -10,7 +10,7 @@ function HeatmapSquare(props) {
     margin: 1.5,
     borderRadius: 3,
 
-    backgroundColor: ColourScale[props.ketoneLevel],
+    backgroundColor: ColourScale[props.level],
   };
 
   const todayStyle = {
@@ -26,7 +26,7 @@ function HeatmapSquare(props) {
     };
   }
 
-  return <View style={style}></View>;
+  return <TouchableOpacity style={style}></TouchableOpacity>;
 }
 
 export default HeatmapSquare;

@@ -10,8 +10,8 @@ function HeatmapRow(props) {
     width: "100%",
   };
 
-  const heatmapSquares = props.ketoneLevels.map((ketoneLevel, idx) => {
-    return <HeatmapSquare key={idx} ketoneLevel={ketoneLevel} />;
+  const heatmapSquares = props.levels.map((level, idx) => {
+    return <HeatmapSquare key={idx} level={level} />;
   });
 
   return <View style={style}>{heatmapSquares}</View>;

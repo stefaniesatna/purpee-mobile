@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient"
 
 import Container from "../Container";
 import Heatmap from "../heatmap/Heatmap";
-import { ketoneLevels, daysInKetosis } from "../../data/SampleData";
+import { levels, daysInKetosis } from "../../data/SampleData";
 import { mainText, contentContainer } from "../../data/Style";
 
 function HomeScreen({ navigation }) {
@@ -43,7 +43,7 @@ function HomeScreen({ navigation }) {
     >
     <Container>
       <View style={contentContainer}>
-        <Heatmap ketoneLevels={ketoneLevels} />
+        <Heatmap levels={levels} />
       </View>
       <View style={styleBottomView}>
         <Text style={mainText}>{cheering}</Text>

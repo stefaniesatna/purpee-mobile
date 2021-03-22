@@ -17,6 +17,7 @@ import ReminderScreen from "./components/screens/ReminderScreen";
 import { styleNavigator, UIColors, styleGradient } from "./data/Style";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import { LevelProvider } from "./LevelContext";
 
 const Tab = createBottomTabNavigator();
 const Root = createStackNavigator();
@@ -93,12 +94,14 @@ function MainStackScreen({ navigation }) {
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar style="light" />
-      <Root.Navigator mode="modal" headerMode="none">
-        <Root.Screen name="Main" component={MainStackScreen} />
-        <Root.Screen name="Modal" component={ModalScreen} />
-      </Root.Navigator>
-    </NavigationContainer>
+    <LevelProvider>
+      <NavigationContainer>
+        <StatusBar style="light" />
+        <Root.Navigator mode="modal" headerMode="none">
+          <Root.Screen name="Main" component={MainStackScreen} />
+          <Root.Screen name="Modal" component={ModalScreen} />
+        </Root.Navigator>
+      </NavigationContainer>
+    </LevelProvider>
   );
 }
