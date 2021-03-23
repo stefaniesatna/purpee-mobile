@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import { View, Text, Button } from "react-native";
+import React, { useState, useContext } from "react";
+import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { LevelContext } from "../../LevelContext"
 import Container from "../Container";
 import Heatmap from "../heatmap/Heatmap";
 import ChangeLevelModal from "../ChangeLevelModal"
-import { levels, daysInKetosis } from "../../data/SampleData";
-import { contentContainer, UIColors, mainText } from "../../data/Style";
+import { contentContainer } from "../../data/Style";
+import MotivatingMessage from "../MotivatingMessage";
+import { calculateStreak } from "../../modules/calculateStreak";
 
 function HomeScreen({ navigation }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -18,27 +20,6 @@ function HomeScreen({ navigation }) {
     alignItems: "center",
   };
 
-  let cheering;
-  if (daysInKetosis === 0) {
-    cheering = `Today is the day to start! 🎯`;
-  } else if (daysInKetosis === 1) {
-    cheering = `First day in! Purple pee FTW 💜`;
-  } else if (daysInKetosis === 5) {
-    cheering = `It's what's on the stick that counts 💪`;
-  } else if (daysInKetosis === 10) {
-    cheering = `Let the stick do the talking 😎`;
-  } else if (daysInKetosis === 15) {
-    cheering = `If bread was allowed, everyone could do it. Keep it up 🎉`;
-  } else if (daysInKetosis === 20) {
-    cheering = `To reach inner peace, you shall purple piss 💦`;
-  } else if (daysInKetosis > 20 && daysInKetosis < 30) {
-    cheering = `Day ${daysInKetosis}. Respect!🎖️`;
-  } else if (daysInKetosis > 30) {
-    cheering = `Day ${daysInKetosis}. You are the real keto lord 🔥`;
-  } else {
-    cheering = `${daysInKetosis} straight days in ketosis 💜`;
-  }
-
   return (
     <LinearGradient
       colors={["#190028", "#25013D", "#2D0039"]}
@@ -46,16 +27,16 @@ function HomeScreen({ navigation }) {
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
       <Container>
-        <ChangeLevelModal
+        <ChangeLevelModal 
           daySelected={daySelected ? daySelected : ""}
           setIsModalVisible={setIsModalVisible}
           isModalVisible={isModalVisible}
         />
         <View style={contentContainer}>
-          <Heatmap levels={levels} setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected} />
+          <Heatmap setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected} />
         </View>
         <View style={styleBottomView}>
-          <Text style={mainText}>{cheering}</Text>
+          <MotivatingMessage />
         </View>
       </Container>
     </LinearGradient> 

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CalendarList } from "react-native-calendars";
 
-import { shortenDate } from "../data/SampleData";
+import { shortenDate } from "../modules/shortenDate";
 import { LevelContext } from "../LevelContext";
 import ColourScale from "../data/ColourScale";
 import { UIColors } from "../data/Style";

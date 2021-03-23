@@ -3,7 +3,7 @@ import { TouchableOpacity } from "react-native";
 
 import { LevelContext } from "../../LevelContext"
 import ColourScale from "../../data/ColourScale";
-import { shortenDate } from "../../data/SampleData"
+import { shortenDate } from "../../modules/shortenDate"
 import { UIColors } from "../../data/Style"
 
 function HeatmapSquare({ date, setIsModalVisible, setDaySelected }) {
