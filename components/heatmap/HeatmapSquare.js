@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useContext } from "react"
 import { TouchableOpacity } from "react-native";
 
+import { LevelContext } from "../../LevelContext"
 import ColourScale from "../../data/ColourScale";
+import { shortenDate } from "../../data/SampleData"
+import { UIColors } from "../../data/Style"
 
-function HeatmapSquare(props) {
+function HeatmapSquare({ date, setIsModalVisible, setDaySelected }) {
+  const [levelDates, setLevelDates] = useContext(LevelContext);
+
   let style = {
     width: 50,
     height: 50,
     margin: 1.5,
     borderRadius: 3,
 
-    backgroundColor: ColourScale[props.level],
+    backgroundColor:ColourScale[levelDates[date]],
   };
 
   const todayStyle = {
-    borderWidth: 2,
+    borderWidth: 1.5,
     borderStyle: "solid",
-    borderColor: "red",
+    borderColor: UIColors.blueFull,
   };
-
-  if (props.today) {
+  
+  if (shortenDate(new Date()) === date) {
     style = {
       ...style,
       ...todayStyle,
     };
   }
 
-  return <TouchableOpacity style={style}></TouchableOpacity>;
+  const handlePress = () => {
+    setIsModalVisible(true)
+    setDaySelected(date)
+  }
+
+
+  return <TouchableOpacity style={style} onPress={handlePress}></TouchableOpacity>;
 }
 
 export default HeatmapSquare;

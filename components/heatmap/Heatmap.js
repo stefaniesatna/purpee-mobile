@@ -4,15 +4,15 @@ import { View } from "react-native";
 import HeatmapRow from "./HeatmapRow";
 import WeekdaysHeader from "../WeekdaysHeader";
 
-function Heatmap(props) {
+function Heatmap({ levels, setIsModalVisible, setDaySelected }) {
   const style = {
     flexDirection: "column",
     marginRight: "auto",
     marginLeft: "auto",
   };
 
-  const heatmapRows = props.levels.map((levels, idx) => (
-    <HeatmapRow key={idx} levels={levels} />
+  const heatmapRows = levels.map((levels, idx) => (
+    <HeatmapRow key={idx} levels={levels} setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected}/>
   ));
 
   return (

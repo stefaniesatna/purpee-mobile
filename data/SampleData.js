@@ -122,7 +122,7 @@ export function generateKetoneLevelsWeeks() {
   /* Create a multidimensional array containing weeks (heatmap rows) and days (heatmap squares). 
     The value of each day in a week is representing the ketone level logged for the day */
   for (let i = 1; i <= daysTotal; i++) {
-    week.push(ketoneLevelsDates[shortenDate(day)]);
+    week.push(shortenDate(day));
     if (i % 7 === 0 || i === daysTotal) {
       weeks.push([...week]);
       week = [];

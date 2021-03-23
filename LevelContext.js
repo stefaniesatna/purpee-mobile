@@ -90,6 +90,8 @@ export const LevelProvider = props => {
         "2021-03-19": Math.floor(Math.random() * 7),
         "2021-03-20": Math.floor(Math.random() * 7),
         "2021-03-21": Math.floor(Math.random() * 7),
+        "2021-03-22": Math.floor(Math.random() * 7),
+        "2021-03-23": Math.floor(Math.random() * 7),
     })
 
     return (

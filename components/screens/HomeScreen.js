@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Button } from "react-native";
-import { LinearGradient } from "expo-linear-gradient"
+import { LinearGradient } from "expo-linear-gradient";
 
 import Container from "../Container";
 import Heatmap from "../heatmap/Heatmap";
+import ChangeLevelModal from "../ChangeLevelModal"
 import { levels, daysInKetosis } from "../../data/SampleData";
 import { mainText, contentContainer } from "../../data/Style";
 
 function HomeScreen({ navigation }) {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [daySelected, setDaySelected] = useState(null);
+
   const styleBottomView = {
     flex: 1,
     justifyContent: "center",
@@ -37,22 +41,27 @@ function HomeScreen({ navigation }) {
 
   return (
     <LinearGradient
-      colors={[ "#190028", "#25013D" , "#2D0039" ]}
+      colors={["#190028", "#25013D", "#2D0039"]}
       locations={[0, 0.7627, 1]}
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
-    <Container>
-      <View style={contentContainer}>
-        <Heatmap levels={levels} />
-      </View>
-      <View style={styleBottomView}>
-        <Text style={mainText}>{cheering}</Text>
-        <Button
-          onPress={() => navigation.navigate("Modal")}
-          title="Open Modal"
+      <Container>
+        <ChangeLevelModal
+          daySelected={daySelected ? daySelected : ""}
+          setIsModalVisible={setIsModalVisible}
+          isModalVisible={isModalVisible}
         />
-      </View>
-    </Container>
+        <View style={contentContainer}>
+          <Heatmap levels={levels} setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected} />
+        </View>
+        <View style={styleBottomView}>
+          <Text style={mainText}>{cheering}</Text>
+          <Button
+            onPress={() => navigation.navigate("Modal")}
+            title="Open Modal"
+          />
+        </View>
+      </Container>
     </LinearGradient>
   );
 }

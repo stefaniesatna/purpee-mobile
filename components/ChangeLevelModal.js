@@ -43,7 +43,9 @@ function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
 
   const handleLevelChangeSubmit = () => {
     setIsModalVisible(false);
-    setLevelDates({ ...levelDates, [daySelected]: changedLevel });
+    if (changedLevel){
+      setLevelDates({ ...levelDates, [daySelected]: changedLevel });
+    }
   };
 
   const handleLevelChangeSkip = () => {

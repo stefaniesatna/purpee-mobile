@@ -3,15 +3,15 @@ import { View } from "react-native";
 
 import HeatmapSquare from "./HeatmapSquare";
 
-function HeatmapRow(props) {
+function HeatmapRow({ levels, setIsModalVisible, setDaySelected }) {
   const style = {
     flexDirection: "row",
     alignItems: "flex-start",
     width: "100%",
   };
 
-  const heatmapSquares = props.levels.map((level, idx) => {
-    return <HeatmapSquare key={idx} level={level} />;
+  const heatmapSquares = levels.map((date, idx) => {
+    return <HeatmapSquare key={idx} date={date} setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected}/>;
   });
 
   return <View style={style}>{heatmapSquares}</View>;
