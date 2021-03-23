@@ -90,7 +90,7 @@ export function shortenDate(day) {
   let mm = String(day.getMonth() + 1).padStart(2, "0");
   let yyyy = day.getFullYear();
 
-  dateShortened = yyyy + "-" + mm + "-" + dd;
+  let dateShortened = yyyy + "-" + mm + "-" + dd;
   return dateShortened;
 }
 
@@ -106,7 +106,7 @@ export function calculateDaysKeto() {
 
 export function generateKetoneLevelsWeeks() {
   const today = new Date();
-  const numOfWeeks = 8;
+  const numOfWeeks = 9;
 
   // n-1 weeks times 7 days plus index of this day (Thursday is 4th day of the week => +4)
   let daysTotal = (numOfWeeks - 1) * 7 + today.getDay();

@@ -57,8 +57,8 @@ function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
   };
 
   return (
-    <View style={style}>
       <Modal
+        style = {style}
         transparent={true}
         visible={isModalVisible}
         onRequestClose={() => {
@@ -92,7 +92,6 @@ function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
           </View>
         </BlurView>
       </Modal>
-    </View>
   );
 }
 

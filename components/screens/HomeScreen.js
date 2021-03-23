@@ -6,7 +6,7 @@ import Container from "../Container";
 import Heatmap from "../heatmap/Heatmap";
 import ChangeLevelModal from "../ChangeLevelModal"
 import { levels, daysInKetosis } from "../../data/SampleData";
-import { mainText, contentContainer } from "../../data/Style";
+import { contentContainer, UIColors, mainText } from "../../data/Style";
 
 function HomeScreen({ navigation }) {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -56,13 +56,9 @@ function HomeScreen({ navigation }) {
         </View>
         <View style={styleBottomView}>
           <Text style={mainText}>{cheering}</Text>
-          <Button
-            onPress={() => navigation.navigate("Modal")}
-            title="Open Modal"
-          />
         </View>
       </Container>
-    </LinearGradient>
+    </LinearGradient> 
   );
 }
 

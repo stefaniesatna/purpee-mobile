@@ -13,8 +13,6 @@ function CalendarScreen() {
   const [daySelected, setDaySelected] = useState(null);
 
   const styleHeader = {
-    justifyContent: "space-evenly",
-
     paddingBottom: 2,
     borderBottomWidth: 1,
     borderBottomStyle: "solid",
@@ -34,7 +32,7 @@ function CalendarScreen() {
           isModalVisible={isModalVisible}
         />
         <View style={contentContainer}>
-          <WeekdaysHeader style={styleHeader} />
+          <WeekdaysHeader style={styleHeader}/>
           <Calendar
             setDaySelected={setDaySelected}
             setIsModalVisible={setIsModalVisible}

@@ -6,19 +6,25 @@ import WeekdaysHeader from "../WeekdaysHeader";
 
 function Heatmap({ levels, setIsModalVisible, setDaySelected }) {
   const style = {
+    padding: 0,
     flexDirection: "column",
     marginRight: "auto",
     marginLeft: "auto",
   };
 
   const heatmapRows = levels.map((levels, idx) => (
-    <HeatmapRow key={idx} levels={levels} setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected}/>
+    <HeatmapRow
+      key={idx}
+      levels={levels}
+      setIsModalVisible={setIsModalVisible}
+      setDaySelected={setDaySelected}
+    />
   ));
 
   return (
-    <View style={style}>
+    <View>
       <WeekdaysHeader />
-      {heatmapRows}
+      <View style={style}>{heatmapRows}</View>
     </View>
   );
 }

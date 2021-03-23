@@ -8,7 +8,7 @@ function WeekdaysHeader(props) {
     marginTop: 3,
     marginBottom: 3,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
     ...props.style,
   };
 
