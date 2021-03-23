@@ -1,15 +1,13 @@
-import React, { useContext, useState } from "react";
-
+import React, { useContext } from "react";
 import { CalendarList } from "react-native-calendars";
+
 import { shortenDate } from "../data/SampleData";
 import { LevelContext } from "../LevelContext";
 import ColourScale from "../data/ColourScale";
 import { UIColors } from "../data/Style";
 
-const Calendar = () => {
+const Calendar = ({ setDaySelected, setIsModalVisible }) => {
   const [levelDates, setLevelDates] = useContext(LevelContext);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [daySelected, setDaySelected] = useState(null);
 
   const styleCalendarTheme = {
     "stylesheet.calendar-list.main": {

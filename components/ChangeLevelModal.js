@@ -1,12 +1,15 @@
-import React from "react";
-import { ImageBackground, Modal, View, Text } from "react-native";
+import React, { useContext, useState } from "react";
+import { Modal, View, Text } from "react-native";
+import { BlurView } from "expo-blur";
+
+import { LevelContext } from "../LevelContext"
 import KetoLevelButtonGroup from "./KetoLevelButtonGroup";
 import LightFatButton from "./buttons/LightFatButton";
-import { PickerIOSComponent } from "react-native";
-import { UIColors, h1, mainText } from "../data/Style"
-import { BlurView } from 'expo-blur';
+import { UIColors } from "../data/Style";
 
-function ChangeLevelModal(props) {
+function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
+  const [levelDates, setLevelDates] = useContext(LevelContext)
+  const [changedLevel, setChangedLevel] = useState(null);
 
   const style = {
     flex: 1,
@@ -27,44 +30,64 @@ function ChangeLevelModal(props) {
     width: 150,
   };
   const styleButtonText = {
-      color: "#A12680"
-  }
+    color: "#A12680",
+  };
 
   const styleButtonGroup = {
     paddingVertical: 10,
     paddingHorizontal: 7.5,
     borderRadius: 3,
     marginVertical: 10,
-    marginHorizontal: 5
+    marginHorizontal: 5,
+  };
 
-  }
+  const handleLevelChangeSubmit = () => {
+    setIsModalVisible(false);
+    setLevelDates({ ...levelDates, [daySelected]: changedLevel });
+  };
+
+  const handleLevelChangeSkip = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleLevelChangeSelect = (level) => {
+    setChangedLevel(level);
+  };
 
   return (
     <View style={style}>
       <Modal
         transparent={true}
-        visible={props.isModalVisible}
+        visible={isModalVisible}
         onRequestClose={() => {
           setModalVisible(false);
         }}
       >
-        <BlurView tint="dark" intensity={60} style={{flex: 1}}>
-            <View style={style}>
+        <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
+          <View style={style}>
             <View style={styleModal}>
-                {/* <Text style={{...h1, color:"#A12680"}}>{props.daySelected}</Text> */}
-                <KetoLevelButtonGroup
-                handleLevelSelect={props.handleLevelChangeSelect}
-                highlightButton={props.previousLevel}
+              {/* <Text style={{...h1, color:"#A12680"}}>{props.daySelected}</Text> */}
+              <KetoLevelButtonGroup
+                handleLevelSelect={handleLevelChangeSelect}
+                highlightButton={daySelected ? levelDates[daySelected] : ""}
                 styleButtonGroup={styleButtonGroup}
-                />
-                <LightFatButton handlePress={props.handleLevelChangeSubmit} style={styleButton} styleText={styleButtonText}>
+              />
+              <LightFatButton
+                handlePress={handleLevelChangeSubmit}
+                style={styleButton}
+                styleText={styleButtonText}
+              >
                 <Text>Change</Text>
-                </LightFatButton>
-                <LightFatButton handlePress={props.handleLevelChangeSkip} style={{backgroundColor: "transparent"}} styleText={{color: "#A12680", fontSize: 16}}>
-                    <Text>Nevermind</Text>
-                </LightFatButton>
+              </LightFatButton>
+              <LightFatButton
+                handlePress={handleLevelChangeSkip}
+                style={{ backgroundColor: "transparent" }}
+                styleText={{ color: "#A12680", fontSize: 16 }}
+              >
+                <Text>Nevermind</Text>
+              </LightFatButton>
             </View>
-            </View>
+          </View>
         </BlurView>
       </Modal>
     </View>
