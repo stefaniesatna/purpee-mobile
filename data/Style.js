@@ -10,11 +10,11 @@ export const secondaryText = {
 
 export const h1 = {
   color: "white",
-  textAlign: "center", 
+  textAlign: "center",
   fontSize: 52,
   fontWeight: "500",
-  fontFamily: "Helvetica"
-}
+  fontFamily: "Helvetica",
+};
 
 export const contentContainer = {
   marginTop: 36,
@@ -30,7 +30,7 @@ export const UIColors = {
 };
 
 export const styleNavigator = {
-  height: 83,         
+  height: 83,
 };
 
 export const debugging = {

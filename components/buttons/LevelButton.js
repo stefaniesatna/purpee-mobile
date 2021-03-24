@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 
-export const LevelButton = props => {
+export const LevelButton = (props) => {
   const styleButtonInactive = {
     width: 50,
     height: 50,
@@ -9,7 +9,7 @@ export const LevelButton = props => {
     paddingVertical: 10,
     paddingHorizontal: 10,
     borderRadius: 3,
-  }
+  };
 
   const styleButtonActive = {
     ...styleButtonInactive,
@@ -17,13 +17,19 @@ export const LevelButton = props => {
     borderWidth: 1.5,
     borderStyle: "solid",
     borderColor: "#00BFEB",
-  }
+  };
 
   return (
     <TouchableOpacity onPress={props.onPress}>
-      <View style={props.isChecked ? {...styleButtonActive,  ...props.styleButton} : {...styleButtonInactive, ...props.styleButton}}>
+      <View
+        style={
+          props.isChecked
+            ? { ...styleButtonActive, ...props.styleButton }
+            : { ...styleButtonInactive, ...props.styleButton }
+        }
+      >
         <Text>{props.children}</Text>
       </View>
     </TouchableOpacity>
   );
-}
+};

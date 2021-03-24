@@ -5,7 +5,7 @@ import { mainText } from "../data/Style";
 import { calculateStreak } from "../modules/calculateStreak";
 
 export const MotivatingMessage = () => {
-  const [ levelDates ] = useContext(LevelContext);
+  const [levelDates] = useContext(LevelContext);
   const daysInKetosis = calculateStreak(levelDates);
 
   // Rewrite this such that it doesn't contain so much conditional logic

@@ -11,8 +11,15 @@ export const HeatmapRow = ({ levels, setIsModalVisible, setDaySelected }) => {
   };
 
   const heatmapSquares = levels.map((date, idx) => {
-    return <HeatmapSquare key={idx} date={date} setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected}/>;
+    return (
+      <HeatmapSquare
+        key={idx}
+        date={date}
+        setIsModalVisible={setIsModalVisible}
+        setDaySelected={setDaySelected}
+      />
+    );
   });
 
   return <View style={style}>{heatmapSquares}</View>;
-}
+};

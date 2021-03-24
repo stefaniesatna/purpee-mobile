@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 
-import { generateArrayOfWeeks } from "../../modules/generateArrayOfWeeks"
+import { generateArrayOfWeeks } from "../../modules/generateArrayOfWeeks";
 import { HeatmapRow } from "./HeatmapRow";
 import { WeekdaysHeader } from "../WeekdaysHeader";
 
@@ -29,4 +29,4 @@ export const Heatmap = ({ setIsModalVisible, setDaySelected }) => {
       <View style={style}>{heatmapRows}</View>
     </View>
   );
-}
+};

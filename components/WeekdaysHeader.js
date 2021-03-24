@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 import { UIColors } from "../data/Style";
 
-export const WeekdaysHeader = props => {
+export const WeekdaysHeader = (props) => {
   const style = {
     marginTop: 3,
     marginBottom: 3,
@@ -29,4 +29,4 @@ export const WeekdaysHeader = props => {
       <Text style={styleText}>S</Text>
     </View>
   );
-}
+};

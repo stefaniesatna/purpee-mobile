@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import {
-    BottomTabBar,
-    createBottomTabNavigator,
+  BottomTabBar,
+  createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
@@ -22,14 +22,13 @@ export const MainStackScreen = ({ navigation }) => {
     borderTopWidth: 1.5,
     borderTopColor: UIColors.blueFull,
   };
-  
+
   useEffect(() => {
     if (!isModalVisible) {
       navigation.navigate("Modal");
       setIsModalVisible(true);
     }
   });
-
 
   return (
     <Tab.Navigator
@@ -80,4 +79,4 @@ export const MainStackScreen = ({ navigation }) => {
       />
     </Tab.Navigator>
   );
-}
+};

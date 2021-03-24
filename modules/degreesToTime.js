@@ -1,4 +1,4 @@
-export const degreesToTime = deg => {
+export const degreesToTime = (deg) => {
   const fiveMinsInterval = Math.floor(deg / 2.5);
   let mins = fiveMinsInterval * 5;
   const hours = Math.floor(mins / 60);
@@ -7,4 +7,4 @@ export const degreesToTime = deg => {
     hours: hours,
     mins: mins,
   };
-}
+};

@@ -7,7 +7,7 @@ import { ColourScale } from "../data/ColourScale";
 import { UIColors } from "../data/Style";
 
 export const Calendar = ({ setDaySelected, setIsModalVisible }) => {
-  const [ levelDates ] = useContext(LevelContext);
+  const [levelDates] = useContext(LevelContext);
 
   const styleCalendarTheme = {
     "stylesheet.calendar-list.main": {

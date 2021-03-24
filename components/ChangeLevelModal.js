@@ -2,13 +2,17 @@ import React, { useContext, useState } from "react";
 import { Modal, View, Text } from "react-native";
 import { BlurView } from "expo-blur";
 
-import { LevelContext } from "../LevelContext"
+import { LevelContext } from "../LevelContext";
 import { LevelButtonGroup } from "./LevelButtonGroup";
 import { LightFatButton } from "./buttons/LightFatButton";
 import { UIColors } from "../data/Style";
 
-export const ChangeLevelModal = ({ isModalVisible, setIsModalVisible, daySelected }) => {
-  const [levelDates, setLevelDates] = useContext(LevelContext)
+export const ChangeLevelModal = ({
+  isModalVisible,
+  setIsModalVisible,
+  daySelected,
+}) => {
+  const [levelDates, setLevelDates] = useContext(LevelContext);
   const [changedLevel, setChangedLevel] = useState(null);
 
   const style = {
@@ -43,7 +47,7 @@ export const ChangeLevelModal = ({ isModalVisible, setIsModalVisible, daySelecte
 
   const handleLevelChangeSubmit = () => {
     setIsModalVisible(false);
-    if (changedLevel){
+    if (changedLevel) {
       setLevelDates({ ...levelDates, [daySelected]: changedLevel });
     }
   };
@@ -57,40 +61,40 @@ export const ChangeLevelModal = ({ isModalVisible, setIsModalVisible, daySelecte
   };
 
   return (
-      <Modal
-        style = {style}
-        transparent={true}
-        visible={isModalVisible}
-        onRequestClose={() => {
-          setModalIsVisible(false);
-        }}
-      >
-        <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
-          <View style={style}>
-            <View style={styleModal}>
-              {/* <Text style={{...h1, color:"#A12680"}}>{props.daySelected}</Text> */}
-              <LevelButtonGroup
-                handleLevelSelect={handleLevelChangeSelect}
-                highlightButton={daySelected ? levelDates[daySelected] : ""}
-                styleButtonGroup={styleButtonGroup}
-              />
-              <LightFatButton
-                handlePress={handleLevelChangeSubmit}
-                style={styleButton}
-                styleText={styleButtonText}
-              >
-                <Text>Change</Text>
-              </LightFatButton>
-              <LightFatButton
-                handlePress={handleLevelChangeSkip}
-                style={{ backgroundColor: "transparent" }}
-                styleText={{ color: "#A12680", fontSize: 16 }}
-              >
-                <Text>Nevermind</Text>
-              </LightFatButton>
-            </View>
+    <Modal
+      style={style}
+      transparent={true}
+      visible={isModalVisible}
+      onRequestClose={() => {
+        setModalIsVisible(false);
+      }}
+    >
+      <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
+        <View style={style}>
+          <View style={styleModal}>
+            {/* <Text style={{...h1, color:"#A12680"}}>{props.daySelected}</Text> */}
+            <LevelButtonGroup
+              handleLevelSelect={handleLevelChangeSelect}
+              highlightButton={daySelected ? levelDates[daySelected] : ""}
+              styleButtonGroup={styleButtonGroup}
+            />
+            <LightFatButton
+              handlePress={handleLevelChangeSubmit}
+              style={styleButton}
+              styleText={styleButtonText}
+            >
+              <Text>Change</Text>
+            </LightFatButton>
+            <LightFatButton
+              handlePress={handleLevelChangeSkip}
+              style={{ backgroundColor: "transparent" }}
+              styleText={{ color: "#A12680", fontSize: 16 }}
+            >
+              <Text>Nevermind</Text>
+            </LightFatButton>
           </View>
-        </BlurView>
-      </Modal>
+        </View>
+      </BlurView>
+    </Modal>
   );
-}
+};

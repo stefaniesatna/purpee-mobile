@@ -3,7 +3,7 @@ import { View } from "react-native";
 import { LevelButton } from "./buttons/LevelButton";
 import { ColourScale } from "../data/ColourScale";
 
-export const LevelButtonGroup = props => {
+export const LevelButtonGroup = (props) => {
   const levels = [1, 2, 3, 4, 5, 6];
 
   const [selectedLevel, setSelectedLevel] = useState(null);
@@ -16,7 +16,7 @@ export const LevelButtonGroup = props => {
     borderRadius: 8,
 
     backgroundColor: "white",
-    ...props.styleButtonGroup
+    ...props.styleButtonGroup,
   };
 
   const levelButtons = levels.map((level) => {
@@ -24,16 +24,18 @@ export const LevelButtonGroup = props => {
       <LevelButton
         styleButton={{ backgroundColor: ColourScale[level] }}
         key={level + 1}
-        isChecked={selectedLevel ? selectedLevel === level : props.highlightButton === level }
-        onPress={() => {
-            props.handleLevelSelect(level)
-            setSelectedLevel(level)
-          }
+        isChecked={
+          selectedLevel
+            ? selectedLevel === level
+            : props.highlightButton === level
         }
-      >
-      </LevelButton>
+        onPress={() => {
+          props.handleLevelSelect(level);
+          setSelectedLevel(level);
+        }}
+      ></LevelButton>
     );
   });
 
   return <View style={styleView}>{levelButtons}</View>;
-}
+};

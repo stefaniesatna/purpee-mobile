@@ -32,7 +32,7 @@ export const CalendarScreen = () => {
           isModalVisible={isModalVisible}
         />
         <View style={contentContainer}>
-          <WeekdaysHeader style={styleHeader}/>
+          <WeekdaysHeader style={styleHeader} />
           <Calendar
             setDaySelected={setDaySelected}
             setIsModalVisible={setIsModalVisible}
@@ -41,4 +41,4 @@ export const CalendarScreen = () => {
       </Container>
     </LinearGradient>
   );
-}
+};

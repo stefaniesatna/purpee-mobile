@@ -4,7 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 import { Container } from "../Container";
 import { Heatmap } from "../heatmap/Heatmap";
-import { ChangeLevelModal } from "../ChangeLevelModal"
+import { ChangeLevelModal } from "../ChangeLevelModal";
 import { contentContainer } from "../../data/Style";
 import { MotivatingMessage } from "../MotivatingMessage";
 
@@ -25,18 +25,21 @@ export const HomeScreen = () => {
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
       <Container>
-        <ChangeLevelModal 
+        <ChangeLevelModal
           daySelected={daySelected || ""}
           setIsModalVisible={setIsModalVisible}
           isModalVisible={isModalVisible}
         />
         <View style={contentContainer}>
-          <Heatmap setIsModalVisible={setIsModalVisible} setDaySelected={setDaySelected} />
+          <Heatmap
+            setIsModalVisible={setIsModalVisible}
+            setDaySelected={setDaySelected}
+          />
         </View>
         <View style={styleBottomView}>
           <MotivatingMessage />
         </View>
       </Container>
-    </LinearGradient> 
+    </LinearGradient>
   );
-}
+};
