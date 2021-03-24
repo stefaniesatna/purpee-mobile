@@ -1,4 +1,4 @@
-import { shortenDate } from "./shortenDate"
+import { formatDateYYYYMMDD } from "./shortenDate"
 
 // Generates multidimensional array of weeks with dates, n weeks back, including current week
 export function generateArrayOfWeeks(numOfWeeks) {
@@ -18,7 +18,7 @@ export function generateArrayOfWeeks(numOfWeeks) {
   /* Create a multidimensional array containing weeks (heatmap rows) and days (heatmap squares). 
       Each day of the week is represented as a date yyyy-mm-dd */
   for (let i = 1; i <= daysTotal; i++) {
-    week.push(shortenDate(day));
+    week.push(formatDateYYYYMMDD(day));
     if (i % 7 === 0 || i === daysTotal) {
       weeks.push([...week]);
       week = [];

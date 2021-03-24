@@ -1,6 +1,5 @@
 import React from "react";
 import { View } from "react-native";
-import { LinearGradient } from "expo-linear-gradient"
 
 function Container(props) {
   const style = {

@@ -62,7 +62,7 @@ function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
         transparent={true}
         visible={isModalVisible}
         onRequestClose={() => {
-          setModalVisible(false);
+          setModalIsVisible(false);
         }}
       >
         <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>

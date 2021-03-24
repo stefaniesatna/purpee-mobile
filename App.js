@@ -32,6 +32,14 @@ function MainStackScreen({ navigation }) {
     }
   });
 
+  const styleBottomTabBar = {
+    flex: 1,
+    backgroundColor: "transparent",
+    borderStyle: "none",
+    borderTopWidth: 1.5,
+    borderTopColor: UIColors.blueFull,
+  };
+
   return (
     <Tab.Navigator
       initialRouteName="HomeScreen"
@@ -49,13 +57,7 @@ function MainStackScreen({ navigation }) {
           >
             <BottomTabBar
               {...props}
-              style={{
-                flex: 1,
-                backgroundColor: "transparent",
-                borderStyle: "none",
-                borderTopWidth: 1.5,
-                borderTopColor: UIColors.blueFull,
-              }}
+              style={styleBottomTabBar}
             />
           </LinearGradient>
         );

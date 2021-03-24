@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -10,7 +10,7 @@ import { contentContainer } from "../../data/Style";
 import MotivatingMessage from "../MotivatingMessage";
 import { calculateStreak } from "../../modules/calculateStreak";
 
-function HomeScreen({ navigation }) {
+function HomeScreen() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [daySelected, setDaySelected] = useState(null);
 
@@ -28,7 +28,7 @@ function HomeScreen({ navigation }) {
     >
       <Container>
         <ChangeLevelModal 
-          daySelected={daySelected ? daySelected : ""}
+          daySelected={daySelected || ""}
           setIsModalVisible={setIsModalVisible}
           isModalVisible={isModalVisible}
         />

@@ -1,4 +1,3 @@
-import { useLinkProps } from "@react-navigation/native"
 import React, { useState, createContext } from "react"
 
 export const LevelContext = createContext()

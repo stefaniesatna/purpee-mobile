@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CalendarList } from "react-native-calendars";
 
-import { shortenDate } from "../modules/shortenDate";
+import { formatDateYYYYMMDD } from "../modules/shortenDate";
 import { LevelContext } from "../LevelContext";
 import ColourScale from "../data/ColourScale";
 import { UIColors } from "../data/Style";
@@ -77,7 +77,7 @@ const Calendar = ({ setDaySelected, setIsModalVisible }) => {
       hideDayNames={true}
       calendarHeight={320}
       theme={styleCalendarTheme}
-      maxDate={shortenDate(new Date())}
+      maxDate={formatDateYYYYMMDD(new Date())}
       disableAllTouchEventsForDisabledDays={true}
       markingType={"custom"}
       markedDates={markedDates}

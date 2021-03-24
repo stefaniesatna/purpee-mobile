@@ -3,7 +3,7 @@ import { TouchableOpacity } from "react-native";
 
 import { LevelContext } from "../../LevelContext"
 import ColourScale from "../../data/ColourScale";
-import { shortenDate } from "../../modules/shortenDate"
+import { formatDateYYYYMMDD } from "../../modules/shortenDate"
 import { UIColors } from "../../data/Style"
 
 function HeatmapSquare({ date, setIsModalVisible, setDaySelected }) {
@@ -24,7 +24,7 @@ function HeatmapSquare({ date, setIsModalVisible, setDaySelected }) {
     borderColor: UIColors.blueFull,
   };
   
-  if (shortenDate(new Date()) === date) {
+  if (formatDateYYYYMMDD(new Date()) === date) {
     style = {
       ...style,
       ...todayStyle,

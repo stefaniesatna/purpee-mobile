@@ -24,7 +24,7 @@ function KetoLevelButtonGroup(props) {
       <KetoLevelButton
         styleButton={{ backgroundColor: ColourScale[ketoLevel] }}
         key={ketoLevel + 1}
-        isChecked={selectedKetoLevel ? (selectedKetoLevel === ketoLevel ? true : false) : props.highlightButton === ketoLevel ? true : false}
+        isChecked={selectedKetoLevel ? selectedKetoLevel === ketoLevel : props.highlightButton === ketoLevel }
         onPress={() => {
             props.handleLevelSelect(ketoLevel)
             setSelectedKetoLevel(ketoLevel)
