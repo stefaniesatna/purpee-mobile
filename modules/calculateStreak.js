@@ -1,4 +1,4 @@
-import { formatDateYYYYMMDD } from "./shortenDate" 
+import { formatDateYYYYMMDD } from "./formatDateYYYYMMDD" 
 
 export function calculateStreak(dates) {
   let day = new Date(); // start with today

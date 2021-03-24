@@ -1,4 +1,4 @@
-import { formatDateYYYYMMDD } from "./shortenDate"
+import { formatDateYYYYMMDD } from "./formatDateYYYYMMDD"
 
 // Generates multidimensional array of weeks with dates, n weeks back, including current week
 export function generateArrayOfWeeks(numOfWeeks) {
