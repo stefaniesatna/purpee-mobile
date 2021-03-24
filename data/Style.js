@@ -3,6 +3,11 @@ export const mainText = {
   fontSize: 24,
 };
 
+export const secondaryText = {
+  color: "#00bfeb",
+  fontSize: 18,
+};
+
 export const h1 = {
   color: "white",
   textAlign: "center", 
@@ -10,11 +15,6 @@ export const h1 = {
   fontWeight: "500",
   fontFamily: "Helvetica"
 }
-
-export const secondaryText = {
-  color: "#00bfeb",
-  fontSize: 18,
-};
 
 export const contentContainer = {
   marginTop: 36,
@@ -31,12 +31,6 @@ export const UIColors = {
 
 export const styleNavigator = {
   height: 83,         
-  // position: "absolute",
-  // backgroundColor: "transparent",
-  
-  // borderTopStyle: "solid",
-  // borderTopColor: UIColors.blueMedium,
-  // borderTopWidth: 4,
 };
 
 export const debugging = {
@@ -44,16 +38,3 @@ export const debugging = {
   borderWidth: 2,
   borderColor: "red",
 };
-
-export const styleModalScreenBackground = {
-  backgroundColor: "#2D0039"
-}
-
-export const styleGradient = {
-  flex: 1,
-  position: 'absolute',
-  left: 0,
-  right: 0,
-  top: 0,
-  height: "100%",
-}

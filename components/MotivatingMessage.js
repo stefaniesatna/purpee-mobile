@@ -4,13 +4,14 @@ import { LevelContext } from "../LevelContext";
 import { mainText } from "../data/Style";
 import { calculateStreak } from "../modules/calculateStreak";
 
-const MotivatingMessage = () => {
-  const [levelDates, setLevelDates] = useContext(LevelContext);
+export const MotivatingMessage = () => {
+  const [ levelDates ] = useContext(LevelContext);
   const daysInKetosis = calculateStreak(levelDates);
 
+  // Rewrite this such that it doesn't contain so much conditional logic
   let message;
   if (daysInKetosis === 0) {
-    message = `Today is the day to start! 🎯`;
+    message = `Today is the day to start 🎯`;
   } else if (daysInKetosis === 1) {
     message = `First day in! Purple pee FTW 💜`;
   } else if (daysInKetosis === 5) {
@@ -31,5 +32,3 @@ const MotivatingMessage = () => {
 
   return <Text style={mainText}>{message}</Text>;
 };
-
-export default MotivatingMessage;

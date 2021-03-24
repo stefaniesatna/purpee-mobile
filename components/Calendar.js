@@ -3,11 +3,11 @@ import { CalendarList } from "react-native-calendars";
 
 import { formatDateYYYYMMDD } from "../modules/formatDateYYYYMMDD";
 import { LevelContext } from "../LevelContext";
-import ColourScale from "../data/ColourScale";
+import { ColourScale } from "../data/ColourScale";
 import { UIColors } from "../data/Style";
 
-const Calendar = ({ setDaySelected, setIsModalVisible }) => {
-  const [levelDates, setLevelDates] = useContext(LevelContext);
+export const Calendar = ({ setDaySelected, setIsModalVisible }) => {
+  const [ levelDates ] = useContext(LevelContext);
 
   const styleCalendarTheme = {
     "stylesheet.calendar-list.main": {
@@ -85,5 +85,3 @@ const Calendar = ({ setDaySelected, setIsModalVisible }) => {
     />
   );
 };
-
-export default Calendar;

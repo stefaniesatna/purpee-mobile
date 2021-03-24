@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 
 import { UIColors } from "../data/Style";
 
-function WeekdaysHeader(props) {
+export const WeekdaysHeader = props => {
   const style = {
     marginTop: 3,
     marginBottom: 3,
@@ -30,5 +30,3 @@ function WeekdaysHeader(props) {
     </View>
   );
 }
-
-export default WeekdaysHeader;

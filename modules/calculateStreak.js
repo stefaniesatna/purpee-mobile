@@ -1,6 +1,6 @@
 import { formatDateYYYYMMDD } from "./formatDateYYYYMMDD" 
 
-export function calculateStreak(dates) {
+export const calculateStreak = dates => {
   let day = new Date(); // start with today
   let streak = 0;
   while (dates[formatDateYYYYMMDD(day)] > 1) {

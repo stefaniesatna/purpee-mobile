@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 
-function LightFatButton(props) {
+export const LightFatButton = props => {
 
   const styleView = {
     justifyContent: "center",
@@ -33,5 +33,3 @@ function LightFatButton(props) {
     </TouchableOpacity>
   );
 }
-
-export default LightFatButton;

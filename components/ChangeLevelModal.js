@@ -3,11 +3,11 @@ import { Modal, View, Text } from "react-native";
 import { BlurView } from "expo-blur";
 
 import { LevelContext } from "../LevelContext"
-import KetoLevelButtonGroup from "./KetoLevelButtonGroup";
-import LightFatButton from "./buttons/LightFatButton";
+import { LevelButtonGroup } from "./LevelButtonGroup";
+import { LightFatButton } from "./buttons/LightFatButton";
 import { UIColors } from "../data/Style";
 
-function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
+export const ChangeLevelModal = ({ isModalVisible, setIsModalVisible, daySelected }) => {
   const [levelDates, setLevelDates] = useContext(LevelContext)
   const [changedLevel, setChangedLevel] = useState(null);
 
@@ -69,7 +69,7 @@ function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
           <View style={style}>
             <View style={styleModal}>
               {/* <Text style={{...h1, color:"#A12680"}}>{props.daySelected}</Text> */}
-              <KetoLevelButtonGroup
+              <LevelButtonGroup
                 handleLevelSelect={handleLevelChangeSelect}
                 highlightButton={daySelected ? levelDates[daySelected] : ""}
                 styleButtonGroup={styleButtonGroup}
@@ -94,5 +94,3 @@ function ChangeLevelModal({ isModalVisible, setIsModalVisible, daySelected }) {
       </Modal>
   );
 }
-
-export default ChangeLevelModal;

@@ -2,10 +2,10 @@ import React from "react";
 import { View } from "react-native";
 
 import { generateArrayOfWeeks } from "../../modules/generateArrayOfWeeks"
-import HeatmapRow from "./HeatmapRow";
-import WeekdaysHeader from "../WeekdaysHeader";
+import { HeatmapRow } from "./HeatmapRow";
+import { WeekdaysHeader } from "../WeekdaysHeader";
 
-function Heatmap({ setIsModalVisible, setDaySelected }) {
+export const Heatmap = ({ setIsModalVisible, setDaySelected }) => {
   const style = {
     padding: 0,
     flexDirection: "column",
@@ -30,5 +30,3 @@ function Heatmap({ setIsModalVisible, setDaySelected }) {
     </View>
   );
 }
-
-export default Heatmap;

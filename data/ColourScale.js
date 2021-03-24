@@ -1,4 +1,4 @@
-const ColourScale = [
+export const ColourScale = [
   "rgba(0,191,235,0.075)",
   "#ffefe5",
   "#fac1b7",
@@ -7,5 +7,3 @@ const ColourScale = [
   "#a12680",
   "#6a2255",
 ];
-
-export default ColourScale;

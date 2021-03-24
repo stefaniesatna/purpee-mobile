@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native"
 
-function ReminderScreen() {
+export const ReminderScreen = () => {
   const styleView = {
     flex: 1,
     justifyContent: "center",
@@ -13,5 +13,3 @@ function ReminderScreen() {
     </View>
   )
 }
-
-export default ReminderScreen;

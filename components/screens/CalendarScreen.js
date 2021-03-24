@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import Container from "../Container";
-import WeekdaysHeader from "../WeekdaysHeader";
-import ChangeLevelModal from "../ChangeLevelModal";
-import Calendar from "../Calendar";
+import { Container } from "../Container";
+import { WeekdaysHeader } from "../WeekdaysHeader";
+import { ChangeLevelModal } from "../ChangeLevelModal";
+import { Calendar } from "../Calendar";
 import { contentContainer, UIColors } from "../../data/Style";
 
-function CalendarScreen() {
+export const CalendarScreen = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [daySelected, setDaySelected] = useState(null);
 
@@ -42,5 +42,3 @@ function CalendarScreen() {
     </LinearGradient>
   );
 }
-
-export default CalendarScreen;

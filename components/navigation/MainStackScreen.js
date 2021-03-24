@@ -6,23 +6,15 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 
-import HomeScreen from "../screens/HomeScreen";
-import CalendarScreen from "../screens/CalendarScreen";
-import ReminderScreen from "../screens/ReminderScreen";
+import { HomeScreen } from "../screens/HomeScreen";
+import { CalendarScreen } from "../screens/CalendarScreen";
+import { ReminderScreen } from "../screens/ReminderScreen";
 import { styleNavigator, UIColors } from "../../data/Style";
 
 const Tab = createBottomTabNavigator();
 
-function MainStackScreen({ navigation }) {
-  let [modalShown, setModalShown] = useState(false);
-
-  useEffect(() => {
-    if (!modalShown) {
-      navigation.navigate("Modal");
-      setModalShown(true);
-    }
-  });
-
+export const MainStackScreen = ({ navigation }) => {
+  let [isModalVisible, setIsModalVisible] = useState(false);
   const styleBottomTabBar = {
     flex: 1,
     backgroundColor: "transparent",
@@ -30,6 +22,14 @@ function MainStackScreen({ navigation }) {
     borderTopWidth: 1.5,
     borderTopColor: UIColors.blueFull,
   };
+  
+  useEffect(() => {
+    if (!isModalVisible) {
+      navigation.navigate("Modal");
+      setIsModalVisible(true);
+    }
+  });
+
 
   return (
     <Tab.Navigator
@@ -81,5 +81,3 @@ function MainStackScreen({ navigation }) {
     </Tab.Navigator>
   );
 }
-
-export default MainStackScreen

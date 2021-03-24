@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 
-function KetoLevelButton(props) {
+export const LevelButton = props => {
   const styleButtonInactive = {
     width: 50,
     height: 50,
@@ -27,5 +27,3 @@ function KetoLevelButton(props) {
     </TouchableOpacity>
   );
 }
-
-export default KetoLevelButton;

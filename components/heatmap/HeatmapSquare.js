@@ -2,12 +2,12 @@ import React, { useContext } from "react"
 import { TouchableOpacity } from "react-native";
 
 import { LevelContext } from "../../LevelContext"
-import ColourScale from "../../data/ColourScale";
+import { ColourScale } from "../../data/ColourScale";
 import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD"
 import { UIColors } from "../../data/Style"
 
-function HeatmapSquare({ date, setIsModalVisible, setDaySelected }) {
-  const [levelDates, setLevelDates] = useContext(LevelContext);
+export const HeatmapSquare = ({ date, setIsModalVisible, setDaySelected }) => {
+  const [ levelDates ] = useContext(LevelContext);
 
   let style = {
     width: 50,
@@ -39,5 +39,3 @@ function HeatmapSquare({ date, setIsModalVisible, setDaySelected }) {
 
   return <TouchableOpacity style={style} onPress={handlePress}></TouchableOpacity>;
 }
-
-export default HeatmapSquare;

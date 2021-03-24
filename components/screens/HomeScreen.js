@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { LevelContext } from "../../LevelContext"
-import Container from "../Container";
-import Heatmap from "../heatmap/Heatmap";
-import ChangeLevelModal from "../ChangeLevelModal"
+import { Container } from "../Container";
+import { Heatmap } from "../heatmap/Heatmap";
+import { ChangeLevelModal } from "../ChangeLevelModal"
 import { contentContainer } from "../../data/Style";
-import MotivatingMessage from "../MotivatingMessage";
-import { calculateStreak } from "../../modules/calculateStreak";
+import { MotivatingMessage } from "../MotivatingMessage";
 
-function HomeScreen() {
+export const HomeScreen = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [daySelected, setDaySelected] = useState(null);
 
@@ -42,5 +40,3 @@ function HomeScreen() {
     </LinearGradient> 
   );
 }
-
-export default HomeScreen;

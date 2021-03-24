@@ -1,7 +1,7 @@
 import { formatDateYYYYMMDD } from "./formatDateYYYYMMDD"
 
 // Generates multidimensional array of weeks with dates, n weeks back, including current week
-export function generateArrayOfWeeks(numOfWeeks) {
+export const generateArrayOfWeeks = numOfWeeks => {
   const today = new Date();
 
   // n-1 weeks times 7 days plus index of this day (Thursday is 4th day of the week => +4)

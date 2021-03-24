@@ -1,9 +1,9 @@
 import React from "react";
 import { View } from "react-native";
 
-import HeatmapSquare from "./HeatmapSquare";
+import { HeatmapSquare } from "./HeatmapSquare";
 
-function HeatmapRow({ levels, setIsModalVisible, setDaySelected }) {
+export const HeatmapRow = ({ levels, setIsModalVisible, setDaySelected }) => {
   const style = {
     flexDirection: "row",
     alignItems: "flex-start",
@@ -16,5 +16,3 @@ function HeatmapRow({ levels, setIsModalVisible, setDaySelected }) {
 
   return <View style={style}>{heatmapSquares}</View>;
 }
-
-export default HeatmapRow;
