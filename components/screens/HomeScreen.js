@@ -18,6 +18,11 @@ export const HomeScreen = () => {
     alignItems: "center",
   };
 
+  const handleSquarePress = date => {
+    setIsModalVisible(true)
+    setDaySelected(date)
+  }
+
   return (
     <LinearGradient
       colors={["#190028", "#25013D", "#2D0039"]}
@@ -32,8 +37,7 @@ export const HomeScreen = () => {
         />
         <View style={contentContainer}>
           <Heatmap
-            setIsModalVisible={setIsModalVisible}
-            setDaySelected={setDaySelected}
+            handleSquarePress={handleSquarePress}
           />
         </View>
         <View style={styleBottomView}>

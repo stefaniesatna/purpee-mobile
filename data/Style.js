@@ -11,8 +11,8 @@ export const secondaryText = {
 export const h1 = {
   color: "white",
   textAlign: "center",
-  fontSize: 52,
-  fontWeight: "500",
+  fontSize: 48,
+  fontWeight: "400",
   fontFamily: "Helvetica",
 };
 

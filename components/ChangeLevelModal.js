@@ -88,7 +88,7 @@ export const ChangeLevelModal = ({
             <LightFatButton
               handlePress={handleLevelChangeSkip}
               style={{ backgroundColor: "transparent" }}
-              styleText={{ color: "#A12680", fontSize: 16 }}
+              styleText={{ color: "white", fontSize: 16 }}
             >
               <Text>Nevermind</Text>
             </LightFatButton>

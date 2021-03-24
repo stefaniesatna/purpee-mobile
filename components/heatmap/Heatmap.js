@@ -5,7 +5,7 @@ import { generateArrayOfWeeks } from "../../modules/generateArrayOfWeeks";
 import { HeatmapRow } from "./HeatmapRow";
 import { WeekdaysHeader } from "../WeekdaysHeader";
 
-export const Heatmap = ({ setIsModalVisible, setDaySelected }) => {
+export const Heatmap = ({ handleSquarePress }) => {
   const style = {
     padding: 0,
     flexDirection: "column",
@@ -18,8 +18,7 @@ export const Heatmap = ({ setIsModalVisible, setDaySelected }) => {
     <HeatmapRow
       key={idx}
       levels={levels}
-      setIsModalVisible={setIsModalVisible}
-      setDaySelected={setDaySelected}
+      handleSquarePress={handleSquarePress}
     />
   ));
 

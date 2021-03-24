@@ -6,7 +6,7 @@ import { ColourScale } from "../../data/ColourScale";
 import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD";
 import { UIColors } from "../../data/Style";
 
-export const HeatmapSquare = ({ date, setIsModalVisible, setDaySelected }) => {
+export const HeatmapSquare = ({ date, handlePress }) => {
   const [levelDates] = useContext(LevelContext);
 
   let style = {
@@ -31,12 +31,7 @@ export const HeatmapSquare = ({ date, setIsModalVisible, setDaySelected }) => {
     };
   }
 
-  const handlePress = () => {
-    setIsModalVisible(true);
-    setDaySelected(date);
-  };
-
   return (
-    <TouchableOpacity style={style} onPress={handlePress}></TouchableOpacity>
+    <TouchableOpacity style={style} onPress={() => handlePress(date)}></TouchableOpacity>
   );
 };
