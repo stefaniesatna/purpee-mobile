@@ -9,7 +9,7 @@ import { Calendar } from "../Calendar";
 import { contentContainer, UIColors } from "../../data/Style";
 
 export const CalendarScreen = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
   const [daySelected, setDaySelected] = useState(null);
 
   const styleHeader = {
@@ -28,14 +28,14 @@ export const CalendarScreen = () => {
       <Container>
         <ChangeLevelModal
           daySelected={daySelected ? daySelected.dateString : ""}
-          setIsModalVisible={setIsModalVisible}
+          setModalVisible={setModalVisible}
           isModalVisible={isModalVisible}
         />
         <View style={contentContainer}>
           <WeekdaysHeader style={styleHeader} />
           <Calendar
             setDaySelected={setDaySelected}
-            setIsModalVisible={setIsModalVisible}
+            setModalVisible={setModalVisible}
           />
         </View>
       </Container>

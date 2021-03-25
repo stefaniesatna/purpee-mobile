@@ -7,7 +7,6 @@ import { h1 } from "../../data/Style";
 import { LinearGradient } from "expo-linear-gradient";
 import { LevelContext } from "../../LevelContext";
 import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD"
-import { Arrow } from "../Arrow"
 
 export const ModalScreen = ({ navigation }) => {
   //TODO: Implement initial state (currently none, but you can still submit)
@@ -67,7 +66,6 @@ export const ModalScreen = ({ navigation }) => {
       <LightThinButton handlePress={handleSkip}>
         Skip
       </LightThinButton>
-      <Arrow />
     </View>
   );
 };

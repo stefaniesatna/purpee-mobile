@@ -9,7 +9,7 @@ import { UIColors } from "../data/Style";
 
 export const ChangeLevelModal = ({
   isModalVisible,
-  setIsModalVisible,
+  setModalVisible,
   daySelected,
 }) => {
   const [levelDates, setLevelDates] = useContext(LevelContext);
@@ -46,14 +46,14 @@ export const ChangeLevelModal = ({
   };
 
   const handleLevelChangeSubmit = () => {
-    setIsModalVisible(false);
+    setModalVisible(false);
     if (changedLevel) {
       setLevelDates({ ...levelDates, [daySelected]: changedLevel });
     }
   };
 
   const handleLevelChangeSkip = () => {
-    setIsModalVisible(false);
+    setModalVisible(false);
   };
 
   const handleLevelChangeSelect = (level) => {
@@ -66,7 +66,7 @@ export const ChangeLevelModal = ({
       transparent={true}
       visible={isModalVisible}
       onRequestClose={() => {
-        setModalIsVisible(false);
+        setModalVisible(false);
       }}
     >
       <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>

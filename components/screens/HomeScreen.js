@@ -9,7 +9,7 @@ import { contentContainer } from "../../data/Style";
 import { MotivatingMessage } from "../MotivatingMessage";
 
 export const HomeScreen = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
   const [daySelected, setDaySelected] = useState(null);
 
   const styleBottomView = {
@@ -19,7 +19,7 @@ export const HomeScreen = () => {
   };
 
   const handleSquarePress = date => {
-    setIsModalVisible(true)
+    setModalVisible(true)
     setDaySelected(date)
   }
 
@@ -32,7 +32,7 @@ export const HomeScreen = () => {
       <Container>
         <ChangeLevelModal
           daySelected={daySelected || ""}
-          setIsModalVisible={setIsModalVisible}
+          setModalVisible={setModalVisible}
           isModalVisible={isModalVisible}
         />
         <View style={contentContainer}>

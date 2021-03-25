@@ -14,7 +14,7 @@ import { styleNavigator, UIColors } from "../../data/Style";
 const Tab = createBottomTabNavigator();
 
 export const MainStackScreen = ({ navigation }) => {
-  let [isModalVisible, setIsModalVisible] = useState(false);
+  let [isModalVisible, setModalVisible] = useState(false);
   const styleBottomTabBar = {
     flex: 1,
     backgroundColor: "transparent",
@@ -26,7 +26,7 @@ export const MainStackScreen = ({ navigation }) => {
   useEffect(() => {
     if (!isModalVisible) {
       navigation.navigate("Modal");
-      setIsModalVisible(true);
+      setModalVisible(true);
     }
   });
 

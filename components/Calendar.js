@@ -6,7 +6,7 @@ import { LevelContext } from "../LevelContext";
 import { ColourScale } from "../data/ColourScale";
 import { UIColors } from "../data/Style";
 
-export const Calendar = ({ setDaySelected, setIsModalVisible }) => {
+export const Calendar = ({ setDaySelected, setModalVisible }) => {
   const [levelDates] = useContext(LevelContext);
 
   const styleCalendarTheme = {
@@ -68,7 +68,7 @@ export const Calendar = ({ setDaySelected, setIsModalVisible }) => {
 
   const handleDayPress = (day) => {
     setDaySelected(day);
-    setIsModalVisible(true);
+    setModalVisible(true);
   };
 
   return (
