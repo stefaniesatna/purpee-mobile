@@ -12,14 +12,14 @@ const Root = createStackNavigator();
 
 export default function App() {
   return (
-    <LevelProvider>
-      <NavigationContainer>
+    <NavigationContainer>
+      <LevelProvider>
         <StatusBar style="light" />
         <Root.Navigator mode="modal" headerMode="none">
           <Root.Screen name="Main" component={MainStackScreen} />
           <Root.Screen name="Modal" component={ModalScreen} />
         </Root.Navigator>
-      </NavigationContainer>
-    </LevelProvider>
+      </LevelProvider>
+    </NavigationContainer>
   );
 }

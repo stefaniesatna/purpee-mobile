@@ -94,8 +94,15 @@ const defaultData = {
 }
 
 const STORAGE_KEY = `LEVEL_DATES`
-export const LevelProvider = (props) => {
+const CLEAR_IN_DEV = true
+
+export function LevelProvider(props) {
   const [levelDates, setLevelDates] = useState({})
+
+  const updateState = (data) => {
+    console.log("Updating levelDates with new state", data)
+    setLevelDates(data)
+  }
 
   useEffect(() => {
     if (Object.keys(levelDates) != 0){
@@ -104,15 +111,22 @@ export const LevelProvider = (props) => {
   }, [levelDates])
 
   useEffect(() => {
-    AsyncStorage.getItem(STORAGE_KEY).then((value) => {
-      if (value){
-        setLevelDates(JSON.parse(value))
+    async function hydrateState(){
+      if(process.env.NODE_ENV === "development" && CLEAR_IN_DEV){
+        console.log("Clearing async storage")
+        await AsyncStorage.clear()
       }
-    })
+      AsyncStorage.getItem(STORAGE_KEY).then((value) => {
+        if (value){
+          setLevelDates(JSON.parse(value))
+        }
+      })
+    }
+    hydrateState()
   }, [])
 
   return (
-    <LevelContext.Provider value={[levelDates, setLevelDates]}>
+    <LevelContext.Provider value={[levelDates, updateState]}>
       {props.children}
     </LevelContext.Provider>
   );
