@@ -5,16 +5,27 @@ import {
 } from "@react-navigation/bottom-tabs";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { HomeScreen } from "../screens/HomeScreen";
 import { CalendarScreen } from "../screens/CalendarScreen";
 import { ReminderScreen } from "../screens/ReminderScreen";
 import { styleNavigator, UIColors } from "../../data/Style";
+import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD";
 
 const Tab = createBottomTabNavigator();
 
+const STORAGE_KEY = "MODAL_SHOWN";
+
+// const fakeData = {
+//   "2021-03-30":true,
+//   "2021-03-29":true,
+//   "2021-03-31": true,
+// }
+
+// const CLEAR = false; 
+
 export const MainStackScreen = ({ navigation }) => {
-  let [isModalVisible, setModalVisible] = useState(false);
   const styleBottomTabBar = {
     flex: 1,
     backgroundColor: "transparent",
@@ -24,11 +35,21 @@ export const MainStackScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
-    if (!isModalVisible) {
-      navigation.navigate("Modal");
-      setModalVisible(true);
-    }
-  });
+    // if (CLEAR) {
+    // AsyncStorage.clear()
+    // }
+    AsyncStorage.getItem(STORAGE_KEY).then((value) => {
+      console.log(value)
+      const data = JSON.parse(value)
+      const today = formatDateYYYYMMDD(new Date());
+      if (!data || !data[today]) {
+        navigation.navigate("Modal");
+
+        const newData = JSON.stringify({ ...data, [today]: true });
+        AsyncStorage.setItem(STORAGE_KEY, newData);
+      }
+    });
+  }, []);
 
   return (
     <Tab.Navigator
