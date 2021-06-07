@@ -1,5 +1,6 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import CircleSlider from "../../components/CircleSlider"
 
 export const ReminderScreen = () => {
   const styleView = {
@@ -9,7 +10,7 @@ export const ReminderScreen = () => {
   };
   return (
     <View style={styleView}>
-      <Text>Reminder Screen</Text>
+      <CircleSlider />
     </View>
   );
 };
