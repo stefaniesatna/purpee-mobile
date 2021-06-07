@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import CircleSlider from "../../components/CircleSlider"
+import { ClockWidget } from "../clockWidget/ClockWidget"
 
 export const ReminderScreen = () => {
   const styleView = {
@@ -10,7 +10,7 @@ export const ReminderScreen = () => {
   };
   return (
     <View style={styleView}>
-      <CircleSlider />
+      <ClockWidget />
     </View>
   );
 };

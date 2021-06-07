@@ -76,14 +76,6 @@ const CircleSlider = ({
 		[dialRadius, btnRadius]
 	);
 
-	// const cartesianToPolar = (x, y) => {
-	// 	let hC = dialRadius + btnRadius
-
-	// 	if (x === 0) return y > hC ? 0 : 180
-	// 	if (x > 0) return 90 - Math.atan(y/x)
-	// 	if (x < 0) return 270 - Math.atan(y/x)
-	// }
-
 	const width = (dialRadius + btnRadius) * 2;
 	const bR = btnRadius;
 	const dR = dialRadius;
