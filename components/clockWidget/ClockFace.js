@@ -1,13 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
-
+import { View } from "react-native";
+import { Time } from "./Time"
 
 export const ClockFace = props => {
-
-  const { time } = props
-
-  return (
-    <Text>{time.hours} : {time.mins}</Text>
-  )
-
+    return (
+        <View> 
+            <Time time={props.time} />
+        </View>
+    )
 }

@@ -1,8 +1,7 @@
 import React from "react";
 import { View } from "react-native";
-import { ClockWidget } from "../clockWidget/ClockWidget"
+import { ClockWidget } from "../clockWidget/ClockWidget";
 import { LinearGradient } from "expo-linear-gradient";
-
 
 export const ReminderScreen = () => {
   return (
@@ -11,7 +10,7 @@ export const ReminderScreen = () => {
       locations={[0.2258, 0.387, 0.5781, 0.7938, 1]}
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
-      <View style={{height:200}}/>
+      <View style={{ height: 200 }} />
       <ClockWidget />
     </LinearGradient>
   );
