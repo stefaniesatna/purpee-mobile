@@ -1,6 +1,5 @@
-import React, { FC, useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { PanResponder, Dimensions } from "react-native";
-import { atan } from "react-native-reanimated";
 import Svg, { Path, Circle, G, Text } from "react-native-svg";
 
 
