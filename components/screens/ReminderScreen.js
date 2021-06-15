@@ -10,6 +10,8 @@ export const ReminderScreen = () => {
       locations={[0.2258, 0.387, 0.5781, 0.7938, 1]}
       style={{ width: "100%", height: "100%", position: "absolute" }}
     >
+      {/* Placeholder arbitrary height
+      TODO: Implement rest of reminder screen and get rid of arbitrary height */}
       <View style={{ height: 200 }} />
       <ClockWidget />
     </LinearGradient>

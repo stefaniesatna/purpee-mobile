@@ -1,7 +1,7 @@
 import React from "react";
 import Svg from "react-native-svg";
 import { View } from "react-native";
-import { Time } from "../Time";
+import { TimeDisplay } from "./TimeDisplay"
 import { ClockMarkings } from "./ClockMarkings";
 
 export const ClockFace = ({ time, width }) => {
@@ -9,7 +9,7 @@ export const ClockFace = ({ time, width }) => {
   const center = width / 2;
   const radius = diameter / 2;
   const hourMarkCount = 24;
-  const minuteMarkCount = hourStickCount * 5;
+  const minuteMarkCount = hourMarkCount * 5;
 
   const style = {
     position: "relative",
@@ -25,7 +25,7 @@ export const ClockFace = ({ time, width }) => {
   return (
     <View style={style}>
       <View style={styleTimeWrapper}>
-        <Time time={time} />
+        <TimeDisplay time={time} />
       </View>
       <Svg height={width} width={width}>
         <ClockMarkings
