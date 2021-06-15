@@ -1,3 +1,5 @@
+//TODO: Generalise? This is not the most reusable
+
 import React from "react";
 import { G, Line, Text } from "react-native-svg";
 import { polarToCartesian } from "../../../modules/polarToCartesian";
@@ -11,14 +13,24 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
     The arch above this angle represents the distance between two minute marks. Our minute count is 120 (24 * 5),
     which is 1/3 of the whole circle (360). Therefore, if we take the index of a given minute as 
     the starting unit, we only need to multiply it by 3 in order to get the degree spacing between 
-    two minute marks. We apply the same logic for hour spacing */ 
-  const minuteSpacingMultiplier = 360 / minutes
-  const hourSpacingMultiplier = 360 / hours
+    two minute marks. We apply the same logic for hour spacing */
+  const minuteSpacingMultiplier = 360 / minutes;
+  const hourSpacingMultiplier = 360 / hours;
 
   const minuteMarks = minutesArray.map((minute, index) => {
     // same properties for both start and end, because we are styling minute marks as dots
-    const start = polarToCartesian(center, center, radius, index * minuteSpacingMultiplier);
-    const end = polarToCartesian(center, center, radius, index * minuteSpacingMultiplier);
+    const start = polarToCartesian(
+      center,
+      center,
+      radius,
+      index * minuteSpacingMultiplier
+    );
+    const end = polarToCartesian(
+      center,
+      center,
+      radius,
+      index * minuteSpacingMultiplier
+    );
 
     return (
       <Line
@@ -36,9 +48,24 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
 
   // -5 and -20 are arbitrary values to "move" the coordinate point towards the centre of the circle
   const hourMarks = hoursArray.map((hour, index) => {
-    const start = polarToCartesian(center, center, radius - 5, index * hourSpacingMultiplier);
-    const end = polarToCartesian(center, center, radius, index * hourSpacingMultiplier);
-    const time = polarToCartesian(center, center, radius - 20, index * hourSpacingMultiplier);
+    const start = polarToCartesian(
+      center,
+      center,
+      radius - 5,
+      index * hourSpacingMultiplier
+    );
+    const end = polarToCartesian(
+      center,
+      center,
+      radius,
+      index * hourSpacingMultiplier
+    );
+    const time = polarToCartesian(
+      center,
+      center,
+      radius - 20,
+      index * hourSpacingMultiplier
+    );
 
     return (
       <G key={index}>

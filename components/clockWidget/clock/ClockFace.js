@@ -1,7 +1,7 @@
 import React from "react";
 import Svg from "react-native-svg";
 import { View } from "react-native";
-import { TimeDisplay } from "./TimeDisplay"
+import { TimeDisplay } from "./TimeDisplay";
 import { ClockMarkings } from "./ClockMarkings";
 
 export const ClockFace = ({ time, width }) => {

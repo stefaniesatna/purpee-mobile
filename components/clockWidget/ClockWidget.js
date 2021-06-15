@@ -40,8 +40,8 @@ export const ClockWidget = () => {
   const clockWidth =
     2 * (customiseSlider.dialRadius + customiseSlider.btnRadius) +
     2 * clockPadding;
-  const clockFaceWidth = 
-    2 * (customiseSlider.dialRadius - customiseSlider.btnRadius - clockPadding)
+  const clockFaceWidth =
+    2 * (customiseSlider.dialRadius - customiseSlider.btnRadius - clockPadding);
 
   const styleClock = {
     width: clockWidth,
@@ -58,7 +58,7 @@ export const ClockWidget = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View style={styleClock}>
-        <ClockFace time={time} width={clockFaceWidth}/>
+        <ClockFace time={time} width={clockFaceWidth} />
         <SetTimeSlider customiseSlider={customiseSlider} />
       </View>
     </View>

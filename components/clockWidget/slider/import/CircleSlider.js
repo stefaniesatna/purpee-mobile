@@ -1,3 +1,8 @@
+/* This file has been copied from https://github.com/raymondchooi/react-native-circle-slider. 
+I've changed some bits to fix a bug that caused "glitching" of the circle button on 180 and 360deg 
+and some default values. This is not to be changed any further, the slider inside the app 
+should be changed via SetTimeSlider */
+
 import React, { useState, useRef, useCallback } from "react";
 import { PanResponder, Dimensions } from "react-native";
 import Svg, { Path, Circle, G, Text } from "react-native-svg";
