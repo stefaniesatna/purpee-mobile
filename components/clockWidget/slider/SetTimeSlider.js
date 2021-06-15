@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import CircleSlider from "./CircleSlider";
+import CircleSlider from "./import/CircleSlider";
 
 export const SetTimeSlider = ({ customiseSlider }) => {
   const styleSliderWrapper = {

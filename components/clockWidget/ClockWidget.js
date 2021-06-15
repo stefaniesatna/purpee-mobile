@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { UIColors } from "../../data/Style";
 import { degreesToTime } from "../../modules/degreesToTime";
-import { SetTimeSlider } from "./SetTimeSlider";
-import { ClockFace } from "./ClockFace";
+import { SetTimeSlider } from "./slider/SetTimeSlider";
+import { ClockFace } from "./clock/ClockFace";
 
 export const ClockWidget = () => {
   // State to keep track of the time selected for notification
@@ -39,6 +39,8 @@ export const ClockWidget = () => {
   const clockWidth =
     2 * (customiseSlider.dialRadius + customiseSlider.btnRadius) +
     2 * clockPadding;
+  const clockFaceWidth = 
+    2 * (customiseSlider.dialRadius - customiseSlider.btnRadius - clockPadding)
 
   const styleClock = {
     width: clockWidth,
@@ -55,7 +57,7 @@ export const ClockWidget = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View style={styleClock}>
-        <ClockFace time={time} />
+        <ClockFace time={time} width={clockFaceWidth}/>
         <SetTimeSlider customiseSlider={customiseSlider} />
       </View>
     </View>
