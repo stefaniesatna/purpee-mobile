@@ -5,12 +5,20 @@ import { UIColors } from "../../../data/Style";
 
 export const ClockMarkings = ({ radius, center, minutes, hours }) => {
   const minutesArray = new Array(minutes).fill(1);
-  // Because we have a clock displaying 24 hours, not 12, we need to divide the number of hours by two, to get 12 hour spots.
   const hoursArray = new Array(hours).fill(1);
 
+  /* polarToCartesian accepts angle in degrees as the last argument. 
+    The arch above this angle represents the distance between two minute marks. Our minute count is 120 (24 * 5),
+    which is 1/3 of the whole circle (360). Therefore, if we take the index of a given minute as 
+    the starting unit, we only need to multiply it by 3 in order to get the degree spacing between 
+    two minute marks. We apply the same logic for hour spacing */ 
+  const minuteSpacingMultiplier = 360 / minutes
+  const hourSpacingMultiplier = 360 / hours
+
   const minuteMarks = minutesArray.map((minute, index) => {
-    const start = polarToCartesian(center, center, radius, index * 3);
-    const end = polarToCartesian(center, center, radius, index * 3);
+    // same properties for both start and end, because we are styling minute marks as dots
+    const start = polarToCartesian(center, center, radius, index * minuteSpacingMultiplier);
+    const end = polarToCartesian(center, center, radius, index * minuteSpacingMultiplier);
 
     return (
       <Line
@@ -26,11 +34,11 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
     );
   });
 
-  // -10 and -20 are arbitrary values to "move" the coordinate point towards the centre of the circle,
+  // -5 and -20 are arbitrary values to "move" the coordinate point towards the centre of the circle
   const hourMarks = hoursArray.map((hour, index) => {
-    const start = polarToCartesian(center, center, radius - 5, index * 15);
-    const end = polarToCartesian(center, center, radius, index * 15);
-    const time = polarToCartesian(center, center, radius - 20, index * 15);
+    const start = polarToCartesian(center, center, radius - 5, index * hourSpacingMultiplier);
+    const end = polarToCartesian(center, center, radius, index * hourSpacingMultiplier);
+    const time = polarToCartesian(center, center, radius - 20, index * hourSpacingMultiplier);
 
     return (
       <G key={index}>
@@ -54,8 +62,6 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
             x={time.x}
             y={time.y}
           >
-            {/* We have 24 hours on clock, therefore we need to move to each "usually 1-hour spot" after two hours. 
-          That's why we're multiplying by two.  */}
             {index}
           </Text>
         )}

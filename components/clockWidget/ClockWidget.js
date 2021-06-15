@@ -9,6 +9,7 @@ export const ClockWidget = () => {
   // State to keep track of the time selected for notification
   const [degrees, setDegrees] = useState();
 
+  // TODO: make a state for time, lift it up to ReminderScreen and add to persistent storage
   let time = {
     hours: degreesToTime(degrees).hours,
     mins: degreesToTime(degrees).mins,

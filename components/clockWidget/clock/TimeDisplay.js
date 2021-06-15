@@ -3,8 +3,7 @@ import { View, Text } from "react-native";
 import { UIColors } from "../../../data/Style";
 import { formatNumberdd } from "../../../modules/formatNumberdd";
 
-export const TimeDisplay = (props) => {
-  const { time } = props;
+export const TimeDisplay = ({ time }) => {
   time.hours = formatNumberdd(time.hours);
   time.mins = formatNumberdd(time.mins);
 
