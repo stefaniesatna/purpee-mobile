@@ -1,15 +1,30 @@
+export const UIColors = {
+  white: "#ffffff",
+  blueFull: "#00bfeb",
+  blueMedium: "#66d9f3",
+  blueLight: "#f3fcfe",
+  darkPurple: "#a12680",
+};
+
 export const mainText = {
-  color: "#00bfeb",
+  color: UIColors.blueFull,
   fontSize: 24,
+  fontFamily: "Helvetica"
 };
 
 export const secondaryText = {
-  color: "#00bfeb",
+  color: UIColors.blueFull,
   fontSize: 18,
+  fontFamily: "Helvetica"
 };
 
+export const biggerSecondaryText = {
+  ...secondaryText,
+  fontSize: 22
+}
+
 export const h1 = {
-  color: "white",
+  color: UIColors.white,
   textAlign: "center",
   fontSize: 48,
   fontWeight: "400",
@@ -19,14 +34,6 @@ export const h1 = {
 export const contentContainer = {
   marginTop: 36,
   width: "100%",
-};
-
-export const UIColors = {
-  white: "#ffffff",
-  blueFull: "#00bfeb",
-  blueMedium: "#66d9f3",
-  blueLight: "#f3fcfe",
-  darkPurple: "#a12680",
 };
 
 export const styleNavigator = {

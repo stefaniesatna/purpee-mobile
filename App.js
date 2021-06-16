@@ -1,4 +1,3 @@
-// Testing a new branch comment
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 

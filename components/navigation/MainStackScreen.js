@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   BottomTabBar,
   createBottomTabNavigator,
@@ -17,27 +17,16 @@ const Tab = createBottomTabNavigator();
 
 const STORAGE_KEY = "MODAL_SHOWN";
 
-// const fakeData = {
-//   "2021-03-30":true,
-//   "2021-03-29":true,
-//   "2021-03-31": true,
-// }
-
-// const CLEAR = false; 
-
 export const MainStackScreen = ({ navigation }) => {
   const styleBottomTabBar = {
     flex: 1,
     backgroundColor: "transparent",
     borderStyle: "none",
-    borderTopWidth: 1.5,
+    borderTopWidth: 1,
     borderTopColor: UIColors.blueFull,
   };
 
   useEffect(() => {
-    // if (CLEAR) {
-    // AsyncStorage.clear()
-    // }
     AsyncStorage.getItem(STORAGE_KEY).then((value) => {
       console.log(value)
       const data = JSON.parse(value)
@@ -55,8 +44,8 @@ export const MainStackScreen = ({ navigation }) => {
     <Tab.Navigator
       initialRouteName="HomeScreen"
       tabBarOptions={{
-        activeTintColor: UIColors.darkPurple,
-        inactiveTintColor: UIColors.blueFull,
+        activeTintColor: UIColors.blueFull,
+        inactiveTintColor: UIColors.blueMedium,
         showLabel: false,
       }}
       tabBar={(props) => {
