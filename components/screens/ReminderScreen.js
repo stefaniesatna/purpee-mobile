@@ -1,29 +1,19 @@
 import React from "react";
-import { Text, View, Switch } from "react-native";
+import { View } from "react-native";
+import { ClockWidget } from "../clockWidget/ClockWidget";
+import { LinearGradient } from "expo-linear-gradient";
 
-import Container from "../Container";
-import { contentContainer, mainText } from "../../data/Style";
-
-function ReminderScreen() {
-  const styleDailyLog = {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-
-    paddingRight: 16,
-    paddingLeft: 16,
-  };
-
+export const ReminderScreen = () => {
   return (
-    <Container>
-      <View style={contentContainer}>
-        <View style={styleDailyLog}>
-          <Text style={mainText}>Daily log reminder</Text>
-          <Switch />
-        </View>
-      </View>
-    </Container>
+    <LinearGradient
+      colors={["#190028", "#25013D", "#3C0146", "#702359", "#2D0139"]}
+      locations={[0.2258, 0.387, 0.5781, 0.7938, 1]}
+      style={{ width: "100%", height: "100%", position: "absolute" }}
+    >
+      {/* Placeholder arbitrary height
+      TODO: Implement rest of reminder screen and get rid of arbitrary height */}
+      <View style={{ height: 200 }} />
+      <ClockWidget />
+    </LinearGradient>
   );
-}
-
-export default ReminderScreen;
+};

@@ -3,12 +3,12 @@ import { Text, View } from "react-native";
 
 import { UIColors } from "../data/Style";
 
-function WeekdaysHeader(props) {
+export const WeekdaysHeader = (props) => {
   const style = {
     marginTop: 3,
     marginBottom: 3,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-around",
     ...props.style,
   };
 
@@ -29,6 +29,4 @@ function WeekdaysHeader(props) {
       <Text style={styleText}>S</Text>
     </View>
   );
-}
-
-export default WeekdaysHeader;
+};

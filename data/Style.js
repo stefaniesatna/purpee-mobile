@@ -8,6 +8,14 @@ export const secondaryText = {
   fontSize: 18,
 };
 
+export const h1 = {
+  color: "white",
+  textAlign: "center",
+  fontSize: 48,
+  fontWeight: "400",
+  fontFamily: "Helvetica",
+};
+
 export const contentContainer = {
   marginTop: 36,
   width: "100%",
@@ -23,11 +31,6 @@ export const UIColors = {
 
 export const styleNavigator = {
   height: 83,
-  backgroundColor: UIColors.white,
-
-  borderTopStyle: "solid",
-  borderTopColor: UIColors.blueMedium,
-  borderTopWidth: 2,
 };
 
 export const debugging = {
