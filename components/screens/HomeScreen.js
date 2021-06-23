@@ -23,6 +23,14 @@ export const HomeScreen = () => {
     setDaySelected(date)
   }
 
+  const hideModal = () => {
+    setModalVisible(false)
+  }
+
+  const checkModal = () => {
+    return isModalVisible
+  }
+
   return (
     <LinearGradient
       colors={["#190028", "#25013D", "#2D0039"]}
@@ -32,8 +40,8 @@ export const HomeScreen = () => {
       <Container>
         <ChangeLevelModal
           daySelected={daySelected || ""}
-          setModalVisible={setModalVisible}
-          isModalVisible={isModalVisible}
+          hide={hideModal}
+          check={checkModal}
         />
         <View style={contentContainer}>
           <Heatmap

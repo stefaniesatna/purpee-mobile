@@ -8,9 +8,9 @@ import { LightFatButton } from "./buttons/LightFatButton";
 import { UIColors } from "../data/Style";
 
 export const ChangeLevelModal = ({
-  isModalVisible,
-  setModalVisible,
+  check,
   daySelected,
+  hide,
 }) => {
   const [levelDates, setLevelDates] = useContext(LevelContext);
   const [changedLevel, setChangedLevel] = useState(null);
@@ -46,14 +46,10 @@ export const ChangeLevelModal = ({
   };
 
   const handleLevelChangeSubmit = () => {
-    setModalVisible(false);
+    hide();
     if (changedLevel) {
       setLevelDates({ ...levelDates, [daySelected]: changedLevel });
     }
-  };
-
-  const handleLevelChangeSkip = () => {
-    setModalVisible(false);
   };
 
   const handleLevelChangeSelect = (level) => {
@@ -64,9 +60,9 @@ export const ChangeLevelModal = ({
     <Modal
       style={style}
       transparent={true}
-      visible={isModalVisible}
+      visible={check()}
       onRequestClose={() => {
-        setModalVisible(false);
+        hide();
       }}
     >
       <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
@@ -86,7 +82,7 @@ export const ChangeLevelModal = ({
               <Text>Change</Text>
             </LightFatButton>
             <LightFatButton
-              handlePress={handleLevelChangeSkip}
+              handlePress={hide}
               style={{ backgroundColor: "transparent" }}
               styleText={{ color: "white", fontSize: 16 }}
             >
