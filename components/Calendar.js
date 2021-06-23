@@ -6,7 +6,7 @@ import { LevelContext } from "../LevelContext";
 import { ColourScale } from "../data/ColourScale";
 import { UIColors } from "../data/Style";
 
-export const Calendar = ({ setDaySelected, setModalVisible }) => {
+export const Calendar = ({ changeDaySelected, showModal }) => {
   const [levelDates] = useContext(LevelContext);
 
   const styleCalendarTheme = {
@@ -87,8 +87,8 @@ Since map always returns an array, I then need to reduce the array of objects in
     }, {});
 
   const handleDayPress = (day) => {
-    setDaySelected(day);
-    setModalVisible(true);
+    changeDaySelected(day);
+    showModal();
   };
 
   return (
