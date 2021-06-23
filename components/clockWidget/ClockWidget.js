@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { View } from "react-native";
 import { UIColors } from "../../data/Style";
 import { degreesToTime } from "../../modules/degreesToTime";
 import { SetTimeSlider } from "./slider/SetTimeSlider";
 import { ClockFace } from "./clock/ClockFace";
+import { NotificationContext } from "../../NotificationContext";
+
 
 export const ClockWidget = () => {
   // State to keep track of the time selected for notification
-  const [degrees, setDegrees] = useState();
-
-  // TODO: make a state for time, lift it up to ReminderScreen and add to persistent storage
-  let time = {
-    hours: degreesToTime(degrees).hours,
-    mins: degreesToTime(degrees).mins,
-  };
+  const [notificationAngle, setNotificationAngle] = useContext(NotificationContext);
 
   // Circle slider returns deg value and passes it to this function
-  const handleValueChange = (e) => {
-    setDegrees(e);
-    time = degreesToTime(degrees);
+  const handleAngleChange = (angle) => {
+    setNotificationAngle(angle)
   };
 
   // Set dimensions & style slider and clock
@@ -32,8 +27,8 @@ export const ClockWidget = () => {
     strokeColor: "#fff",
     strokeWidth: 0,
     textSize: 10,
-    value: 0,
-    onValueChange: handleValueChange,
+    value: notificationAngle,
+    onValueChange: handleAngleChange,
   };
 
   const clockPadding = 8;
@@ -58,7 +53,7 @@ export const ClockWidget = () => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View style={styleClock}>
-        <ClockFace time={time} width={clockFaceWidth} />
+        <ClockFace notificationAngle={notificationAngle} width={clockFaceWidth} />
         <SetTimeSlider customiseSlider={customiseSlider} />
       </View>
     </View>

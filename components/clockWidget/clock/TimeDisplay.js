@@ -2,10 +2,13 @@ import React from "react";
 import { View, Text } from "react-native";
 import { UIColors } from "../../../data/Style";
 import { formatNumberdd } from "../../../modules/formatNumberdd";
+import { degreesToTime } from "../../../modules/degreesToTime";
 
-export const TimeDisplay = ({ time }) => {
-  time.hours = formatNumberdd(time.hours);
-  time.mins = formatNumberdd(time.mins);
+export const TimeDisplay = ({ notificationAngle }) => {
+  let time = {
+    hours: formatNumberdd(degreesToTime(notificationAngle).hours),
+    mins: formatNumberdd(degreesToTime(notificationAngle).mins)
+  }
 
   const styleTime = {
     fontSize: 36,

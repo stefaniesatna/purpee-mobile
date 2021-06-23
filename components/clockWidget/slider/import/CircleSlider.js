@@ -44,6 +44,8 @@ const CircleSlider = ({
         } else {
           setAngle(a);
         }
+
+        onValueChange(a)
       },
     })
   ).current;
@@ -120,7 +122,6 @@ const CircleSlider = ({
           fill={textColor}
           textAnchor="middle"
         >
-          {onValueChange(angle) + ""}
         </Text>
       </G>
     </Svg>
