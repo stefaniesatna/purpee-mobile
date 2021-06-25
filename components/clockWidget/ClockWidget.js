@@ -5,7 +5,7 @@ import { degreesToTime } from "../../modules/degreesToTime";
 import { SetTimeSlider } from "./slider/SetTimeSlider";
 import { ClockFace } from "./clock/ClockFace";
 
-export const ClockWidget = () => {
+export const ClockWidget = ({ screenWidth }) => {
   // State to keep track of the time selected for notification
   const [degrees, setDegrees] = useState();
 
@@ -23,20 +23,20 @@ export const ClockWidget = () => {
 
   // Set dimensions & style slider and clock
   const customiseSlider = {
-    btnRadius: 21,
-    dialRadius: 130,
+    btnRadius: 0.056 * screenWidth,
+    dialRadius: 0.34 * screenWidth,
     dialWidth: 0,
     meterColor: UIColors.blueFull,
     textColor: "none",
     fillColor: "none",
     strokeColor: "#fff",
     strokeWidth: 0,
-    textSize: 10,
+    textSize: 0,
     value: 0,
     onValueChange: handleValueChange,
   };
 
-  const clockPadding = 8;
+  const clockPadding = 0.021 * screenWidth;
   const clockWidth =
     2 * (customiseSlider.dialRadius + customiseSlider.btnRadius) +
     2 * clockPadding;
