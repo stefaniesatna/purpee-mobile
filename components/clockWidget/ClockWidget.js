@@ -1,7 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { View } from "react-native";
 import { UIColors } from "../../data/Style";
-import { degreesToTime } from "../../modules/degreesToTime";
 import { SetTimeSlider } from "./slider/SetTimeSlider";
 import { ClockFace } from "./clock/ClockFace";
 import { NotificationContext } from "../../NotificationContext";
