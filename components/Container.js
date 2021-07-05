@@ -7,6 +7,7 @@ export const Container = (props) => {
     flexDirection: "column",
     alignItems: "center",
     height: "100%",
+    ...props.style,
   };
 
   return <View style={style}>{props.children}</View>;

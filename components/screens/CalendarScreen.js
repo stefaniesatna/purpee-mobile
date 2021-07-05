@@ -19,6 +19,22 @@ export const CalendarScreen = () => {
     borderBottomColor: UIColors.blueMedium,
   };
 
+  const hideModal = () => {
+    setModalVisible(false)
+  }
+
+  const showModal = () => {
+    setModalVisible(true)
+  }
+
+  const checkModal = () => {
+    return isModalVisible
+  }
+
+  const changeDaySelected = day => {
+    setDaySelected(day)
+  }
+
   return (
     <LinearGradient
       colors={["#190028", "#25013D", "#2D0039"]}
@@ -28,14 +44,14 @@ export const CalendarScreen = () => {
       <Container>
         <ChangeLevelModal
           daySelected={daySelected ? daySelected.dateString : ""}
-          setModalVisible={setModalVisible}
-          isModalVisible={isModalVisible}
+          check={checkModal}
+          hide={hideModal}
         />
         <View style={contentContainer}>
           <WeekdaysHeader style={styleHeader} />
           <Calendar
-            setDaySelected={setDaySelected}
-            setModalVisible={setModalVisible}
+            changeDaySelected={changeDaySelected}
+            showModal={showModal}
           />
         </View>
       </Container>

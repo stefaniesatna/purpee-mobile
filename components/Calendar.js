@@ -6,7 +6,7 @@ import { LevelContext } from "../LevelContext";
 import { ColourScale } from "../data/ColourScale";
 import { UIColors } from "../data/Style";
 
-export const Calendar = ({ setDaySelected, setModalVisible }) => {
+export const Calendar = ({ changeDaySelected, showModal }) => {
   const [levelDates] = useContext(LevelContext);
 
   const styleCalendarTheme = {
@@ -39,11 +39,31 @@ export const Calendar = ({ setDaySelected, setModalVisible }) => {
     calendarBackground: "transparent",
   };
 
-  /* Extracting dates as properties from the levelsDates object to have an array
-    that I can map over. After that, I'm mapping in order to create an object of objects
-    with the dates as properties (the format required by CalendarList) to later pass into
-    the markedDates attribute. Since map always returns an array, I then need to reduce the
-    array of objects into an object of objects. */
+/*
+CalendarList requires a markedDates prop which is an object of objects with the dates as properties.
+
+markedDates={{
+    '2018-03-28': {
+      customStyles: {
+        container: {
+          backgroundColor: 'green'
+        },
+      }
+    },
+    '2018-03-29': {
+      customStyles: {
+        container: {
+          backgroundColor: 'white',
+        },
+      }
+    }
+}}
+
+To produce this I'm extracting dates as properties from the levelsDates object to have an array that I can map over. 
+After that, I'm mapping in order to create the object of objects. 
+Since map always returns an array, I then need to reduce the array of objects into an object of objects.
+
+*/
 
   const datesArr = Object.keys(levelDates);
   const markedDates = datesArr
@@ -67,8 +87,8 @@ export const Calendar = ({ setDaySelected, setModalVisible }) => {
     }, {});
 
   const handleDayPress = (day) => {
-    setDaySelected(day);
-    setModalVisible(true);
+    changeDaySelected(day);
+    showModal();
   };
 
   return (
