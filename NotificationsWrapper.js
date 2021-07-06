@@ -58,7 +58,7 @@ async function schedulePushNotification(time) {
   await Notifications.scheduleNotificationAsync({
     content: {
       title: "Purpee time 💜",
-      body: "Don't forget to log your ketone levels!",
+      body: "Don't forget to log your ketone levels today!",
     },
     trigger: {
       hour: time.hour,
