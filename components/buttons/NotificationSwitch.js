@@ -1,16 +1,16 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import { Switch, Text, View } from "react-native";
 import { UIColors, biggerSecondaryText } from "../../data/Style";
 
 export const NotificationSwitch = ({ screenWidth, onChange, value }) => {
   const styleWrapper = {
-      width: screenWidth * 0.94,
-      height: screenWidth * 0.117,
-      marginBottom: 21,
-      marginTop: 21,
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
+    width: screenWidth * 0.94,
+    height: screenWidth * 0.117,
+    marginBottom: 21,
+    marginTop: 21,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   };
 
   return (

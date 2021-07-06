@@ -9,11 +9,12 @@ export const NotificationsWrapper = ({ children }) => {
   const responseListener = useRef();
   const [notification] = useContext(NotificationContext);
 
-  const notificationTime = {
+  const time = {
     hour: notification ? degreesToTime(notification.angle).hours : 0,
     minute: notification ? degreesToTime(notification.angle).mins : 0,
   };
-  const notificationOn = notification && notification.isNotificationOn;
+
+  const isOn = notification ? notification.isOn : false;
 
   useEffect(() => {
     registerForPushNotificationsAsync();
@@ -37,20 +38,16 @@ export const NotificationsWrapper = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!notificationOn) {
+    if (!isOn) {
       cancelNotifications();
     }
-    if (notificationOn) {
+    if (isOn) {
       cancelNotifications();
-      schedulePushNotification(notificationTime);
+      schedulePushNotification(time);
     }
-  }, [notificationTime, notificationOn]);
+  }, [time, isOn]);
 
-  return (
-    <>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 };
 
 async function cancelNotifications() {

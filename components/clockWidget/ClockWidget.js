@@ -4,8 +4,11 @@ import { UIColors } from "../../data/Style";
 import { SetTimeSlider } from "./slider/SetTimeSlider";
 import { ClockFace } from "./clock/ClockFace";
 
-export const ClockWidget = ({ screenWidth, handleAngleChange, notificationAngle }) => {
-
+export const ClockWidget = ({
+  screenWidth,
+  handleAngleChange,
+  notificationAngle,
+}) => {
   // Set dimensions & style slider and clock
   const customiseSlider = {
     btnRadius: 0.056 * screenWidth,
@@ -43,7 +46,10 @@ export const ClockWidget = ({ screenWidth, handleAngleChange, notificationAngle 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View style={styleClock}>
-        <ClockFace notificationAngle={notificationAngle} width={clockFaceWidth} />
+        <ClockFace
+          notificationAngle={notificationAngle}
+          width={clockFaceWidth}
+        />
         <SetTimeSlider customiseSlider={customiseSlider} />
       </View>
     </View>

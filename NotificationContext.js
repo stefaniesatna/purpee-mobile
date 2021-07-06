@@ -26,7 +26,7 @@ export function NotificationProvider(props) {
         if (value){
           setNotification(JSON.parse(value))
         } else {
-          setNotification({angle: 0, isNotificationOn: false})
+          setNotification({angle: 0, isOn: false})
         }
       })
     }
