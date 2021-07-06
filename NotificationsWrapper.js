@@ -7,13 +7,13 @@ import { degreesToTime } from "./modules/degreesToTime";
 export const NotificationsWrapper = ({ children }) => {
   const notificationListener = useRef();
   const responseListener = useRef();
-  const [ notification ] = useContext(NotificationContext);
+  const [notification] = useContext(NotificationContext);
 
   const notificationTime = {
-    hour: degreesToTime(notification.angle).hours,
-    minute: degreesToTime(notification.angle).mins,
+    hour: notification ? degreesToTime(notification.angle).hours : 0,
+    minute: notification ? degreesToTime(notification.angle).mins : 0,
   };
-  const notificationOn = notification.isNotificationOn;
+  const notificationOn = notification && notification.isNotificationOn;
 
   useEffect(() => {
     registerForPushNotificationsAsync();
@@ -46,7 +46,11 @@ export const NotificationsWrapper = ({ children }) => {
     }
   }, [notificationTime, notificationOn]);
 
-  return <>{children}</>;
+  return (
+    <>
+      {children}
+    </>
+  );
 };
 
 async function cancelNotifications() {
