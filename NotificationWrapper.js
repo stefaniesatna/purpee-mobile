@@ -4,7 +4,7 @@ import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
 import { degreesToTime } from "./modules/degreesToTime";
 
-export const NotificationsWrapper = ({ children }) => {
+export const NotificationWrapper = ({ children }) => {
   const notificationListener = useRef();
   const responseListener = useRef();
   const [notification] = useContext(NotificationContext);

@@ -9,7 +9,7 @@ import { ModalScreen } from "./components/screens/ModalScreen";
 import { MainStackScreen } from "./components/navigation/MainStackScreen";
 import { LevelProvider } from "./LevelContext";
 import { NotificationProvider } from "./NotificationContext";
-import { NotificationsWrapper } from "./NotificationsWrapper";
+import { NotificationWrapper } from "./NotificationsWrapper";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -28,13 +28,13 @@ export default function App() {
         <NotificationProvider>
           {/* Notifications need to receive context from NotificationProvider, but also need to wrap the rest of the app. 
           That's why most of code related to notifications is in NotificationsWrapper */}
-          <NotificationsWrapper>
+          <NotificationWrapper>
             <StatusBar style="light" />
             <Root.Navigator mode="modal" headerMode="none">
               <Root.Screen name="Main" component={MainStackScreen} />
               <Root.Screen name="Modal" component={ModalScreen} />
             </Root.Navigator>
-          </NotificationsWrapper>
+          </NotificationWrapper>
         </NotificationProvider>
       </LevelProvider>
     </NavigationContainer>
