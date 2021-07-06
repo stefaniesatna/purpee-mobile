@@ -10,7 +10,7 @@ export function NotificationProvider(props) {
   const [notification, setNotification] = useState()
 
   const updateState = (data) => {
-    setNotification(data)
+    setNotification((prev) => ({...prev, ...data}))
   }
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export function NotificationProvider(props) {
         if (value){
           setNotification(JSON.parse(value))
         } else {
-            setNotification({hours: 0, mins: 0})
+          setNotification({angle: 0, isNotificationOn: false})
         }
       })
     }

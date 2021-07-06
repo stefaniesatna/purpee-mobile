@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { ClockWidget } from "../clockWidget/ClockWidget";
@@ -6,8 +6,19 @@ import { NotificationSwitch } from "../buttons/NotificationSwitch";
 import { InfoTip } from "../InfoTip";
 import { Container } from "../Container";
 import { contentContainer } from "../../data/Style";
+import { NotificationContext } from "../../NotificationContext";
 
 export const ReminderScreen = () => {
+  const [notification, setNotification] = useContext(NotificationContext);
+
+  const handleAngleChange = angle => {
+    setNotification({angle: angle})
+  }
+
+  const handleToggleSwitch = (value) => {
+    setNotification({isNotificationOn: value})
+  }
+
   const screenWidth = Dimensions.get("window").width
   return (
     <LinearGradient
@@ -18,9 +29,9 @@ export const ReminderScreen = () => {
       <Container
         style={{ ...contentContainer }}
       >
-        <NotificationSwitch screenWidth={screenWidth}/>
+        <NotificationSwitch screenWidth={screenWidth} onChange={handleToggleSwitch} value={notification.isNotificationOn}/>
         <InfoTip screenWidth={screenWidth}/>
-        <ClockWidget screenWidth={screenWidth}/>
+        <ClockWidget screenWidth={screenWidth} handleAngleChange={handleAngleChange} notificationAngle={notification.angle}/>
       </Container>
     </LinearGradient>
   );
