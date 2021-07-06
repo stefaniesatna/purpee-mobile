@@ -9,7 +9,7 @@ import { ModalScreen } from "./components/screens/ModalScreen";
 import { MainStackScreen } from "./components/navigation/MainStackScreen";
 import { LevelProvider } from "./LevelContext";
 import { NotificationProvider } from "./NotificationContext";
-import { NotificationWrapper } from "./NotificationsWrapper";
+import { NotificationWrapper } from "./NotificationWrapper";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
