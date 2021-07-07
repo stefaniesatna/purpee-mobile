@@ -27,9 +27,9 @@ export const Calendar = ({ changeDaySelected, showModal }) => {
         alignItems: "center",
       },
     },
-    textDayFontFamily: "Helvetica",
-    textMonthFontFamily: "Helvetica",
-    textDayHeaderFontFamily: "Helvetica",
+    textDayFontFamily: "Montserrat_400Regular" || "Helvetica",
+    textMonthFontFamily: "Montserrat_400Regular" || "Helvetica",
+    textDayHeaderFontFamily: "Montserrat_400Regular" || "Helvetica",
 
     monthTextColor: UIColors.blueFull,
     todayTextColor: "white",
