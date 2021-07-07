@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
+import { defaultFont } from "../../data/Style"
 
 export const LevelButton = (props) => {
   const styleButtonInactive = {
@@ -28,7 +29,7 @@ export const LevelButton = (props) => {
             : { ...styleButtonInactive, ...props.styleButton }
         }
       >
-        <Text>{props.children}</Text>
+        <Text style={defaultFont}>{props.children}</Text>
       </View>
     </TouchableOpacity>
   );

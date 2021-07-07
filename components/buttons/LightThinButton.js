@@ -1,14 +1,13 @@
 import React from "react";
 import { Text, TouchableOpacity } from "react-native";
+import { defaultFont } from "../../data/Style"
 
 export const LightThinButton = (props) => {
 
   const styleText = {
+    ...defaultFont,
     alignItems: "center",
-
-    fontFamily: "Helvetica",
     fontSize: 18,
-    fontWeight: "400",
     color: "white",
     ...props.styleText,
   };

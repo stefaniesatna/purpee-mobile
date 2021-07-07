@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
-
-import { UIColors } from "../data/Style";
+import { dayHeaderText } from "../data/Style";
 
 export const WeekdaysHeader = (props) => {
   const style = {
@@ -12,21 +11,15 @@ export const WeekdaysHeader = (props) => {
     ...props.style,
   };
 
-  const styleText = {
-    color: UIColors.blueFull,
-    width: 50,
-    textAlign: "center",
-  };
-
   return (
     <View style={style}>
-      <Text style={styleText}>M</Text>
-      <Text style={styleText}>T</Text>
-      <Text style={styleText}>W</Text>
-      <Text style={styleText}>T</Text>
-      <Text style={styleText}>F</Text>
-      <Text style={styleText}>S</Text>
-      <Text style={styleText}>S</Text>
+      <Text style={dayHeaderText}>M</Text>
+      <Text style={dayHeaderText}>T</Text>
+      <Text style={dayHeaderText}>W</Text>
+      <Text style={dayHeaderText}>T</Text>
+      <Text style={dayHeaderText}>F</Text>
+      <Text style={dayHeaderText}>S</Text>
+      <Text style={dayHeaderText}>S</Text>
     </View>
   );
 };

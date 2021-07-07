@@ -5,7 +5,7 @@ import { BlurView } from "expo-blur";
 import { LevelContext } from "../LevelContext";
 import { LevelButtonGroup } from "./LevelButtonGroup";
 import { LightFatButton } from "./buttons/LightFatButton";
-import { UIColors } from "../data/Style";
+import { UIColors, defaultFont } from "../data/Style";
 
 export const ChangeLevelModal = ({
   check,
@@ -68,7 +68,6 @@ export const ChangeLevelModal = ({
       <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
         <View style={style}>
           <View style={styleModal}>
-            {/* <Text style={{...h1, color:"#A12680"}}>{props.daySelected}</Text> */}
             <LevelButtonGroup
               handleLevelSelect={handleLevelChangeSelect}
               highlightButton={daySelected ? levelDates[daySelected] : ""}
@@ -79,14 +78,14 @@ export const ChangeLevelModal = ({
               style={styleButton}
               styleText={styleButtonText}
             >
-              <Text>Change</Text>
+              <Text style={defaultFont}>Change</Text>
             </LightFatButton>
             <LightFatButton
               handlePress={hide}
               style={{ backgroundColor: "transparent" }}
               styleText={{ color: "white", fontSize: 16 }}
             >
-              <Text>Nevermind</Text>
+              <Text style={defaultFont}>Nevermind</Text>
             </LightFatButton>
           </View>
         </View>
