@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export const NotificationContext = createContext();
 
 const STORAGE_KEY = `NOTIFICATION`;
-const CLEAR_IN_DEV = true;
+const CLEAR_IN_DEV = false;
 
 export function NotificationProvider(props) {
   const [notification, setNotification] = useState();

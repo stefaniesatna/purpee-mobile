@@ -5,7 +5,6 @@ import { G, Line, Text } from "react-native-svg";
 import { polarToCartesian } from "../../../modules/polarToCartesian";
 import { UIColors } from "../../../data/Style";
 import { Dimensions } from "react-native"
-import { lightFont } from "../../../data/Style"
 
 export const ClockMarkings = ({ radius, center, minutes, hours }) => {
   const minutesArray = new Array(minutes).fill(1);
@@ -85,7 +84,6 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
         {/* not to clutter the appearance of the clockface, we will only display every other hour */}
         {index % 2 === 0 && (
           <Text
-            style={lightFont}
             textAnchor="middle"
             fontSize="10"
             fill={UIColors.blueFull}

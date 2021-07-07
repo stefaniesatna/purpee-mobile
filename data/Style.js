@@ -32,10 +32,6 @@ export const defaultFont = {
   fontFamily: "Montserrat_400Regular"
 }
 
-export const lightFont = {
-  fontFamily: "Montserrat_400Regular"
-}
-
 export const mainText = {
   ...defaultFont,
   color: UIColors.blueFull,
