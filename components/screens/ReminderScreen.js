@@ -36,7 +36,7 @@ export const ReminderScreen = () => {
         <ClockWidget
           screenWidth={screenWidth}
           handleAngleChange={handleAngleChange}
-          notificationAngle={notification.angle}
+          angle={notification.angle}
         />
       </Container>
     </LinearGradient>

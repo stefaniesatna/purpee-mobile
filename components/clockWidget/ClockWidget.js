@@ -7,7 +7,7 @@ import { ClockFace } from "./clock/ClockFace";
 export const ClockWidget = ({
   screenWidth,
   handleAngleChange,
-  notificationAngle,
+  angle,
 }) => {
   // Set dimensions & style slider and clock
   const customiseSlider = {
@@ -20,7 +20,7 @@ export const ClockWidget = ({
     strokeColor: "#fff",
     strokeWidth: 0,
     textSize: 10,
-    value: notificationAngle,
+    value: angle,
     onValueChange: handleAngleChange,
   };
 
@@ -47,7 +47,7 @@ export const ClockWidget = ({
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View style={styleClock}>
         <ClockFace
-          notificationAngle={notificationAngle}
+          angle={angle}
           width={clockFaceWidth}
         />
         <SetTimeSlider customiseSlider={customiseSlider} />

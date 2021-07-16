@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { TimeDisplay } from "./TimeDisplay";
 import { ClockMarkings } from "./ClockMarkings";
 
-export const ClockFace = ({ notificationAngle, width }) => {
+export const ClockFace = ({ angle, width }) => {
   const diameter = width;
   const center = width / 2;
   const radius = diameter / 2;
@@ -25,7 +25,7 @@ export const ClockFace = ({ notificationAngle, width }) => {
   return (
     <View style={style}>
       <View style={styleTimeWrapper}>
-        <TimeDisplay notificationAngle={notificationAngle} />
+        <TimeDisplay angle={angle} />
       </View>
       <Svg height={width} width={width}>
         <ClockMarkings
