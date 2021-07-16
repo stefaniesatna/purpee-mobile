@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import { LevelContext } from "../LevelContext";
 import { secondaryText } from "../data/Style";
 import { calculateStreak } from "../modules/calculateStreak";
-import { motivatingMessages, newMessage } from "../data/MotivatingMessagesDB";
+import { newMessage, getMessageForDay } from "../data/MotivatingMessagesDB";
 
 export const MotivatingMessage = () => {
   const [levelDates] = useContext(LevelContext);
@@ -18,13 +18,7 @@ export const MotivatingMessage = () => {
   newMessage(`Day ${daysInKetosis}. Respect!🎖️`, 25, 30);
   newMessage(`Day ${daysInKetosis}. You are the real keto lord 🔥`, 30, 35);
 
-  let message = `${daysInKetosis} straight days in ketosis 💜`;
-  motivatingMessages.forEach((m) => {
-    if (m.min <= daysInKetosis && daysInKetosis < m.max) {
-      message = m.message;
-      return;
-    }
-  });
+  let message = getMessageForDay(daysInKetosis)
 
   return <Text style={secondaryText}>{message}</Text>;
 };

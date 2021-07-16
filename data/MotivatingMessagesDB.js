@@ -1,4 +1,4 @@
-export let motivatingMessages = [];
+let motivatingMessages = [];
 
 // newMessage takes in motivational message, and starting day (inclusive), ending day (exclusive, optional) of when it should display
 export function newMessage(m, min, max = min + 1) {
@@ -22,4 +22,15 @@ export function newMessage(m, min, max = min + 1) {
     message: m,
   };
   motivatingMessages.push(message);
+}
+
+export function getMessageForDay(dayNo){
+  let message = `${dayNo} straight days in ketosis 💜`;
+  motivatingMessages.forEach((m) => {
+    if (m.min <= dayNo && dayNo < m.max) {
+      message = m.message;
+      return message;
+    }
+  });
+  return message
 }
