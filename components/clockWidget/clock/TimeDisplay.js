@@ -4,10 +4,10 @@ import { UIColors, defaultFont } from "../../../data/Style";
 import { formatNumberdd } from "../../../modules/formatNumberdd";
 import { degreesToTime } from "../../../modules/degreesToTime";
 
-export const TimeDisplay = ({ notificationAngle }) => {
+export const TimeDisplay = ({ angle }) => {
   let time = {
-    hours: formatNumberdd(degreesToTime(notificationAngle).hours),
-    mins: formatNumberdd(degreesToTime(notificationAngle).mins)
+    hours: formatNumberdd(degreesToTime(angle).hours),
+    mins: formatNumberdd(degreesToTime(angle).mins)
   }
 
   const styleTime = {

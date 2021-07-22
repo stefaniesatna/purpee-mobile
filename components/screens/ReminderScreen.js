@@ -6,7 +6,7 @@ import { NotificationSwitch } from "../buttons/NotificationSwitch";
 import { InfoTip } from "../InfoTip";
 import { Container } from "../Container";
 import { contentContainer } from "../../data/Style";
-import { NotificationContext } from "../../NotificationContext";
+import { NotificationContext } from "../../notifications/NotificationContext";
 
 export const ReminderScreen = () => {
   const [notification, setNotification] = useContext(NotificationContext);
@@ -36,7 +36,7 @@ export const ReminderScreen = () => {
         <ClockWidget
           screenWidth={screenWidth}
           handleAngleChange={handleAngleChange}
-          notificationAngle={notification.angle}
+          angle={notification.angle}
         />
       </Container>
     </LinearGradient>

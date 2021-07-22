@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useContext } from "react";
 import { NotificationContext } from "./NotificationContext";
 import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
-import { degreesToTime } from "./modules/degreesToTime";
+import { degreesToTime } from "../modules/degreesToTime";
 
 export const NotificationWrapper = ({ children }) => {
   const notificationListener = useRef();
@@ -79,7 +79,7 @@ async function registerForPushNotificationsAsync() {
       finalStatus = status;
     }
     if (finalStatus !== "granted") {
-      alert("Failed to get push token for push notification!");
+      alert("Unable to set notifications");
       return;
     }
     token = (await Notifications.getExpoPushTokenAsync()).data;

@@ -11,8 +11,8 @@ import { setCustomText } from "react-native-global-props";
 import { ModalScreen } from "./components/screens/ModalScreen";
 import { MainStackScreen } from "./components/navigation/MainStackScreen";
 import { LevelProvider } from "./LevelContext";
-import { NotificationProvider } from "./NotificationContext";
-import { NotificationWrapper } from "./NotificationWrapper";
+import { NotificationProvider } from "./notifications/NotificationContext";
+import { NotificationWrapper } from "./notifications/NotificationWrapper";
 
 import { useFonts, Montserrat_400Regular } from "@expo-google-fonts/montserrat";
 
