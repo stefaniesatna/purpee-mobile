@@ -15,8 +15,7 @@ export const LightFatButton = (props) => {
     ...props.style,
   };
 
-  const styleText = {
-    ...defaultFont, 
+  const styleText = { 
     alignItems: "center",
     fontSize: 18,
     color: "#A12680",

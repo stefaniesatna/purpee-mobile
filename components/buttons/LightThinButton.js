@@ -5,7 +5,6 @@ import { defaultFont } from "../../data/Style"
 export const LightThinButton = (props) => {
 
   const styleText = {
-    ...defaultFont,
     alignItems: "center",
     fontSize: 18,
     color: "white",

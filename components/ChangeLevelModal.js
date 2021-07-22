@@ -78,14 +78,14 @@ export const ChangeLevelModal = ({
               style={styleButton}
               styleText={styleButtonText}
             >
-              <Text style={defaultFont}>Change</Text>
+              <Text>Change</Text>
             </LightFatButton>
             <LightFatButton
               handlePress={hide}
               style={{ backgroundColor: "transparent" }}
               styleText={{ color: "white", fontSize: 16 }}
             >
-              <Text style={defaultFont}>Nevermind</Text>
+              <Text>Nevermind</Text>
             </LightFatButton>
           </View>
         </View>

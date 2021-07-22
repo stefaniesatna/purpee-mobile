@@ -11,7 +11,6 @@ export const TimeDisplay = ({ notificationAngle }) => {
   }
 
   const styleTime = {
-    ...defaultFont,
     fontSize: 34,
     color: UIColors.blueFull,
   };

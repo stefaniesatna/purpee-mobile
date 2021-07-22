@@ -29,7 +29,7 @@ export const LevelButton = (props) => {
             : { ...styleButtonInactive, ...props.styleButton }
         }
       >
-        <Text style={defaultFont}>{props.children}</Text>
+        <Text>{props.children}</Text>
       </View>
     </TouchableOpacity>
   );

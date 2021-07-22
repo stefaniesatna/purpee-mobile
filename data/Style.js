@@ -6,18 +6,12 @@ export const UIColors = {
   darkPurple: "#a12680",
 };
 
-export const defaultFont = {
-  fontFamily: "Montserrat_400Regular"
-}
-
 export const mainText = {
-  ...defaultFont,
   color: UIColors.blueFull,
   fontSize: 24,
 };
 
 export const secondaryText = {
-  ...defaultFont,
   color: UIColors.blueFull,
   fontSize: 18,
 };
@@ -28,14 +22,12 @@ export const biggerSecondaryText = {
 }
 
 export const dayHeaderText = {
-  ...defaultFont,
   color: UIColors.blueFull,
   width: 50,
   textAlign: "center"
 }
 
 export const h1 = {
-  ...defaultFont,
   color: UIColors.white,
   textAlign: "center",
   fontSize: 48,

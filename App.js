@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as Notifications from "expo-notifications";
 import { StatusBar } from "expo-status-bar";
-import AppLoading from 'expo-app-loading';
+import AppLoading from "expo-app-loading";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+
+import { setCustomText } from "react-native-global-props";
 
 import { ModalScreen } from "./components/screens/ModalScreen";
 import { MainStackScreen } from "./components/navigation/MainStackScreen";
@@ -12,10 +14,15 @@ import { LevelProvider } from "./LevelContext";
 import { NotificationProvider } from "./NotificationContext";
 import { NotificationWrapper } from "./NotificationWrapper";
 
-import {
-  useFonts,
-  Montserrat_400Regular,
-} from '@expo-google-fonts/montserrat';
+import { useFonts, Montserrat_400Regular } from "@expo-google-fonts/montserrat";
+
+const customTextProps = {
+  style: {
+    fontFamily: "Montserrat_400Regular",
+  },
+};
+
+setCustomText(customTextProps);
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -34,7 +41,7 @@ export default function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
-  } else { 
+  } else {
     return (
       <NavigationContainer>
         <LevelProvider>
