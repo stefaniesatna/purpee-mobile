@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { UIColors } from "../../../data/Style";
+import { UIColors, defaultFont } from "../../../data/Style";
 import { formatNumberdd } from "../../../modules/formatNumberdd";
 import { degreesToTime } from "../../../modules/degreesToTime";
 
@@ -11,7 +11,7 @@ export const TimeDisplay = ({ notificationAngle }) => {
   }
 
   const styleTime = {
-    fontSize: 36,
+    fontSize: 34,
     color: UIColors.blueFull,
   };
 
@@ -23,13 +23,13 @@ export const TimeDisplay = ({ notificationAngle }) => {
 
   return (
     <View style={styleTimeWrapper}>
-      <View style={{ flex: 2, alignItems: "center" }}>
+      <View style={{ flex: 1, alignItems: "center" }}>
         <Text style={styleTime}>{time.hours}</Text>
       </View>
-      <View style={{ flex: 0.5, alignItems: "center" }}>
+      <View style={{ flex: 0.25, alignItems: "center" }}>
         <Text style={styleTime}>:</Text>
       </View>
-      <View style={{ flex: 2, alignItems: "center" }}>
+      <View style={{ flex: 1, alignItems: "center" }}>
         <Text style={styleTime}>{time.mins}</Text>
       </View>
     </View>

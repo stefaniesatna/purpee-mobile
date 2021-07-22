@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
+import { defaultFont } from "../../data/Style"
 
 export const LevelButton = (props) => {
   const styleButtonInactive = {

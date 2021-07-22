@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
+import { defaultFont } from "../../data/Style"
 
 export const LightFatButton = (props) => {
   const styleView = {
@@ -14,12 +15,9 @@ export const LightFatButton = (props) => {
     ...props.style,
   };
 
-  const styleText = {
+  const styleText = { 
     alignItems: "center",
-
-    fontFamily: "Helvetica",
     fontSize: 18,
-    fontWeight: "400",
     color: "#A12680",
     ...props.styleText,
   };

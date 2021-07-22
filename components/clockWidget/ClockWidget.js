@@ -1,20 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import { View } from "react-native";
 import { UIColors } from "../../data/Style";
 import { SetTimeSlider } from "./slider/SetTimeSlider";
 import { ClockFace } from "./clock/ClockFace";
-import { NotificationContext } from "../../NotificationContext";
 
-
-export const ClockWidget = ({ screenWidth }) => {
-  // State to keep track of the time selected for notification
-  const [notificationAngle, setNotificationAngle] = useContext(NotificationContext);
-
-  // Circle slider returns deg value and passes it to this function
-  const handleAngleChange = (angle) => {
-    setNotificationAngle(angle)
-  };
-
+export const ClockWidget = ({
+  screenWidth,
+  handleAngleChange,
+  notificationAngle,
+}) => {
   // Set dimensions & style slider and clock
   const customiseSlider = {
     btnRadius: 0.056 * screenWidth,
@@ -52,7 +46,10 @@ export const ClockWidget = ({ screenWidth }) => {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <View style={styleClock}>
-        <ClockFace notificationAngle={notificationAngle} width={clockFaceWidth} />
+        <ClockFace
+          notificationAngle={notificationAngle}
+          width={clockFaceWidth}
+        />
         <SetTimeSlider customiseSlider={customiseSlider} />
       </View>
     </View>

@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Switch, Text, View } from "react-native";
 import { UIColors, biggerSecondaryText } from "../../data/Style";
 
-export const NotificationSwitch = ({ screenWidth }) => {
-    // TODO: Add to persistent storage 
-  const [isEnabled, setEnabled] = useState(false);
-  const toggleSwitch = () => {
-    setEnabled((prevState) => !prevState);
-  };
-
+export const NotificationSwitch = ({ screenWidth, onChange, value }) => {
   const styleWrapper = {
-      width: screenWidth * 0.94,
-      height: screenWidth * 0.117,
-      marginBottom: 21,
-      marginTop: 21,
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "center",
+    width: screenWidth * 0.94,
+    height: screenWidth * 0.117,
+    marginBottom: 21,
+    marginTop: 21,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   };
 
   return (
@@ -26,8 +20,8 @@ export const NotificationSwitch = ({ screenWidth }) => {
         trackColor={{ true: UIColors.blueFull }}
         thumbColor={"white"}
         ios_backgroundColor={UIColors.blueFull}
-        onValueChange={toggleSwitch}
-        value={isEnabled}
+        onValueChange={onChange}
+        value={value}
       />
     </View>
   );

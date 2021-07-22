@@ -86,7 +86,6 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
           <Text
             textAnchor="middle"
             fontSize="10"
-            fontWeight="normal"
             fill={UIColors.blueFull}
             alignmentBaseline="central"
             x={time.x}

@@ -9,13 +9,11 @@ export const UIColors = {
 export const mainText = {
   color: UIColors.blueFull,
   fontSize: 24,
-  fontFamily: "Helvetica"
 };
 
 export const secondaryText = {
   color: UIColors.blueFull,
   fontSize: 18,
-  fontFamily: "Helvetica"
 };
 
 export const biggerSecondaryText = {
@@ -23,12 +21,16 @@ export const biggerSecondaryText = {
   fontSize: 22
 }
 
+export const dayHeaderText = {
+  color: UIColors.blueFull,
+  width: 50,
+  textAlign: "center"
+}
+
 export const h1 = {
   color: UIColors.white,
   textAlign: "center",
   fontSize: 48,
-  fontWeight: "400",
-  fontFamily: "Helvetica",
 };
 
 export const contentContainer = {
