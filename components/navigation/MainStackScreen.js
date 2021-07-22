@@ -28,7 +28,6 @@ export const MainStackScreen = ({ navigation }) => {
 
   useEffect(() => {
     AsyncStorage.getItem(STORAGE_KEY).then((value) => {
-      console.log(value)
       const data = JSON.parse(value)
       const today = formatDateYYYYMMDD(new Date());
       if (!data || !data[today]) {
