@@ -10,6 +10,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { HomeScreen } from "../screens/HomeScreen";
 import { CalendarScreen } from "../screens/CalendarScreen";
 import { ReminderScreen } from "../screens/ReminderScreen";
+import { SettingsScreen } from "../screens/SettingsScreen";
 import { styleNavigator, UIColors } from "../../data/Style";
 import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD";
 
@@ -28,7 +29,7 @@ export const MainStackScreen = ({ navigation }) => {
 
   useEffect(() => {
     AsyncStorage.getItem(STORAGE_KEY).then((value) => {
-      const data = JSON.parse(value)
+      const data = JSON.parse(value);
       const today = formatDateYYYYMMDD(new Date());
       if (!data || !data[today]) {
         navigation.navigate("Modal");
@@ -60,15 +61,6 @@ export const MainStackScreen = ({ navigation }) => {
       }}
     >
       <Tab.Screen
-        name="CalendarScreen"
-        component={CalendarScreen}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-calendar-outline" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={{
@@ -78,11 +70,29 @@ export const MainStackScreen = ({ navigation }) => {
         }}
       />
       <Tab.Screen
+        name="CalendarScreen"
+        component={CalendarScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ios-calendar-outline" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="ReminderScreen"
         component={ReminderScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="ios-alarm" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="SettingsScreen"
+        component={SettingsScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="settings" color={color} size={size} />
           ),
         }}
       />
