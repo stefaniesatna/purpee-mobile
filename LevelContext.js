@@ -28,6 +28,7 @@ export function LevelProvider(props) {
       AsyncStorage.getItem(STORAGE_KEY).then((value) => {
         if (value){
           setLevelDates(JSON.parse(value))
+          console.log(value)
         }
       })
     }
