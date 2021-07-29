@@ -1,6 +1,6 @@
-export const levelDatesToCSV = (jsonData) => {
+// Maybe split this in two functions to make it more generic
+export const levelDatesToCSV = data => {
   // Sort dates descending
-  const data = JSON.parse(jsonData);
   const dates = Object.keys(data);
   const sortedDates = dates.sort((a, b) => {
     return new Date(b) - new Date(a);
@@ -12,6 +12,6 @@ export const levelDatesToCSV = (jsonData) => {
       return `${date},${data[date]}`;
     })
     .join("\n");
-    
+  
   return csv;
 };
