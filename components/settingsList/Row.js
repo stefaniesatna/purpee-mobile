@@ -8,19 +8,28 @@ export const Row = ({text, iconName, iconSize, iconColor, handlePress}) => {
 
     const styleRow = {
         width: screenWidth * 0.94,
-        paddingBottom: 21,
+        paddingBottom: 10.5,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
     }
 
+    const styleDivider = {
+        height: 1,
+        width: screenWidth * 0.94,
+        backgroundColor: UIColors.blueFull,
+        marginBottom: 10.5,
+    }
 
     return (
-        <View style={styleRow}>
-            <Text style={secondaryText}>{text}</Text>
+        <View>
             <TouchableOpacity onPress={handlePress}>
-                <Ionicons name={iconName} color={UIColors.blueFull} size={30} /> 
+                <View style={styleRow}>
+                    <Text style={{...secondaryText, color: UIColors.blueMedium}}>{text}</Text>
+                    <Ionicons name={iconName} color={UIColors.blueMedium} size={30} /> 
+                </View> 
             </TouchableOpacity>
-        </View> 
+            <View style={styleDivider}/>
+        </View>
     )
 }

@@ -5,6 +5,7 @@ import { Row } from "./Row"
 import { exportKetoneLevelsCSV } from "../../modules/userFacingFunctionality/exportKetoneLevelsCSV";
 import { emailSupport } from "../../modules/userFacingFunctionality/emailSupport"
 import { showPrivacyPolicy } from "../../modules/userFacingFunctionality/showPrivacyPolicy"
+import { showTermsAndConditions } from "../../modules/userFacingFunctionality/showTermsAndConditions";
 
 export const Settings = () => {
   const [ levelDates ] = useContext(LevelContext);
@@ -18,6 +19,7 @@ export const Settings = () => {
       <Row text={"My ketosis level data"} iconName={"download"} handlePress={() => exportKetoneLevelsCSV(levelDates)}/>
       <Row text={"Contact"} iconName={"mail"} handlePress={emailSupport}/>
       <Row text={"Privacy Policy"} iconName={"document"} handlePress={showPrivacyPolicy}/>
+      <Row text={"Terms & Conditions"} iconName={"document"} handlePress={showTermsAndConditions}/>
     </View> 
   );
 };
