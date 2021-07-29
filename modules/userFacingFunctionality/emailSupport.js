@@ -1,4 +1,6 @@
-//TODO - missing implementation
+//TODO Swap email address for a real one 
+import * as Linking from 'expo-linking';
+
 export const emailSupport = () => {
-    console.log("Emailing support")
+    Linking.openURL('mailto:support@example.com')
 }

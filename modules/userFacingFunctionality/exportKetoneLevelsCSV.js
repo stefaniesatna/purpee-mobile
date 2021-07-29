@@ -1,7 +1,7 @@
-// TODO - missing implementation
+// TODO - missing implementation for the download
 import { levelDatesToCSV } from "../levelDatesToCSV"
 export const exportKetoneLevelsCSV = (levels) => {
     console.log("Exporting ketone levels as CSV")
     const csv = levelDatesToCSV(levels)
-    console.log("new csv\n", csv)
+    console.log("csv\n", csv)
 }
