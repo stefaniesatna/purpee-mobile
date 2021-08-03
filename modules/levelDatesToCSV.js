@@ -18,6 +18,5 @@ export const levelDatesToCSV = data => {
     })
     .join("\n");
   const csv = `${header}\n${csvData}`
-  console.log(csv)
   return csv;
 };

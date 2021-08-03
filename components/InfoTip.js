@@ -1,6 +1,7 @@
 import React from "react"
 import { View, Text } from "react-native"
 import { secondaryText, UIColors } from "../data/Style"
+import { ColourScale } from "../data/ColourScale"
 import { Ionicons } from "@expo/vector-icons";
 
 export const InfoTip = ({ screenWidth }) => {
@@ -16,7 +17,7 @@ export const InfoTip = ({ screenWidth }) => {
         borderWidth: 1,
         borderColor: UIColors.blueFull,
         borderRadius: 3,
-        backgroundColor: "#2D0039"
+        backgroundColor: ColourScale[0]
     }
 
     return (

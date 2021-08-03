@@ -15,7 +15,7 @@ export const HeatmapSquare = ({ date, handlePress }) => {
     margin: 1.5,
     borderRadius: 3,
 
-    backgroundColor: ColourScale[levelDates[date]],
+    backgroundColor: levelDates[date] ? ColourScale[levelDates[date]] : ColourScale[0],
   };
 
   const todayStyle = {
