@@ -7,13 +7,13 @@ export const levelDatesToCSV = data => {
   });
 
   // Construct CSV
+  /* whilst internally I'm using the scale of 0-6, 0 representing the absence of log, the user
+  won't see in csv the absence of log, therefore they'll never have a date with 0, therefore it 
+  makes sense to move the scale down -1 and therefore 0 will represent on csv "logged, but not in
+  ketosis. Scale will therefore be 0-5 */
   const header = `date, ketosis_level_(0-5)`
   const csvData = sortedDates
     .map((date) => {
-      /* whilst internally I'm using the scale of 0-6, 0 representing the absence of log, the user
-      won't see in csv the absence of log, therefore they'll never have a date with 0, therefore it 
-      makes sense to move the scale down -1 and therefore 0 will represent on csv "logged, but not in
-      ketosis. Scale will therefore be 0-5 */
       return `${date},${data[date]-1}`;
     })
     .join("\n");
