@@ -17,7 +17,7 @@ export const InfoTip = ({ screenWidth }) => {
         borderWidth: 1,
         borderColor: UIColors.blueFull,
         borderRadius: 3,
-        backgroundColor: ColourScale[0]
+        backgroundColor: UIColors.emptyStatePurple,
     }
 
     return (
