@@ -10,6 +10,7 @@
       "resizeMode": "cover",
       "backgroundColor": "#25013D"
     },
+    "primaryColor": "#ffffff",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
