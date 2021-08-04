@@ -3,7 +3,6 @@ import * as FileSystem from "expo-file-system";
 import { levelDatesToCSV } from "../levelDatesToCSV";
 
 export const exportKetoneLevelsCSV = (levels) => {
-  console.log("Exporting ketone levels as CSV");
   const csv = levelDatesToCSV(levels);
   const now = new Date();
   const fileName = `csv-ketone-levels-export-${now.getFullYear()}-${now.getMonth() +1}-${now.getDate()}.csv`;
