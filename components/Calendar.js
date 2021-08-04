@@ -32,7 +32,7 @@ export const Calendar = ({ changeDaySelected, showModal }) => {
     textDayHeaderFontFamily: "Montserrat_400Regular",
 
     monthTextColor: UIColors.blueFull,
-    todayTextColor: "white",
+    todayTextColor: UIColors.emptyStatePurple,
     dayTextColor: UIColors.blueFull,
     textDisabledColor: UIColors.blueFull,
     backgroundColor: "transparent",

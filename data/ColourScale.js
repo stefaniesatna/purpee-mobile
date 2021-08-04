@@ -1,5 +1,6 @@
+import { UIColors } from "./Style"
 export const ColourScale = [
-  "rgba(0,191,235,0.075)",
+  UIColors.emptyStatePurple,
   "#ffefe5",
   "#fac1b7",
   "#f58e8e",

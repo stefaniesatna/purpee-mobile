@@ -4,6 +4,7 @@ export const UIColors = {
   blueMedium: "#66d9f3",
   blueLight: "#f3fcfe",
   darkPurple: "#a12680",
+  emptyStatePurple: "rgba(43,10,66,1)",
 };
 
 export const mainText = {
