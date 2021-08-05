@@ -1,6 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+
 export const LevelContext = createContext();
 
 const STORAGE_KEY = `LEVEL_DATES`
@@ -14,8 +15,17 @@ export function LevelProvider(props) {
   }
 
   useEffect(() => {
+    async function setStorageValue(){
+      try {
+        const jsonValue = JSON.stringify(levelDates)
+        await AsyncStorage.setItem(STORAGE_KEY, jsonValue)
+      }
+      catch(e){
+        return -1
+      }
+    }
     if (Object.keys(levelDates) != 0){
-      AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(levelDates))
+      setStorageValue()
     }
   }, [levelDates])
 

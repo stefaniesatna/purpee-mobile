@@ -14,7 +14,15 @@ export function NotificationProvider(props) {
   };
 
   useEffect(() => {
-    AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(notification));
+    async function setStorageValue() {
+      try {
+        const jsonValue = JSON.stringify(notification)
+        await AsyncStorage.setItem(STORAGE_KEY, jsonValue)
+      } catch(e) {
+        return 1
+      }
+    }
+    setStorageValue()
   }, [notification]);
 
   useEffect(() => {
