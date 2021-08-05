@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Dimensions } from "react-native";
 
 import { generateArrayOfWeeks } from "../../modules/generateArrayOfWeeks";
 import { HeatmapRow } from "./HeatmapRow";
@@ -12,7 +12,13 @@ export const Heatmap = ({ handleSquarePress }) => {
     marginRight: "auto",
     marginLeft: "auto",
   };
-  const levels = generateArrayOfWeeks(9);
+  const screenWidth = Dimensions.get('window').width
+  const screenHeight = Dimensions.get('window').height
+  const screenRatio = screenWidth / screenHeight
+
+  // everything below ratio 0.6 is an iphone, everything above is an iPad
+  const numberOfRows = screenRatio > 0.6 ? 8 : 9
+  const levels = generateArrayOfWeeks(numberOfRows);
 
   const heatmapRows = levels.map((levels, idx) => (
     <HeatmapRow
