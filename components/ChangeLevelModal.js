@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Modal, View, Text } from "react-native";
+import { Modal, View, Text, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { BlurView } from "expo-blur";
 
 import { LevelContext } from "../LevelContext";
@@ -65,9 +65,13 @@ export const ChangeLevelModal = ({
         hide();
       }}
     >
+      <TouchableWithoutFeedback onPress={hide}>
       <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
         <View style={style}>
-          <View style={styleModal}>
+          {/* Chose TouchableOpacity with 100% opacity over TouchableWithoutFeedback because 
+          TouchableWithoutFeedback doesn't take style as props and therefore messes up the layout
+          even when wrapping child components in another View */}
+          <TouchableOpacity style={styleModal} onPress={() => {}} activeOpacity={1}>
             <LevelButtonGroup
               handleLevelSelect={handleLevelChangeSelect}
               highlightButton={daySelected ? levelDates[daySelected] : ""}
@@ -87,9 +91,10 @@ export const ChangeLevelModal = ({
             >
               <Text>Nevermind</Text>
             </LightFatButton>
-          </View>
+          </TouchableOpacity>
         </View>
       </BlurView>
+      </TouchableWithoutFeedback>
     </Modal>
   );
 };
