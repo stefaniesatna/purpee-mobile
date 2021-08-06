@@ -1,5 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { cancelAllScheduledNotificationsAsync } from "expo-notifications";
+import { getStorageValue, setStorageValue } from "../modules/asyncStorageAPI";
 
 export const NotificationContext = createContext();
 
@@ -14,15 +16,7 @@ export function NotificationProvider(props) {
   };
 
   useEffect(() => {
-    async function setStorageValue() {
-      try {
-        const jsonValue = JSON.stringify(notification)
-        await AsyncStorage.setItem(STORAGE_KEY, jsonValue)
-      } catch(e) {
-        return 1
-      }
-    }
-    setStorageValue()
+    setStorageValue(STORAGE_KEY, notification);
   }, [notification]);
 
   useEffect(() => {
@@ -30,9 +24,9 @@ export function NotificationProvider(props) {
       if (process.env.NODE_ENV === "development" && CLEAR_IN_DEV) {
         await AsyncStorage.clear();
       }
-      AsyncStorage.getItem(STORAGE_KEY).then((value) => {
+      getStorageValue(STORAGE_KEY).then((value) => {
         if (value) {
-          setNotification(JSON.parse(value));
+          setNotification(value);
         } else {
           setNotification({ angle: 0, isOn: false });
         }
