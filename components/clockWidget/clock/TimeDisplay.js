@@ -11,7 +11,7 @@ export const TimeDisplay = ({ angle }) => {
   }
 
   const styleTime = {
-    fontSize: 34,
+    fontSize: 30,
     color: UIColors.blueFull,
   };
 
