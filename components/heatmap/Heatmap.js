@@ -17,7 +17,7 @@ export const Heatmap = ({ handleSquarePress }) => {
   const screenRatio = screenWidth / screenHeight
 
   // everything below ratio 0.6 is an iphone, everything above is an iPad
-  const numberOfRows = screenRatio > 0.6 ? 8 : 9
+  const numberOfRows = screenRatio > 0.6 ? 8 : screenRatio < 0.5 ? 12 : screenRatio === 0.75 ? 7 : 9
   const levels = generateArrayOfWeeks(numberOfRows);
 
   const heatmapRows = levels.map((levels, idx) => (
