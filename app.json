@@ -18,7 +18,7 @@
       "assets/*"
     ],
     "ios": {
-      "supportsTablet": false,
+      "supportsTablet": true,
       "bundleIdentifier": "purpee.ios",
       "buildNumber": "1.0.0"
     },
