@@ -18,7 +18,7 @@ export const MotivatingMessage = () => {
   newMessage(`Day ${daysInKetosis}. Respect!🎖️`, 25, 30);
   newMessage(`Day ${daysInKetosis}. You are the real keto lord 🔥`, 30, 35);
 
-  let message = getMessageForDay(daysInKetosis)
+  let message = getMessageForDay(daysInKetosis);
 
   return <Text style={secondaryText}>{message}</Text>;
 };

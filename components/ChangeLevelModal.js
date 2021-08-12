@@ -1,5 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Modal, View, Text, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
+import {
+  Modal,
+  View,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { BlurView } from "expo-blur";
 
 import { LevelContext } from "../LevelContext";
@@ -7,11 +13,7 @@ import { LevelButtonGroup } from "./LevelButtonGroup";
 import { LightFatButton } from "./buttons/LightFatButton";
 import { UIColors, defaultFont } from "../data/Style";
 
-export const ChangeLevelModal = ({
-  check,
-  daySelected,
-  hide,
-}) => {
+export const ChangeLevelModal = ({ check, daySelected, hide }) => {
   const [levelDates, setLevelDates] = useContext(LevelContext);
   const [changedLevel, setChangedLevel] = useState(null);
 
@@ -66,34 +68,38 @@ export const ChangeLevelModal = ({
       }}
     >
       <TouchableWithoutFeedback onPress={hide}>
-      <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
-        <View style={style}>
-          {/* Chose TouchableOpacity with 100% opacity over TouchableWithoutFeedback because 
+        <BlurView tint="dark" intensity={60} style={{ flex: 1 }}>
+          <View style={style}>
+            {/* Chose TouchableOpacity with 100% opacity over TouchableWithoutFeedback because 
           TouchableWithoutFeedback doesn't take style as props and therefore messes up the layout
           even when wrapping child components in another View */}
-          <TouchableOpacity style={styleModal} onPress={() => {}} activeOpacity={1}>
-            <LevelButtonGroup
-              handleLevelSelect={handleLevelChangeSelect}
-              highlightButton={daySelected ? levelDates[daySelected] : ""}
-              styleButtonGroup={styleButtonGroup}
-            />
-            <LightFatButton
-              handlePress={handleLevelChangeSubmit}
-              style={styleButton}
-              styleText={styleButtonText}
+            <TouchableOpacity
+              style={styleModal}
+              onPress={() => {}}
+              activeOpacity={1}
             >
-              <Text>Change</Text>
-            </LightFatButton>
-            <LightFatButton
-              handlePress={hide}
-              style={{ backgroundColor: "transparent" }}
-              styleText={{ color: "white", fontSize: 16 }}
-            >
-              <Text>Nevermind</Text>
-            </LightFatButton>
-          </TouchableOpacity>
-        </View>
-      </BlurView>
+              <LevelButtonGroup
+                handleLevelSelect={handleLevelChangeSelect}
+                highlightButton={daySelected ? levelDates[daySelected] : ""}
+                styleButtonGroup={styleButtonGroup}
+              />
+              <LightFatButton
+                handlePress={handleLevelChangeSubmit}
+                style={styleButton}
+                styleText={styleButtonText}
+              >
+                <Text>Change</Text>
+              </LightFatButton>
+              <LightFatButton
+                handlePress={hide}
+                style={{ backgroundColor: "transparent" }}
+                styleText={{ color: "white", fontSize: 16 }}
+              >
+                <Text>Nevermind</Text>
+              </LightFatButton>
+            </TouchableOpacity>
+          </View>
+        </BlurView>
       </TouchableWithoutFeedback>
     </Modal>
   );

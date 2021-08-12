@@ -20,20 +20,20 @@ export const CalendarScreen = () => {
   };
 
   const hideModal = () => {
-    setModalVisible(false)
-  }
+    setModalVisible(false);
+  };
 
   const showModal = () => {
-    setModalVisible(true)
-  }
+    setModalVisible(true);
+  };
 
   const checkModal = () => {
-    return isModalVisible
-  }
+    return isModalVisible;
+  };
 
-  const changeDaySelected = day => {
-    setDaySelected(day)
-  }
+  const changeDaySelected = (day) => {
+    setDaySelected(day);
+  };
 
   return (
     <LinearGradient

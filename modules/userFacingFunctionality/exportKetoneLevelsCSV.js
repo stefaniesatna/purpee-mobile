@@ -5,7 +5,9 @@ import { levelDatesToCSV } from "../levelDatesToCSV";
 export const exportKetoneLevelsCSV = (levels) => {
   const csv = levelDatesToCSV(levels);
   const now = new Date();
-  const fileName = `csv-ketone-levels-export-${now.getFullYear()}-${now.getMonth() +1}-${now.getDate()}.csv`;
+  const fileName = `csv-ketone-levels-export-${now.getFullYear()}-${
+    now.getMonth() + 1
+  }-${now.getDate()}.csv`;
   const uri = FileSystem.cacheDirectory + fileName;
   FileSystem.writeAsStringAsync(uri, csv, {
     encoding: FileSystem.EncodingType.UTF8,
