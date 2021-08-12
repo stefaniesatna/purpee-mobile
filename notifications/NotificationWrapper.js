@@ -1,13 +1,16 @@
 import React, { useRef, useEffect, useContext } from "react";
 import { NotificationContext } from "./NotificationContext";
+import { LevelContext } from "../LevelContext";
 import Constants from "expo-constants";
 import * as Notifications from "expo-notifications";
 import { degreesToTime } from "../modules/degreesToTime";
+import { formatDateYYYYMMDD } from "../modules/formatDateYYYYMMDD";
 
 export const NotificationWrapper = ({ children }) => {
   const notificationListener = useRef();
   const responseListener = useRef();
   const [notification] = useContext(NotificationContext);
+  const [levelDates] = useContext(LevelContext);
 
   const time = {
     hour: notification ? degreesToTime(notification.angle).hours : 0,
@@ -46,6 +49,14 @@ export const NotificationWrapper = ({ children }) => {
       schedulePushNotification(time);
     }
   }, [time, isOn]);
+
+  useEffect(() => {
+    const today = formatDateYYYYMMDD(new Date()) 
+    if ((levelDates && levelDates[today] && levelDates[today] > 0)){
+      console.log("Cancelling notifications because we have date")
+      cancelNotifications()
+    }
+  }, [levelDates])
 
   return <>{children}</>;
 };
