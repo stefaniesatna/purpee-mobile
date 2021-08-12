@@ -91,7 +91,7 @@ async function registerForPushNotificationsAsync() {
       finalStatus = status;
     }
     if (finalStatus !== "granted") {
-      alert("Unable to set notifications");
+      alert("Permission for push notifications could not be granted. Reminder notifications will not be sent");
       return;
     }
     token = (await Notifications.getExpoPushTokenAsync()).data;
