@@ -18,7 +18,7 @@ export const NotificationSwitch = ({ screenWidth, onChange, value }) => {
       <Text style={biggerSecondaryText}>Daily log reminder</Text>
       <Switch
         trackColor={{ true: UIColors.blueFull }}
-        thumbColor={"#ffffff"}
+        thumbColor={UIColors.white}
         ios_backgroundColor={{ true: UIColors.blueFull }}
         onValueChange={onChange}
         value={value}

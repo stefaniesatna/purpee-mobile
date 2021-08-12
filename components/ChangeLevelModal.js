@@ -32,7 +32,7 @@ export const ChangeLevelModal = ({ check, daySelected, hide }) => {
     borderWidth: 1.5,
   };
   const styleButton = {
-    backgroundColor: "white",
+    backgroundColor: UIColors.white,
     width: 150,
   };
   const styleButtonText = {

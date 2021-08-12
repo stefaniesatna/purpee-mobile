@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View } from "react-native";
 import { LevelButton } from "./buttons/LevelButton";
 import { ColourScale } from "../data/ColourScale";
+import { UIColors } from "../data/Style";
 
 export const LevelButtonGroup = (props) => {
   const levels = [1, 2, 3, 4, 5, 6];
@@ -15,7 +16,7 @@ export const LevelButtonGroup = (props) => {
 
     borderRadius: 8,
 
-    backgroundColor: "white",
+    backgroundColor: UIColors.white,
     ...props.styleButtonGroup,
   };
 
