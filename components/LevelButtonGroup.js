@@ -4,10 +4,6 @@ import { LevelButton } from "./buttons/LevelButton";
 import { ColourScale } from "../data/ColourScale";
 
 export const LevelButtonGroup = (props) => {
-  const levels = [1, 2, 3, 4, 5, 6];
-
-  const [selectedLevel, setSelectedLevel] = useState(null);
-
   const styleView = {
     flexDirection: "row",
     alignItems: "center",
@@ -18,6 +14,9 @@ export const LevelButtonGroup = (props) => {
     backgroundColor: "white",
     ...props.styleButtonGroup,
   };
+
+  const levels = [1, 2, 3, 4, 5, 6];
+  const [selectedLevel, setSelectedLevel] = useState(null);
 
   const levelButtons = levels.map((level) => {
     return (
@@ -30,8 +29,8 @@ export const LevelButtonGroup = (props) => {
             : props.highlightButton === level
         }
         onPress={() => {
-          props.handleLevelSelect(level);
           setSelectedLevel(level);
+          props.handleLevelSelect(level);
         }}
       ></LevelButton>
     );

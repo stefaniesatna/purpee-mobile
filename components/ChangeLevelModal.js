@@ -5,7 +5,7 @@ import { BlurView } from "expo-blur";
 import { LevelContext } from "../LevelContext";
 import { LevelButtonGroup } from "./LevelButtonGroup";
 import { LightFatButton } from "./buttons/LightFatButton";
-import { UIColors, defaultFont } from "../data/Style";
+import { UIColors } from "../data/Style";
 
 export const ChangeLevelModal = ({
   check,
@@ -70,7 +70,7 @@ export const ChangeLevelModal = ({
           <View style={styleModal}>
             <LevelButtonGroup
               handleLevelSelect={handleLevelChangeSelect}
-              highlightButton={daySelected ? levelDates[daySelected] : ""}
+              highlightButton={levelDates[daySelected] > 0 ? levelDates[daySelected] : changedLevel}
               styleButtonGroup={styleButtonGroup}
             />
             <LightFatButton
