@@ -39,7 +39,7 @@ export const Calendar = ({ changeDaySelected, showModal }) => {
     calendarBackground: "transparent",
   };
 
-/*
+  /*
 CalendarList requires a markedDates prop which is an object of objects with the dates as properties.
 
 markedDates={{

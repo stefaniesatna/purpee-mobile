@@ -6,13 +6,13 @@ import { LevelButtonGroup } from "../LevelButtonGroup";
 import { h1 } from "../../data/Style";
 import { LinearGradient } from "expo-linear-gradient";
 import { LevelContext } from "../../LevelContext";
-import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD"
+import { formatDateYYYYMMDD } from "../../modules/formatDateYYYYMMDD";
 
 export const ModalScreen = ({ navigation }) => {
   //TODO: Implement initial state (currently none, but you can still submit)
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [levelDates, setLevelDates] = useContext(LevelContext);
-  const today = formatDateYYYYMMDD(new Date())
+  const today = formatDateYYYYMMDD(new Date());
 
   const styleButtonGroup = {
     height: 125,
@@ -26,20 +26,19 @@ export const ModalScreen = ({ navigation }) => {
     justifyContent: "center",
   };
 
-  
   const handleLevelSelect = (level) => {
     setSelectedLevel(level);
   };
-  
+
   const handleLevelSubmit = () => {
     navigation.navigate("Main");
-    setLevelDates({...levelDates, [today]: selectedLevel})
+    setLevelDates({ ...levelDates, [today]: selectedLevel });
   };
 
   const handleSkip = () => {
-    navigation.navigate("Main")
-    setLevelDates({...levelDates, [today]: 0})
-  }
+    navigation.navigate("Main");
+    setLevelDates({ ...levelDates, [today]: 0 });
+  };
 
   return (
     <View style={styleView}>
@@ -63,9 +62,7 @@ export const ModalScreen = ({ navigation }) => {
       <LightFatButton handlePress={handleLevelSubmit} style={{ margin: 13 }}>
         Log today
       </LightFatButton>
-      <LightThinButton handlePress={handleSkip}>
-        Skip
-      </LightThinButton>
+      <LightThinButton handlePress={handleSkip}>Skip</LightThinButton>
     </View>
   );
 };

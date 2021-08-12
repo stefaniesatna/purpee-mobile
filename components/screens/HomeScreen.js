@@ -18,18 +18,18 @@ export const HomeScreen = () => {
     alignItems: "center",
   };
 
-  const handleSquarePress = date => {
-    setModalVisible(true)
-    setDaySelected(date)
-  }
+  const handleSquarePress = (date) => {
+    setModalVisible(true);
+    setDaySelected(date);
+  };
 
   const hideModal = () => {
-    setModalVisible(false)
-  }
+    setModalVisible(false);
+  };
 
   const checkModal = () => {
-    return isModalVisible
-  }
+    return isModalVisible;
+  };
 
   return (
     <LinearGradient
@@ -44,9 +44,7 @@ export const HomeScreen = () => {
           check={checkModal}
         />
         <View style={contentContainer}>
-          <Heatmap
-            handleSquarePress={handleSquarePress}
-          />
+          <Heatmap handleSquarePress={handleSquarePress} />
         </View>
         <View style={styleBottomView}>
           <MotivatingMessage />

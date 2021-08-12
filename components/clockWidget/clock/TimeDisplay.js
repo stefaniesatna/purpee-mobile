@@ -7,11 +7,11 @@ import { degreesToTime } from "../../../modules/degreesToTime";
 export const TimeDisplay = ({ angle }) => {
   let time = {
     hours: formatNumberdd(degreesToTime(angle).hours),
-    mins: formatNumberdd(degreesToTime(angle).mins)
-  }
+    mins: formatNumberdd(degreesToTime(angle).mins),
+  };
 
   const styleTime = {
-    fontSize: 34,
+    fontSize: 30,
     color: UIColors.blueFull,
   };
 

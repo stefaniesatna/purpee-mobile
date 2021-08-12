@@ -4,7 +4,7 @@ import React from "react";
 import { G, Line, Text } from "react-native-svg";
 import { polarToCartesian } from "../../../modules/polarToCartesian";
 import { UIColors } from "../../../data/Style";
-import { Dimensions } from "react-native"
+import { Dimensions } from "react-native";
 
 export const ClockMarkings = ({ radius, center, minutes, hours }) => {
   const minutesArray = new Array(minutes).fill(1);
@@ -47,7 +47,9 @@ export const ClockMarkings = ({ radius, center, minutes, hours }) => {
     );
   });
 
-  const hourTextSize = toString(Math.floor(Dimensions.get("window").width * 0.026))
+  const hourTextSize = toString(
+    Math.floor(Dimensions.get("window").width * 0.026)
+  );
 
   // -5 and -20 are arbitrary values to "move" the coordinate point towards the centre of the circle
   const hourMarks = hoursArray.map((hour, index) => {
