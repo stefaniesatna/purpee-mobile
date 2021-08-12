@@ -5,7 +5,7 @@ export const setStorageValue = async (key, value) => {
         const jsonValue = JSON.stringify(value)
         await AsyncStorage.setItem(key, jsonValue)
     } catch {
-        return 1
+        return null
     }
 }
 
@@ -14,6 +14,6 @@ export const getStorageValue = async (key) => {
         const jsonValue = await AsyncStorage.getItem(key)
         return jsonValue != null ? JSON.parse(jsonValue) : null
     } catch {
-        return 1
+        return null
     }
 }

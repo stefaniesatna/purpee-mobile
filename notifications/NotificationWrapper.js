@@ -50,6 +50,7 @@ export const NotificationWrapper = ({ children }) => {
     }
   }, [time, isOn]);
 
+  // TODO: For now only cancelling notification, need to find a way to reschedule them after the notification time
   useEffect(() => {
     const today = formatDateYYYYMMDD(new Date()) 
     if ((levelDates && levelDates[today] && levelDates[today] > 0)){
