@@ -18,6 +18,17 @@ export const NotificationWrapper = ({ children }) => {
   };
 
   const isOn = notification ? notification.isOn : false;
+  const numberOfNotifications = 30
+  const intervalSecs = 20
+  const today = new Date()
+    console.log("==================\n\n\n\n")
+    console.log("Today is ", today)
+  const tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+    console.log("Today still is ", today)
+    console.log("Tomorrow is now ", tomorrow)
+  const startDate = levelDates && levelDates[formatDateYYYYMMDD(today)] > 0 ? tomorrow : today
+    console.log("Start date", startDate)
 
   useEffect(() => {
     registerForPushNotificationsAsync();
@@ -49,15 +60,6 @@ export const NotificationWrapper = ({ children }) => {
       schedulePushNotification(time);
     }
   }, [time, isOn]);
-
-  // TODO: For now only cancelling notification, need to find a way to reschedule them after the notification time
-  useEffect(() => {
-    const today = formatDateYYYYMMDD(new Date()) 
-    if ((levelDates && levelDates[today] && levelDates[today] > 0)){
-      console.log("Cancelling notifications because we have date")
-      cancelNotifications()
-    }
-  }, [levelDates])
 
   return <>{children}</>;
 };
