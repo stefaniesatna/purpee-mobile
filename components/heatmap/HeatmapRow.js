@@ -12,11 +12,7 @@ export const HeatmapRow = ({ levels, handleSquarePress }) => {
 
   const heatmapSquares = levels.map((date, idx) => {
     return (
-      <HeatmapSquare
-        key={idx}
-        date={date}
-        handlePress={handleSquarePress}
-      />
+      <HeatmapSquare key={idx} date={date} handlePress={handleSquarePress} />
     );
   });
 

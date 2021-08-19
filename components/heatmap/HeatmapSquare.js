@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TouchableOpacity } from "react-native";
+import { TouchableOpacity, Dimensions } from "react-native";
 
 import { LevelContext } from "../../LevelContext";
 import { ColourScale } from "../../data/ColourScale";
@@ -8,14 +8,19 @@ import { UIColors } from "../../data/Style";
 
 export const HeatmapSquare = ({ date, handlePress }) => {
   const [levelDates] = useContext(LevelContext);
+  const widthPercentOfScreen = 50 / 375;
+  const gapWidthPercentOfScreen = 1.5 / 375;
+  const screenWidth = Dimensions.get("window").width;
 
   let style = {
-    width: 50,
-    height: 50,
-    margin: 1.5,
+    width: widthPercentOfScreen * screenWidth,
+    height: widthPercentOfScreen * screenWidth,
+    margin: gapWidthPercentOfScreen * screenWidth,
     borderRadius: 3,
 
-    backgroundColor: levelDates[date] ? ColourScale[levelDates[date]] : ColourScale[0],
+    backgroundColor: levelDates[date]
+      ? ColourScale[levelDates[date]]
+      : ColourScale[0],
   };
 
   const todayStyle = {
@@ -32,6 +37,9 @@ export const HeatmapSquare = ({ date, handlePress }) => {
   }
 
   return (
-    <TouchableOpacity style={style} onPress={() => handlePress(date)}></TouchableOpacity>
+    <TouchableOpacity
+      style={style}
+      onPress={() => handlePress(date)}
+    ></TouchableOpacity>
   );
 };
