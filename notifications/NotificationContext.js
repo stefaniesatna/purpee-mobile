@@ -1,6 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { cancelAllScheduledNotificationsAsync } from "expo-notifications";
 import { getStorageValue, setStorageValue } from "../modules/asyncStorageAPI";
 
 export const NotificationContext = createContext();

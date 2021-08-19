@@ -59,6 +59,7 @@ async function schedulePushNotification(time) {
     content: {
       title: "Purpee time 💜",
       body: "Don't forget to log your ketone levels today!",
+      sound:  "default"
     },
     trigger: {
       hour: time.hour,
@@ -83,7 +84,6 @@ async function registerForPushNotificationsAsync() {
       return;
     }
     token = (await Notifications.getExpoPushTokenAsync()).data;
-    console.log(token);
   } else {
     alert("Must use physical device for Push Notifications");
   }
