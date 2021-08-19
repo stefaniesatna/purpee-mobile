@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { getStorageValue, setStorageValue } from "./modules/asyncStorageAPI";
 
 export const LevelContext = createContext();
 
@@ -15,7 +16,7 @@ export function LevelProvider(props) {
 
   useEffect(() => {
     if (Object.keys(levelDates) != 0) {
-      AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(levelDates));
+      setStorageValue(STORAGE_KEY, levelDates);
     }
   }, [levelDates]);
 
@@ -25,9 +26,9 @@ export function LevelProvider(props) {
         console.log("Clearing async storage");
         await AsyncStorage.clear();
       }
-      AsyncStorage.getItem(STORAGE_KEY).then((value) => {
+      getStorageValue(STORAGE_KEY).then((value) => {
         if (value) {
-          setLevelDates(JSON.parse(value));
+          setLevelDates(value);
         }
       });
     }

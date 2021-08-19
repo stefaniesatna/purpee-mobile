@@ -30,7 +30,7 @@ export const ReminderScreen = () => {
         <NotificationSwitch
           screenWidth={screenWidth}
           onChange={handleToggleSwitch}
-          value={notification.isOn}
+          value={notification ? notification.isOn : false}
         />
         <InfoTip screenWidth={screenWidth} />
         <ClockWidget

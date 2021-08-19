@@ -5,7 +5,10 @@ import {
 } from "@react-navigation/bottom-tabs";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  getStorageValue,
+  setStorageValue,
+} from "../../modules/asyncStorageAPI";
 
 import { HomeScreen } from "../screens/HomeScreen";
 import { CalendarScreen } from "../screens/CalendarScreen";
@@ -28,14 +31,13 @@ export const MainStackScreen = ({ navigation }) => {
   };
 
   useEffect(() => {
-    AsyncStorage.getItem(STORAGE_KEY).then((value) => {
-      const data = JSON.parse(value);
+    getStorageValue(STORAGE_KEY).then((data) => {
       const today = formatDateYYYYMMDD(new Date());
       if (!data || !data[today]) {
         navigation.navigate("Modal");
 
-        const newData = JSON.stringify({ ...data, [today]: true });
-        AsyncStorage.setItem(STORAGE_KEY, newData);
+        const newData = { ...data, [today]: true };
+        setStorageValue(STORAGE_KEY, newData);
       }
     });
   }, []);

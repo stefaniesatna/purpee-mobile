@@ -11,7 +11,7 @@ import { BlurView } from "expo-blur";
 import { LevelContext } from "../LevelContext";
 import { LevelButtonGroup } from "./LevelButtonGroup";
 import { LightFatButton } from "./buttons/LightFatButton";
-import { UIColors, defaultFont } from "../data/Style";
+import { UIColors } from "../data/Style";
 
 export const ChangeLevelModal = ({ check, daySelected, hide }) => {
   const [levelDates, setLevelDates] = useContext(LevelContext);
