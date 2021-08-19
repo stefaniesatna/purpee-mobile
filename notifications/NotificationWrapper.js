@@ -21,12 +21,12 @@ export const NotificationWrapper = ({ children }) => {
 
     notificationListener.current =
       Notifications.addNotificationReceivedListener((n) => {
-        console.log(n);
+        return n
       });
 
     responseListener.current =
       Notifications.addNotificationResponseReceivedListener((response) => {
-        console.log(response);
+        return response
       });
 
     return () => {
